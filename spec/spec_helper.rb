@@ -24,7 +24,7 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 end
 
-def sign_up(username)
+def sign_up(email)
   visit "/users/new"
   fill_in "Email", with: email
   fill_in "Password", with: 'abcdef'
@@ -32,10 +32,10 @@ def sign_up(username)
 end
 
 def sign_up_as_hello_world
-  sign_up("hello_world")
+  sign_up("hello_world@test.com")
 end
 
-def sign_in(username)
+def sign_in(email)
   visit "/session/new"
   fill_in "Email", with: email
   fill_in "Password", with: 'abcdef'

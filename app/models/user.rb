@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
 
-  validate :email, :password_digest, presence: true
-  validate :password, length: { minimum: 6, allow_nil: true}
-
   attr_reader :password
+
+  validates :email, presence: true
+  validates :password_digest, presence: {message: "Password can't be blank"}
+  validates :email, uniqueness: { message: "you're already signed up! Sign in instead."}
+  validates :password, length: { minimum: 6, allow_nil: true}
+  validates :email, length: { minimum: 5 }
+  validates :session_token, presence: true
+
 
   after_initialize :ensure_session_token
   after_initialize :apply_gravatar #TODO find user's gravatar and link to it.
@@ -40,3 +45,6 @@ class User < ActiveRecord::Base
 
 
 end
+
+
+

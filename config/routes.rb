@@ -1,5 +1,5 @@
 Fwendme::Application.routes.draw do
-  root to: "session#new"
+  root to: "sessions#new"
 
   resources :users, only: [:new, :create, :show, :index]
   resource :session, only: [:new, :create, :destroy]

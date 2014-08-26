@@ -4,6 +4,18 @@ development:
   host: localhost
   username: appacademy
 
+test:
+  adapter: postgresql
+  database: fwendme_development
+  host: localhost
+  username: appacademy
+
+production:
+  adapter: postgresql
+  database: fwendme_development
+  host: localhost
+  username: appacademy
+
 
 
 

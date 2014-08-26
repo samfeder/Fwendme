@@ -1,22 +1,23 @@
 class SessionsController < ApplicationController
 
   def new
-
+    @user = User.new
+    render :new
   end
 
 
   def create
-    user = User.find_by_credentials(
-      params[:user][:email]
+    @user = User.find_by_credentials(
+      params[:user][:email],
       params[:user][:password]
     )
-
-    if user
-      sign_in(user)
-      render :json "signed in"
-    else
-      flash.now[:errors] = ["User not found"]
+    if @user.nil?
+      flash.now[:errors] = ["User/Password combo invalid"]
       render :new
+    else
+      sign_in(@user)
+      redirect_to user_url(@user)
+    end
   end
 
 
