@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'pg'
 
-gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'bcrypt', require: 'bcrypt'
 
 group :development do
   gem 'pry-rails'

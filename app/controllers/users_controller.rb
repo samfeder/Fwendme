@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_signed_in!, except: [:new, :create]
 
   def new
     @user = User.new
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
     @user.name ||= params["user"]["email"]
     if @user.save
       sign_in(@user)
-      render :show
+      redirect_to edit_user_url(@user)
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new

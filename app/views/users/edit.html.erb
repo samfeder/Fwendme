@@ -1,0 +1,28 @@
+
+<p>Edit <%= @user.name %>'s account</p>
+
+<form action="<%= users_url %>" method="put">
+  <%= auth_token_input %>
+  <label>
+    Email
+    <input type="email" name="user[email]" value="<%= @user.email %>">
+  </label>
+<br>
+  <label>
+    Name
+    <input type="text" name="user[name]" value="">
+  </label>
+<br>
+  <label>
+    Avatar Link
+    <input type="text" name="user[avatar_link]" value="<%= @user.avatar_link %>">
+  </label>
+<br>
+  <label>
+    New Password
+    <input type="password" name="user[password]" value="">
+  </label>
+<br>
+  <input type="submit" value="Submit">
+</form>
+  <%= link_to "Cancel", user_url(@user)%>
