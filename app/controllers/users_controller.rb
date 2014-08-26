@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.name = params["user"]["email"]
+    @user.name ||= params["user"]["email"]
     if @user.save
       sign_in(@user)
       render :show

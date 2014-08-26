@@ -1,5 +1,15 @@
 class User < ActiveRecord::Base
 
+  has_many :owned_chats,
+  class_name: "Chat",
+  foreign_key: :owner_id,
+  primary_key: :id
+
+  has_many :chat_memberships
+
+  has_many :chats, through: :chat_memberships, source: :chat
+
+
   attr_reader :password
 
   validates :email, presence: true
@@ -39,7 +49,7 @@ class User < ActiveRecord::Base
   end
 
   def apply_gravatar
-    self.avatar_link ||= "/fwendme/app/assets/images/avatar.jpg"
+    self.avatar_link ||= "avatar.jpg"
   end
 
 

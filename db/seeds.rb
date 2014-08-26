@@ -1,7 +1,66 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(email: "frodo@shire.com", name: "Frodo", password: "password")
+User.create(email: "pippen@shire.com", name: "Pippen", password: "password")
+User.create(email: "sam@shire.com", name: "Sam", password: "password")
+User.create(email: "merry@shire.com", name: "Merry", password: "password")
+User.create(email: "bilbo@shire.com", name: "Bilbo", password: "password")
+
+User.create(email: "gandalf@fellowship.com", name: "Gandalf", password: "password")
+User.create(email: "boromir@fellowship.com", name: "Boromir", password: "password")
+User.create(email: "aragorn@fellowship.com", name: "Aragorn", password: "password")
+User.create(email: "gimli@fellowship.com", name: "Gimli", password: "password")
+User.create(email: "legolas@fellowship.com", name: "Legolas", password: "password")
+
+User.create(email: "sauron@mordor.com", name: "Sauron", password: "password")
+User.create(email: "headorc@mordor.com", name: "Orc Lord", password: "password")
+User.create(email: "troll@mordor.com", name: "Troll", password: "password")
+
+User.create(email: "gollum@precious.com", name: "Gollum", password: "password")
+
+frodo = User.find_by_name("Frodo")
+pippen = User.find_by_name("Pippen")
+sam = User.find_by_name("Sam")
+merry = User.find_by_name("Merry")
+bilbo = User.find_by_name("Bilbo")
+gandalf = User.find_by_name("Gandalf")
+boromir = User.find_by_name("Boromir")
+aragorn = User.find_by_name("Aragorn")
+gimli = User.find_by_name("Gimli")
+legolas = User.find_by_name("Legolas")
+sauron = User.find_by_name("Sauron")
+orc = User.find_by_name("Orc Lord")
+troll = User.find_by_name("Troll")
+gollum = User.find_by_name("Gollum")
+
+Chat.create(title: "Mordor Budz", description: "FIND THOSE HOBBITS", owner_id: sauron.id)
+Chat.create(title: "Fellowship", description: "For the sanctity of the realm", owner_id: gandalf.id)
+Chat.create(title: "Shire", description: "It'll be spring soon, and the orchards will be in blossom...", owner_id: frodo.id)
+Chat.create(title: "Mount Doom Crew", description: "Hope there's no giant spiders", owner_id: frodo.id)
+
+mordor_chat = Chat.find_by_title("Mordor Budz")
+fellowship_chat = Chat.find_by_title("Fellowship")
+shire_chat = Chat.find_by_title("Shire")
+mount_doom_chat = Chat.find_by_title("Mount Doom Crew")
+
+ChatMembership.create(user_id: frodo.id, chat_id: fellowship_chat.id)
+ChatMembership.create(user_id: merry.id, chat_id: fellowship_chat.id)
+ChatMembership.create(user_id: pippen.id, chat_id: fellowship_chat.id)
+ChatMembership.create(user_id: sam.id, chat_id: fellowship_chat.id)
+ChatMembership.create(user_id: gandalf.id, chat_id: fellowship_chat.id)
+ChatMembership.create(user_id: boromir.id, chat_id: fellowship_chat.id)
+ChatMembership.create(user_id: aragorn.id, chat_id: fellowship_chat.id)
+ChatMembership.create(user_id: gimli.id, chat_id: fellowship_chat.id)
+ChatMembership.create(user_id: legolas.id, chat_id: fellowship_chat.id)
+
+ChatMembership.create(user_id: sauron.id, chat_id: mordor_chat.id)
+ChatMembership.create(user_id: orc.id, chat_id: mordor_chat.id)
+ChatMembership.create(user_id: troll.id, chat_id: mordor_chat.id)
+
+ChatMembership.create(user_id: frodo.id, chat_id: shire_chat.id)
+ChatMembership.create(user_id: pippen.id, chat_id: shire_chat.id)
+ChatMembership.create(user_id: sam.id, chat_id: shire_chat.id)
+ChatMembership.create(user_id: merry.id, chat_id: shire_chat.id)
+ChatMembership.create(user_id: bilbo.id, chat_id: shire_chat.id)
+
+ChatMembership.create(user_id: frodo.id, chat_id: mount_doom_chat.id)
+ChatMembership.create(user_id: sam.id, chat_id: mount_doom_chat.id)
+ChatMembership.create(user_id: gollum.id, chat_id: mount_doom_chat.id)
