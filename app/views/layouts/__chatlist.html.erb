@@ -1,4 +1,4 @@
-<ul>
+<ul id="group-chat-list" class="group">
 <% current_user.chats.each do |chat| %>
 <li>
   <%= link_to chat.title, chat_url(chat) %>

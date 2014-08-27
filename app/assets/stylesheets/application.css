@@ -8,6 +8,144 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+
+
  */
+
+
+
+
+
+html, figure, body, header, nav, h1, h2, a, ul, li, main, section, p, small, footer, aside, input {
+  margin: 0;
+  padding: 0;
+  font-family: arial ;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: brown;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+h1 {
+font-weight: bold;
+font-size: 12pt;
+}
+
+h2 {
+font-size: 10pt;
+margin-top: 4px;
+}
+
+#group-chat-list{
+  background: green;
+  margin-top: 45px;
+  margin-bottom: 50px;
+}
+
+#private-chat-list{
+  background: blue;
+}
+
+#chat-tray{
+  background: red;
+  position: fixed;
+  max-width: 280px;
+  height: 100%;
+}
+
+
+
+nav.group {
+  width: 100%;
+  background-color: beige;
+  height: 40px;
+  position: fixed;
+  z-index: 1000;
+}
+
+a.user-menu-link {
+  float: right;
+  margin-right: 25px;
+  margin-top: 10px;
+}
+
+ul.user-menu {
+  background-color: yellow;
+  position: relative;
+  float: right;
+  top: 35px;
+  left: 90px;
+}
+
+main.chat-window {
+  max-width: 650px;
+  min-width: 500px;
+  text-align: center;
+  width: auto;
+  margin: 45px auto;
+  padding: 0 280px;
+  position: relative;
+  height: 90%;
+}
+
+header.chat-header {
+  background: gray;
+  height: 65px;
+}
+
+figure.chat-logo {
+float: left;
+margin: 10px;
+}
+
+section.chat-descriptors {
+  float: left;
+  margin-top: 10px;
+  max-width: 200px;
+}
+
+.chat-tools{
+  float: right;
+  margin-right: 20px;
+}
+
+.chat-options{
+  margin: 45px;
+}
+
+section.chat-tools {
+  margin-top: 20px;
+}
+
+section.chat-messages{
+  width: 100%;
+  height: 90%;
+  background: magenta;
+}
+
+textarea.new-message {
+  background-color: yellowgreen;
+  width: 100%;
+  height: 40px;
+  font-size: 14pt;
+  overflow: auto;
+}
+
+.placeholder-text{
+  margin-top: 85px;
+  text-align: center;
+  font-size: 24pt;
+}

@@ -1,0 +1,7 @@
+<ul id="private-chat-list" class="group">
+<% User.all.each do |user| %>
+<li>
+  <%= link_to "#{user.name}" %>
+</li>
+<% end %>
+</ul>

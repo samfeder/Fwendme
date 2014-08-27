@@ -1,1 +1,28 @@
-yo
+<header class="chat-header">
+<figure class="chat-logo" alt="chat logo">
+  <img src="<%= asset_path("#{@chat.avatar}") %>" width="45" height="45" alt="chat logo">
+</figure>
+
+<section class="chat-descriptors">
+  <h1><%= @chat.title %></h1>
+  <h2><%= @chat.description %></h2>
+</section>
+
+<section class="chat-tools">
+  <a class="chat-settings chat-options" href="#">
+    O
+  </a>
+  <a class="close-chat chat-options" href="<%= root_url %>">
+    X
+  </a>
+</section>
+
+</header>
+<article class"chat-window-body">
+  <section class="chat-messages">
+    <ul class="messages-list">
+
+    </ul>
+  </section>
+  <textarea type="text" class="new-message"></textarea>
+</article>

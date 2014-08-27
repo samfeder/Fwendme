@@ -1,5 +1,5 @@
 Fwendme::Application.routes.draw do
-  root to: "sessions#new"
+  root to: 'static_pages#root'
 
   resources :users, only: [:new, :create, :show, :index, :edit, :update] do
     resources :chats, only: :new

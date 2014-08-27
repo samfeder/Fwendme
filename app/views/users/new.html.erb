@@ -1,16 +1,17 @@
-<h2>Sign Up</h2>
+<h3>Sign Up</h3>
 
 <form action="<%= users_url %>" method="post">
   <%= auth_token_input %>
   <label>
-    Email
+    Email<br>
     <input type="email" name="user[email]" value="<%= @user.email %>">
-  </label>
+  </label><br>
 
   <label>
-    Password
+    Password<br>
     <input type="password" name="user[password]" value="">
   </label>
-
+<br><br>
   <input type="submit" value="Sign Up">
 </form>
+<%= link_to "Sign In", new_session_url %>
