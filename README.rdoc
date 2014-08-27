@@ -2,4 +2,5 @@
 
 A group chatting app for you and all of your friends!
 
+
 <tt>rake doc:app</tt>.
