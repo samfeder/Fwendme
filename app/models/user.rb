@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :chat_memberships
 
+  has_many :messages
+
   has_many :chats, through: :chat_memberships, source: :chat
 
 

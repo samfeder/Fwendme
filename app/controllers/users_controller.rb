@@ -19,12 +19,10 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    render :show
   end
 
   def edit
     @user = current_user
-    render :edit
   end
 
   def update
@@ -39,7 +37,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    render :index
   end
 
   private

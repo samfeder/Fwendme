@@ -14,7 +14,7 @@
 
 
 
-
+/* RESET */
 
 html, figure, body, header, nav, h1, h2, a, ul, li, main, section, p, small, footer, aside, input {
   margin: 0;
@@ -31,6 +31,16 @@ a {
 ul {
   list-style: none;
 }
+
+input {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  font: inherit;
+  list-style: none outside none;
+  text-decoration: none;
+}
+
+/* CLEAR FIX */
 
 .group:after {
   content: "";
@@ -142,10 +152,22 @@ textarea.new-message {
   height: 40px;
   font-size: 14pt;
   overflow: auto;
+  resize: none;
 }
 
 .placeholder-text{
   margin-top: 85px;
   text-align: center;
   font-size: 24pt;
+}
+
+input.send-message-button {
+  border-left: 1px solid black;
+  height: 40px;
+  padding-left: 16px;
+  cursor: pointer;
+  position: relative;
+  float: right;
+  bottom: 40px;
+  right: 16px;
 }

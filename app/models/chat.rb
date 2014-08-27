@@ -6,6 +6,7 @@ class Chat < ActiveRecord::Base
   primary_key: :id
 
   has_many :chat_memberships
+  has_many :messages
 
   has_many :users, through: :chat_memberships, source: :user
 

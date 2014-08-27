@@ -2,7 +2,6 @@ class ChatsController < ApplicationController
 
   def new
     @chat = Chat.new
-    render :new
   end
 
   def create
@@ -17,7 +16,6 @@ class ChatsController < ApplicationController
 
   def edit
     @chat = Chat.find(params[:id])
-    render :edit
   end
 
   def update
@@ -37,13 +35,12 @@ class ChatsController < ApplicationController
   end
 
   def show
-    @chat = Chat.find(params[:id])
-    render :show
+    @chat = Chat.includes(:users, :messages).find(params[:id])
+    @messages = @chat.messages.reverse
   end
 
   def index
     @chats = Chat.all
-    render :index
   end
 
   private

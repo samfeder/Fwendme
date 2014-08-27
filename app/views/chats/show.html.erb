@@ -18,11 +18,25 @@
 </section>
 
 </header>
+
 <article class"chat-window-body">
+
   <section class="chat-messages">
     <ul class="messages-list">
-
+      <% @messages.each do |message| %>
+        <%= "#{message.user.name}: #{message.content}" %><br>
+      <% end %>
     </ul>
   </section>
-  <textarea type="text" class="new-message"></textarea>
+
+  <form action="<%= messages_url(@chat) %>" method="post">
+    <%= auth_token_input %>
+    <textarea type="text"
+              value=""
+              name="message[content]"
+              class="new-message">
+    </textarea>
+    <input type="submit" class="send-message-button" value="Send Message">
+  </form>
+
 </article>
