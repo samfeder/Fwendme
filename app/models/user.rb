@@ -13,14 +13,16 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  # has_attached_file :avatar, :styles => {
-  #   :big => "40x40>",
-  #   :small => "40x40#"
-  # }
-  # validates_attachment_content_type(
-  #   :avatar,
-  #   :content_type => /\Aimage\/.*\Z/
-  # )
+  has_attached_file :avatar,
+  :default_url => "Fwendatar.png",
+  :styles => {
+    :big => "40x40>",
+    :small => "40x40#"
+  }
+  validates_attachment_content_type(
+    :avatar,
+    :content_type => /\Aimage\/.*\Z/
+  )
 
   validates :email, presence: true
   validates :password_digest, presence: {message: "Password can't be blank"}

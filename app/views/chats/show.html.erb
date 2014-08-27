@@ -23,9 +23,13 @@
 
   <section class="chat-messages">
     <ul class="messages-list">
-      <% @messages.each do |message| %>
-        <%= "#{message.user.name}: #{message.content}" %><br>
-      <% end %>
+
+        <% @messages.each do |message| %>
+        <li class="message">
+          <%= image_tag message.user.avatar, size: "40x40" %>
+          <%= "#{message.user.name}: #{message.content}" %><br>
+        </li>
+        <% end %>
     </ul>
   </section>
 

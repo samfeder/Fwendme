@@ -1,1 +1,11 @@
-yo
+<h3>New Chat</h3>
+
+<form action="<%= chats_url %>" method="post">
+  <%= auth_token_input %>
+  <label>
+    Title<br>
+    <input type="text" name="chat[title]" value="">
+  </label><br>
+<br><br>
+  <input type="submit" value="Create Chat">
+</form>

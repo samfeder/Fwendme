@@ -6,11 +6,13 @@ class ChatsController < ApplicationController
 
   def create
     @chat = current_user.chats.new(chat_params)
+    @chat.owner = current_user
     if @chat.save
       redirect_to chat_url(@chat)
     else
       flash.now[:errors] = @chat.errors.full_messages
-      render :new
+      fail
+      redirect_to :back
     end
   end
 
