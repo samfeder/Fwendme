@@ -1,21 +1,42 @@
 <form action="<%= chat_url(@chat) %>" enctype="multipart/form-data" method="POST">
+
 <%= auth_token_input %>
+
 <input type="hidden" name= "_method" value= "PATCH" >
+
 <label>
   Chat Name
   <input type="text"
          value="<%= @chat.title %>"
          name = "chat[title]">
 </label>
+
 <br>
+
 <label>
   Chat Description
   <input type="text"
          value="<%= @chat.description %>"
          name = "chat[description]">
 </label>
+
 <br>
+
 <input id="chat_portrait" name="chat[portrait]" type="file">
+
+<br><br>
+
+<h3>Current Users (check or uncheck to add/remove users)</h3>
+<ul>
+<% User.all.each do |user| %>
+<li>
+  <input type = "checkbox"
+         name = "chat[user_ids][]" value="<%= user.id %>"
+         <%= "checked" if @chat.users.include?(user) %>>
+  <%= user.name %>
+ </li>
+<% end %>
+</ul>
 
 <input type="submit">
 

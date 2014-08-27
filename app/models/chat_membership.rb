@@ -6,4 +6,6 @@ class ChatMembership < ActiveRecord::Base
 
   belongs_to :user
 
+  # scope :current_memberships TODO: Will require 'lambda scopes'
+
 end

@@ -1,5 +1,7 @@
 class ChatsController < ApplicationController
 
+  before_action :require_membership!, only: [:edit, :show]
+
   def new
     @chat = Chat.new
   end
@@ -47,6 +49,7 @@ class ChatsController < ApplicationController
 
   private
   def chat_params
-    params.require(:chat).permit(:title, :portrait)
+    params.require(:chat).permit(:title, :portrait, user_ids: [])
   end
+
 end

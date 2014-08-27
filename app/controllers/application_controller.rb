@@ -25,8 +25,10 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_url unless signed_in?
   end
 
-
-
-
+  def require_membership!
+    redirect_to :root unless
+    !ChatMembership.where(user_id: current_user.id,
+                         chat_id: params[:id]).empty?
+  end
 
 end
