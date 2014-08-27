@@ -25,7 +25,12 @@ html, figure, body, header, nav, h1, h2, a, ul, li, main, section, p, small, foo
 
 a {
   text-decoration: none;
-  color: brown;
+  color: darkgray;
+  font-weight: strong;
+}
+
+a:hover{
+  color: lightgray;
 }
 
 ul {
@@ -86,7 +91,7 @@ h3 {
 }
 
 #private-chat-list{
-  background: blue;
+  background: green;
 }
 
 #chat-tray{
