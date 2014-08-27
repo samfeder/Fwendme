@@ -11,8 +11,16 @@ class User < ActiveRecord::Base
 
   has_many :chats, through: :chat_memberships, source: :chat
 
-
   attr_reader :password
+
+  # has_attached_file :avatar, :styles => {
+  #   :big => "40x40>",
+  #   :small => "40x40#"
+  # }
+  # validates_attachment_content_type(
+  #   :avatar,
+  #   :content_type => /\Aimage\/.*\Z/
+  # )
 
   validates :email, presence: true
   validates :password_digest, presence: {message: "Password can't be blank"}
@@ -23,7 +31,6 @@ class User < ActiveRecord::Base
 
 
   after_initialize :ensure_session_token
-  after_initialize :apply_gravatar #TODO find user's gravatar and link to it.
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -49,12 +56,6 @@ class User < ActiveRecord::Base
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
-
-  def apply_gravatar
-    self.avatar_link ||= "avatar.jpg"
-  end
-
-
 
 end
 

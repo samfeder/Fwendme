@@ -5,6 +5,8 @@ class Chat < ActiveRecord::Base
   foreign_key: :owner_id,
   primary_key: :id
 
+  attr_reader :portrait
+
   has_many :chat_memberships
   has_many :messages
 
@@ -12,11 +14,14 @@ class Chat < ActiveRecord::Base
 
   validates :title, :owner_id, presence: true
 
-  after_initialize :apply_gravatar
-
-  def apply_gravatar
-    self.avatar ||= "chat.jpg"
-  end
-
-
+  has_attached_file :portrait,
+  :default_url => "Fwendatar.png",
+  :styles => {
+    :big => "45x45",
+    :small => "45x45"
+  }
+  validates_attachment_content_type(
+    :portrait,
+    :content_type => /\Aimage\/.*\Z/
+  )
 end

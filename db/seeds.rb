@@ -41,6 +41,27 @@ fellowship_chat = Chat.find_by_title("Fellowship")
 shire_chat = Chat.find_by_title("Shire")
 mount_doom_chat = Chat.find_by_title("Mount Doom Crew")
 
+Message.create(user_id: boromir.id, chat_id: fellowship_chat.id, content: "One does not simply 'walk' into Mordor.")
+Message.create(user_id: gandalf.id, chat_id: fellowship_chat.id, content: "You shall not pass!.")
+Message.create(user_id: gimli.id, chat_id: fellowship_chat.id, content: "Never thought I'd die fighting side by side with an elf")
+Message.create(user_id: legolas.id, chat_id: fellowship_chat.id, content: "What about a friend?")
+Message.create(user_id: gimli.id, chat_id: fellowship_chat.id, content: "Aye, that I can do.")
+Message.create(user_id: aragorn.id, chat_id: fellowship_chat.id, content: "Behold! The sword of Elendil!")
+Message.create(user_id: frodo.id, chat_id: fellowship_chat.id, content: "LOL you guys are funny!")
+
+Message.create(user_id: frodo.id, chat_id: mount_doom_chat.id, content: "It... It's so heavy Sam.")
+Message.create(user_id: sam.id, chat_id: mount_doom_chat.id, content: "Share the load Mr. Frodo!.")
+Message.create(user_id: gollum.id, chat_id: mount_doom_chat.id, content: "See? See! He wants it for himselfs")
+Message.create(user_id: sam.id, chat_id: mount_doom_chat.id, content: "Shut up you! Go away! Get out of here!")
+Message.create(user_id: frodo.id, chat_id: mount_doom_chat.id, content: "No Sam, it's you...")
+Message.create(user_id: sam.id, chat_id: mount_doom_chat.id, content: "but... Mr. Frodo...")
+
+
+
+
+
+
+
 ChatMembership.create(user_id: frodo.id, chat_id: fellowship_chat.id)
 ChatMembership.create(user_id: merry.id, chat_id: fellowship_chat.id)
 ChatMembership.create(user_id: pippen.id, chat_id: fellowship_chat.id)

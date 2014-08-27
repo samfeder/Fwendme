@@ -1,6 +1,6 @@
 <header class="chat-header">
 <figure class="chat-logo" alt="chat logo">
-  <img src="<%= asset_path("#{@chat.avatar}") %>" width="45" height="45" alt="chat logo">
+<%= image_tag @chat.portrait.url(:big), size: "45x45" %>
 </figure>
 
 <section class="chat-descriptors">
@@ -9,7 +9,7 @@
 </section>
 
 <section class="chat-tools">
-  <a class="chat-settings chat-options" href="#">
+  <a class="chat-settings chat-options" href="<%= edit_chat_url(@chat) %>">
     O
   </a>
   <a class="close-chat chat-options" href="<%= root_url %>">

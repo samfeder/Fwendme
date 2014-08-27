@@ -5,7 +5,7 @@ class ChatsController < ApplicationController
   end
 
   def create
-    @chat = current_user.owned_chat.new(chat_params)
+    @chat = current_user.chats.new(chat_params)
     if @chat.save
       redirect_to chat_url(@chat)
     else
@@ -45,6 +45,6 @@ class ChatsController < ApplicationController
 
   private
   def chat_params
-    params.require([:chat]).permit(:title)
+    params.require(:chat).permit(:title, :portrait)
   end
 end

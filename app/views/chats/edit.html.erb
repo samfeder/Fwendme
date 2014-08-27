@@ -1,0 +1,22 @@
+<form action="<%= chat_url(@chat) %>" enctype="multipart/form-data" method="POST">
+<%= auth_token_input %>
+<input type="hidden" name= "_method" value= "PATCH" >
+<label>
+  Chat Name
+  <input type="text"
+         value="<%= @chat.title %>"
+         name = "chat[title]">
+</label>
+<br>
+<label>
+  Chat Description
+  <input type="text"
+         value="<%= @chat.description %>"
+         name = "chat[description]">
+</label>
+<br>
+<input id="chat_portrait" name="chat[portrait]" type="file">
+
+<input type="submit">
+
+</form>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827034002) do
+ActiveRecord::Schema.define(version: 20140827150156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,15 @@ ActiveRecord::Schema.define(version: 20140827034002) do
   add_index "chat_memberships", ["user_id"], name: "index_chat_memberships_on_user_id", using: :btree
 
   create_table "chats", force: true do |t|
-    t.string   "title",       null: false
+    t.string   "title",                 null: false
     t.string   "description"
-    t.string   "avatar",      null: false
-    t.integer  "owner_id",    null: false
+    t.integer  "owner_id",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "portrait_file_name"
+    t.string   "portrait_content_type"
+    t.integer  "portrait_file_size"
+    t.datetime "portrait_updated_at"
   end
 
   add_index "chats", ["owner_id"], name: "index_chats_on_owner_id", using: :btree
@@ -49,13 +52,16 @@ ActiveRecord::Schema.define(version: 20140827034002) do
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                         null: false
-    t.string   "password_digest",               null: false
-    t.string   "name",                          null: false
-    t.string   "avatar_link",     default: "t"
+    t.string   "email",               null: false
+    t.string   "password_digest",     null: false
+    t.string   "name",                null: false
     t.string   "session_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end
