@@ -7,6 +7,19 @@ class User < ActiveRecord::Base
 
   has_many :chat_memberships
 
+  has_many :friendships
+
+  has_many :friends,
+  through: :friendships
+
+  has_many :inverse_friendships,
+  class_name: "Friendship",
+  foreign_key: :friend_id
+
+  has_many :inverse_friends,
+  through: :inverse_friendships,
+  source: :user
+
   has_many :messages
 
   has_many :chats, through: :chat_memberships, source: :chat
@@ -46,6 +59,10 @@ class User < ActiveRecord::Base
 
   def valid_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def fwends
+    self.friends + self.inverse_friends
   end
 
   def reset_token!
