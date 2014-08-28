@@ -25,16 +25,23 @@
 <input id="chat_portrait" name="chat[portrait]" type="file">
 
 <br><br>
+<h3>Current Members</h3>
+<% User.all.each do |user| %>
+<% next if !@chat.users.include?(user) %>
+<%= image_tag user.avatar.url, size: "45x45" %>
+<% end %>
 
-<h3>Current Users (check or uncheck to add/remove users)</h3>
+
+<h3>Select which users to add</h3>
 <ul>
 <% User.all.each do |user| %>
+<% next if @chat.users.include?(user) %>
 <li>
   <input type = "checkbox"
-         name = "chat[user_ids][]" value="<%= user.id %>"
-         <%= "checked" if @chat.users.include?(user) %>>
+         name = "chat[user_ids][]" value="<%= user.id %>">
   <%= user.name %>
  </li>
+
 <% end %>
 </ul>
 
