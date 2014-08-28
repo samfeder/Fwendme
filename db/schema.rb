@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827150156) do
+ActiveRecord::Schema.define(version: 20140828011322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140827150156) do
     t.string   "portrait_content_type"
     t.integer  "portrait_file_size"
     t.datetime "portrait_updated_at"
+    t.boolean  "private_chat"
   end
 
   add_index "chats", ["owner_id"], name: "index_chats_on_owner_id", using: :btree

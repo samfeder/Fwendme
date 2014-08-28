@@ -11,6 +11,7 @@ class ChatsController < ApplicationController
     @chat = current_user.chats.new(chat_params)
     @chat.owner = current_user
     if @chat.save
+      ChatMembership.create!(chat_id: @chat.id, user_id: @chat.owner.id)
       redirect_to chat_url(@chat)
     else
       flash.now[:errors] = @chat.errors.full_messages
@@ -25,7 +26,9 @@ class ChatsController < ApplicationController
 
   def update
     @chat = Chat.find(params[:id])
-    if @chat.update(chat_params)
+    updated_params = chat_params
+    updated_params[:user_ids] += @chat.users.map { |user| user.id.to_s }
+    if @chat.update(updated_params)
       redirect_to chat_url(@chat)
     else
       flash.now[:errors] = @chat.errors.full_messages
