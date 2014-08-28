@@ -1,4 +1,4 @@
-class ChatMembershipsController < ApplicationController
+class ChatMembershipsController < ApiController
 
   def create
 
