@@ -1,20 +1,19 @@
-User.create(email: "frodo@shire.com", name: "Frodo", password: "password", avatar: File.new("#{Rails.root}/seeds/images/frodo.jpg"))
-User.create(email: "pippen@shire.com", name: "Pippen", password: "password", avatar: File.new("#{Rails.root}/seeds/images/pippin.jpg"))
-User.create(email: "sam@shire.com", name: "Sam", password: "password", avatar: File.new("#{Rails.root}/seeds/images/sam.jpg"))
-User.create(email: "merry@shire.com", name: "Merry", password: "password", avatar: File.new("#{Rails.root}/seeds/images/merry.jpg"))
-User.create(email: "bilbo@shire.com", name: "Bilbo", password: "password", avatar: File.new("#{Rails.root}/seeds/images/bilbo.jpg"))
+User.create([{email: "frodo@shire.com", name: "Frodo", password: "password", avatar: File.new("#{Rails.root}/seeds/images/frodo.jpg")},
+{email: "pippen@shire.com", name: "Pippen", password: "password", avatar: File.new("#{Rails.root}/seeds/images/pippin.jpg")},
+{email: "sam@shire.com", name: "Sam", password: "password", avatar: File.new("#{Rails.root}/seeds/images/sam.jpg")},
+{email: "merry@shire.com", name: "Merry", password: "password", avatar: File.new("#{Rails.root}/seeds/images/merry.jpg")},
+{email: "bilbo@shire.com", name: "Bilbo", password: "password", avatar: File.new("#{Rails.root}/seeds/images/bilbo.jpg")},
 
-User.create(email: "gandalf@fellowship.com", name: "Gandalf", password: "password", avatar: File.new("#{Rails.root}/seeds/images/gandalf.jpg"))
-User.create(email: "boromir@fellowship.com", name: "Boromir", password: "password", avatar: File.new("#{Rails.root}/seeds/images/boromir.jpg"))
-User.create(email: "aragorn@fellowship.com", name: "Aragorn", password: "password", avatar: File.new("#{Rails.root}/seeds/images/aragorn.jpg"))
-User.create(email: "gimli@fellowship.com", name: "Gimli", password: "password", avatar: File.new("#{Rails.root}/seeds/images/gimli.jpg"))
-User.create(email: "legolas@fellowship.com", name: "Legolas", password: "password", avatar: File.new("#{Rails.root}/seeds/images/legolas.jpg"))
+{email: "gandalf@fellowship.com", name: "Gandalf", password: "password", avatar: File.new("#{Rails.root}/seeds/images/gandalf.jpg")},
+{email: "boromir@fellowship.com", name: "Boromir", password: "password", avatar: File.new("#{Rails.root}/seeds/images/boromir.jpg")},
+{email: "aragorn@fellowship.com", name: "Aragorn", password: "password", avatar: File.new("#{Rails.root}/seeds/images/aragorn.jpg")},
+{email: "gimli@fellowship.com", name: "Gimli", password: "password", avatar: File.new("#{Rails.root}/seeds/images/gimli.jpg")},
+{email: "legolas@fellowship.com", name: "Legolas", password: "password", avatar: File.new("#{Rails.root}/seeds/images/legolas.jpg")},
 
-User.create(email: "sauron@mordor.com", name: "Sauron", password: "password", avatar: File.new("#{Rails.root}/seeds/images/sauron.jpg"))
-User.create(email: "headorc@mordor.com", name: "Orc", password: "password", avatar: File.new("#{Rails.root}/seeds/images/orc.jpg"))
-User.create(email: "troll@mordor.com", name: "Troll", password: "password", avatar: File.new("#{Rails.root}/seeds/images/troll.jpg"))
-
-User.create(email: "gollum@precious.com", name: "Gollum", password: "password", avatar: File.new("#{Rails.root}/seeds/images/gollum.jpg"))
+{email: "sauron@mordor.com", name: "Sauron", password: "password", avatar: File.new("#{Rails.root}/seeds/images/sauron.jpg")},
+{email: "headorc@mordor.com", name: "Orc", password: "password", avatar: File.new("#{Rails.root}/seeds/images/orc.jpg")},
+{email: "troll@mordor.com", name: "Troll", password: "password", avatar: File.new("#{Rails.root}/seeds/images/troll.jpg")},
+{email: "gollum@precious.com", name: "Gollum", password: "password", avatar: File.new("#{Rails.root}/seeds/images/gollum.jpg")}])
 
 frodo = User.find_by_name("Frodo")
 pippen = User.find_by_name("Pippen")
@@ -36,20 +35,6 @@ fellowship = [frodo, pippen, sam, merry, gandalf, boromir, aragorn, gimli, legol
 bad_guys = [sauron, orc, troll]
 mount_doom_crew = [frodo, sam, gollum]
 middle_earth = [hobbits, fellowship, bad_guys, mount_doom_crew]
-
-#Wait a second... Why don't I just make group members auto-friends?
-
-# current_friends = []
-#
-# middle_earth.each do |group|
-#   group.each_with_index do |member, i|
-#     (i+1).upto(group.length-1) do |j|
-#       next if current_friends.include?([i,j])
-#       Friendship.create(user_id: group[i].id, friend_id: group[j].id)
-#       current_friends << [group[i].id,group[j].id]
-#     end
-#   end
-# end
 
 Chat.create(title: "Mordor Budz", description: "FIND THOSE HOBBITS", owner_id: sauron.id, portrait: File.new("#{Rails.root}/seeds/images/mordor.jpg"))
 Chat.create(title: "Fellowship", description: "For the sanctity of the realm", owner_id: gandalf.id, portrait: File.new("#{Rails.root}/seeds/images/fellowship.jpg"))
@@ -77,8 +62,6 @@ Message.create(user_id: frodo.id, chat_id: mount_doom_chat.id, content: "No Sam,
 Message.create(user_id: sam.id, chat_id: mount_doom_chat.id, content: "but... Mr. Frodo...")
 
 
-
-
 ChatMembership.create(user_id: frodo.id, chat_id: fellowship_chat.id)
 ChatMembership.create(user_id: merry.id, chat_id: fellowship_chat.id)
 ChatMembership.create(user_id: pippen.id, chat_id: fellowship_chat.id)
@@ -102,3 +85,8 @@ ChatMembership.create(user_id: bilbo.id, chat_id: shire_chat.id)
 ChatMembership.create(user_id: frodo.id, chat_id: mount_doom_chat.id)
 ChatMembership.create(user_id: sam.id, chat_id: mount_doom_chat.id)
 ChatMembership.create(user_id: gollum.id, chat_id: mount_doom_chat.id)
+
+mount_doom_chat.make_fwends
+shire_chat.make_fwends
+mordor_chat.make_fwends
+fellowship_chat.make_fwends

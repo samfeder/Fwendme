@@ -15,7 +15,6 @@ class ChatsController < ApplicationController
       redirect_to chat_url(@chat)
     else
       flash.now[:errors] = @chat.errors.full_messages
-      fail
       redirect_to :back
     end
   end
