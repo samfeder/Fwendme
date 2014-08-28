@@ -32,10 +32,13 @@
 <% end %>
 
 
-<h3>Select which users to add</h3>
+
 <ul>
+<% user_count = 0 %>
 <% User.all.each do |user| %>
 <% next if @chat.users.include?(user) %>
+<% next if !current_user.fwends.include?(user) %>
+<% user_count += 1 %>
 <li>
   <input type = "checkbox"
          name = "chat[user_ids][]" value="<%= user.id %>">
@@ -44,7 +47,9 @@
 
 <% end %>
 </ul>
-
+<% if user_count > 0 %>
+<h3>Select which users to add</h3>
+<% end %>
 <input type="submit">
 
 </form>
