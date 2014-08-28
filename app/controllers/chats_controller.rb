@@ -1,5 +1,6 @@
 class ChatsController < ApplicationController
 
+  before_action :require_signed_in!
   before_action :require_membership!, only: [:edit, :show]
 
   def new
