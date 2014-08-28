@@ -1,13 +1,16 @@
 Fwendme::Application.routes.draw do
   root to: 'static_pages#root'
 
-  resources :users, only: [:new, :create, :show, :index, :edit, :update]
+  resources :users, only: [:new, :create, :show, :index, :edit, :update] do
+    resources :friendships, only: [:create, :new]
+  end
 
   resource :session, only: [:new, :create, :destroy]
 
   resources :chats, except: :index do
     resources :messages, only: :new
   end
+
 
   resources :messages, only: [:create, :show]
 

@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    #make index template
   end
 
   private

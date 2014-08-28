@@ -30,7 +30,7 @@ sauron = User.find_by_name("Sauron")
 orc = User.find_by_name("Orc")
 troll = User.find_by_name("Troll")
 gollum = User.find_by_name("Gollum")
-
+rai
 Chat.create(title: "Mordor Budz", description: "FIND THOSE HOBBITS", owner_id: sauron.id, portrait: File.new("#{Rails.root}/seeds/images/mordor.jpg"))
 Chat.create(title: "Fellowship", description: "For the sanctity of the realm", owner_id: gandalf.id, portrait: File.new("#{Rails.root}/seeds/images/fellowship.jpg"))
 Chat.create(title: "Shire", description: "It'll be spring soon, and the orchards will be in blossom...", owner_id: frodo.id, portrait: File.new("#{Rails.root}/seeds/images/theshire.jpg"))

@@ -1,8 +1,9 @@
 <ul id="private-chat-list" class="group">
 <li><h1>Private Chats</h1></li>
-<% User.all.each do |user| %>
+<% current_user.fwends.each do |user| %>
 <li>
   <%= link_to "#{user.name}" %>
 </li>
 <% end %>
 </ul>
+<%= link_to "Make Fwends", users_url %>

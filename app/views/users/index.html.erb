@@ -1,0 +1,6 @@
+<% @users.each do |user| %>
+<% next if user == current_user %>
+<% next if current_user.fwends.include?(user) %>
+<%= user.name %>
+<%= button_to "Add Fwend", user_friendships_url(user) %>
+<% end %>
