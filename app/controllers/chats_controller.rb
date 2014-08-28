@@ -21,6 +21,7 @@ class ChatsController < ApplicationController
 
   def edit
     @chat = Chat.find(params[:id])
+    @chat_membership = ChatMembership.where(chat_id: @chat.id, user_id: current_user.id).first
   end
 
   def update

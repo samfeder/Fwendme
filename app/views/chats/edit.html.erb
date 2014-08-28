@@ -54,6 +54,7 @@
 
 </form>
 <%= link_to "Cancel", chat_url(params[:id]) %>
+<%= button_to "Leave Chat", chat_membership_url(@chat_membership.id), method: :delete %>
 <% if current_user.id == @chat.owner.id %>
 <%= button_to "Delete This Chat", chat_url(params[:id]), method: :delete %>
 <% end %>
