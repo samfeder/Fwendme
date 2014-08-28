@@ -5,8 +5,7 @@ class FriendshipsController < ApplicationController
     if @friendship.save
       redirect_to root_url
     else
-      flash.new[:errors] = @friendship.errors.full_messages
-      redirect_to :back
+      render json: ["#{@friendship}.errors.full_messages"], status: 403
     end
   end
 

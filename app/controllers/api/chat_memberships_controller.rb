@@ -11,7 +11,7 @@ class ChatMembershipsController < ApplicationController
   def destroy
     @chat_membership = ChatMembership.find(params[:id])
     @chat_membership.destroy
-    redirect_to root_url
+    render json: {}
   end
 
 end

@@ -1,20 +1,17 @@
 class MessagesController < ApplicationController
   before_action :require_signed_in!
 
-  def new
-    @message = Message.new(chat_id: params[:chat_id])
-  end
-
   def create
     @message = current_user.messages.new(message_params)
     @message.chat_id = params[:format]
     @message.save
     flash.now[:errors] = @message.errors.full_messages
-    redirect_to :back
+    render json: @message
   end
 
   def show
     @message = Message.find(params[:id])
+    render json: @message
   end
 
   private

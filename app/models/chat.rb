@@ -34,6 +34,12 @@ class Chat < ActiveRecord::Base
       end
     end
   end
+
+  def is_member?(user)
+    self.users.include?(user)
+  end
+
+
 end
 
   #   group.each_with_index do |member, i|
