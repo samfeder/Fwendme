@@ -38,6 +38,7 @@ class ChatsController < ApplicationController
 
   def destroy
     chat = Chat.find(params[:id])
+    ChatMembership.where(chat_id: params[:id]).destroy_all
     chat.destroy
     redirect_to user_url(current_user)
   end
