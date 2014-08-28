@@ -14,7 +14,7 @@ class ChatsController < ApplicationController
       ChatMembership.create!(chat_id: @chat.id, user_id: @chat.owner.id)
       redirect_to chat_url(@chat)
     else
-      flash.now[:errors] = @chat.errors.full_messages
+      flash[:errors] = @chat.errors.full_messages
       redirect_to :back
     end
   end

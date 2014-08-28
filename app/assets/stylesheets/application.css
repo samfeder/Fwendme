@@ -208,3 +208,7 @@ li.message {
   padding-top: 5px;
   border-bottom: 1px solid black;
 }
+
+section.error-list{
+  color: red;
+}

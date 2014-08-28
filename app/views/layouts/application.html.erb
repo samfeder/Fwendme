@@ -27,14 +27,21 @@
   <%= render :partial => 'layouts/_userlist' %>
 </aside>
 
-<%= render :partial => 'layouts/_errors' %>
 <main class="chat-window">
   <%= yield %>
+  <%= render :partial => 'layouts/_errors' %>
 </main>
+
 <% else %>
+
+<% if !signed_in? %>
+  <%= render :partial => 'layouts/_errors' %>
+<% end %>
 
 <%= yield %>
 
 <% end %>
+
 </body>
+
 </html>
