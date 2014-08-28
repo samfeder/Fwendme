@@ -27,8 +27,13 @@ class ChatsController < ApplicationController
   def update
     @chat = Chat.find(params[:id])
     updated_params = chat_params
-    updated_params[:user_ids] += @chat.users.map { |user| user.id.to_s }
+
+    if updated_params[:user_ids]
+      updated_params[:user_ids] += @chat.users.map { |user| user.id.to_s }
+    end
+
     if @chat.update(updated_params)
+      @chat.make_fwends
       redirect_to chat_url(@chat)
     else
       flash.now[:errors] = @chat.errors.full_messages

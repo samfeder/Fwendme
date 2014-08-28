@@ -24,4 +24,25 @@ class Chat < ActiveRecord::Base
     :portrait,
     :content_type => /\Aimage\/.*\Z/
   )
+
+  def make_fwends
+    self.users.each_with_index do |user, i|
+      current_fwends = User.find(user.id).fwends.map{ |friend| friend.id }
+      (i+1).upto(self.users.length-1) do |j|
+        next if current_fwends.include?(self.users[j].id)
+        Friendship.create(user_id: self.users[i].id, friend_id: self.users[j].id)
+      end
+    end
+  end
 end
+
+  #   group.each_with_index do |member, i|
+  #     (i+1).upto(group.length-1) do |j|
+  #       next if current_friends.include?([i,j])
+  #       Friendship.create(user_id: group[i].id, friend_id: group[j].id)
+  #       current_friends << [group[i].id,group[j].id]
+  #     end
+  #   end
+  # end
+
+

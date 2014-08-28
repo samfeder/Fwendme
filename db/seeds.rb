@@ -30,7 +30,27 @@ sauron = User.find_by_name("Sauron")
 orc = User.find_by_name("Orc")
 troll = User.find_by_name("Troll")
 gollum = User.find_by_name("Gollum")
-rai
+
+hobbits = [frodo, pippen, sam, merry, bilbo]
+fellowship = [frodo, pippen, sam, merry, gandalf, boromir, aragorn, gimli, legolas]
+bad_guys = [sauron, orc, troll]
+mount_doom_crew = [frodo, sam, gollum]
+middle_earth = [hobbits, fellowship, bad_guys, mount_doom_crew]
+
+#Wait a second... Why don't I just make group members auto-friends?
+
+# current_friends = []
+#
+# middle_earth.each do |group|
+#   group.each_with_index do |member, i|
+#     (i+1).upto(group.length-1) do |j|
+#       next if current_friends.include?([i,j])
+#       Friendship.create(user_id: group[i].id, friend_id: group[j].id)
+#       current_friends << [group[i].id,group[j].id]
+#     end
+#   end
+# end
+
 Chat.create(title: "Mordor Budz", description: "FIND THOSE HOBBITS", owner_id: sauron.id, portrait: File.new("#{Rails.root}/seeds/images/mordor.jpg"))
 Chat.create(title: "Fellowship", description: "For the sanctity of the realm", owner_id: gandalf.id, portrait: File.new("#{Rails.root}/seeds/images/fellowship.jpg"))
 Chat.create(title: "Shire", description: "It'll be spring soon, and the orchards will be in blossom...", owner_id: frodo.id, portrait: File.new("#{Rails.root}/seeds/images/theshire.jpg"))
@@ -55,9 +75,6 @@ Message.create(user_id: gollum.id, chat_id: mount_doom_chat.id, content: "See? S
 Message.create(user_id: sam.id, chat_id: mount_doom_chat.id, content: "Shut up you! Go away! Get out of here!")
 Message.create(user_id: frodo.id, chat_id: mount_doom_chat.id, content: "No Sam, it's you...")
 Message.create(user_id: sam.id, chat_id: mount_doom_chat.id, content: "but... Mr. Frodo...")
-
-
-
 
 
 
