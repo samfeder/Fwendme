@@ -1,1 +1,2 @@
-json.user user, :id, :name, :avatar
+json.fwend fwend, :id
+
