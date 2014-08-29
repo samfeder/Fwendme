@@ -1,0 +1,9 @@
+<ul id="group-chat-list2" class="group">
+
+<li><p class="tray-header2">Group Chats</p></li>
+<% current_user.chats.each do |chat| %>
+<li>
+  <a href="<%= chat.id %>"><%= chat.title %></a>
+</li>
+<% end %>
+</ul>

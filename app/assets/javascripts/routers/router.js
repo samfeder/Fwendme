@@ -2,9 +2,9 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    "chats/:id": "show"
-    // "chats/new/:id", "new",
-    // "chats/:id/edit" "edit"
+    "chats/:id": "show",
+    "chats/:id/edit": "edit"
+    // "chats/new/:id": "new"
   },
 
   index: function(){
@@ -23,6 +23,15 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
     });
 
     this._swapView(view)
+  },
+
+  edit: function(id){
+    var chat = FwendMe.chats.getOrFetch(id);
+    var editView = new FwendMe.Views.EditShow({
+      model: chat
+    });
+
+    this._swapView(editView)
   },
 
 

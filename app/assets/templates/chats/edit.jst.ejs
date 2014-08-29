@@ -3,21 +3,21 @@
 <label id="chat-name">
   Chat Name
   <input type="text"
-         value="<%= chat.get("title") %>"
+         value="<%= chat.escape("title") %>"
          name = "chat[title]">
 </label>
 
 <label id="chat-description">
   Chat Description
   <input type="text"
-         value="<%= chat.get("description") %>"
+         value="<%= chat.escape("description") %>"
          name = "chat[description]">
 </label>
 
 <input id="chat_portrait" name="chat[portrait]" type="file">
 
 <section class="member-management">
-  <% chat.gets('members').forEach( function(member){) %>
+  <% chat.get('members').forEach(function(member){ %>
   <%= member.escape('avatar') %>
   <% }) %>
 </section>
@@ -25,34 +25,25 @@
 <% chat.get("fwend_ids").forEach(function(fwendID){ %>
 
 
+<input type = "checkbox"
+  name = "chat[user_ids][]" value="<%= user.id %>">
+</li>
+
+<!--Ughh, just not sure about name -->
+
 <% }) %>
 
+<% if ( chat.get("fwends_ids") > chat.get("members.length") ){ %>
 
-
-
-
-<ul>
-<% user_count = 0 %>
-<% User.all.each do |user| %>
-<% next if @chat.users.include?(user) %>
-<% next if !current_user.fwends.include?(user) %>
-<% user_count += 1 %>
-<li>
-  <input type = "checkbox"
-         name = "chat[user_ids][]" value="<%= user.id %>">
-  <%= user.name %>
- </li>
-
-<% end %>
-</ul>
-<% if user_count > 0 %>
 <h3>Select which users to add</h3>
-<% end %>
-<input type="submit">
 
-</form>
-<%= link_to "Cancel", chat_url(params[:id]) %>
-<%= button_to "Leave Chat", chat_membership_url(@chat_membership.id), method: :delete %>
-<% if current_user.id == @chat.owner.id %>
-<%= button_to "Delete This Chat", chat_url(params[:id]), method: :delete %>
-<% end %>
+<% } %>
+
+<% if ( chat.escape("current_user")["id"] === chat.escape("owner_id") ){ %>
+
+<a href="#">Delete Chat</a>
+
+<% } %>
+
+<a href="#">Cancel</a>
+<a href="#">Leave Chat</a>
