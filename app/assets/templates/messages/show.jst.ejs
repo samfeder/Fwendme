@@ -1,0 +1,7 @@
+<li>
+<li id= "message-<%= message.get("id") %>" class="message">
+  <%= image_tag message.user.avatar, size: "40x40" %>
+  <%= "#{message.user.name}: "%>
+  <%= "#{message.content}" %>
+  <br>
+</li>

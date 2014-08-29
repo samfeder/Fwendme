@@ -1,10 +1,10 @@
-FwendMe.Views.ChatIndexView = Backbone.View.extend({
+FwendMe.Views.ChatIndexView = Backbone.CompositeView.extend({
 
 
-  template: ["chats/index"],
+  template: JST["chats/index"],
 
   render: function(){
-    var content = his.template({boards: this.collection});
+    var content = this.template({boards: this.collection});
     this.$el.html(content);
     return this;
   }

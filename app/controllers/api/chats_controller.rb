@@ -47,7 +47,7 @@ module Api
       @chat = Chat.includes(:users, :messages).find(params[:id])
       @messages = @chat.messages.reverse
       if @chat.is_member?(current_user)
-        render json: @chat
+        render :show
       else
         render json: ["You are not a member of this here chat, fella."],
                                                        status: 403

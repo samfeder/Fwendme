@@ -8,26 +8,28 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
   },
 
   index: function(){
+    FwendMe.chats.fetch();
+
     var view = new FwendMe.Views.ChatIndexView({collection: FwendMe.chats})
+
     this._swapView(view)
   },
 
   show: function(id){
-    var that = this;
-    var board = Fwendme.chats.get(id);
-    chat.fetch({
-      success: function(){
-        var view = new FwendMe.Views.ChatShowView({model: chat});
-        that._swapView(view);
-      }
-    })
+    var chat = FwendMe.chats.getOrFetch(id);
+    var view = new FwendMe.Views.ChatShow({
+      model: chat,
+      collection: chat.messages
+    });
+
+    this._swapView(view)
   },
 
 
   _swapView: function(newView){
     this._currentView && this._currentView.remove();
     this._currentView = newView;
-    $('#main').html(this._currentView.render().$el)
+    $('main').html(this._currentView.render().$el)
   }
 
 

@@ -1,0 +1,35 @@
+<header class="chat-header">
+<figure class="chat-logo" alt="chat logo">
+<img height="45" src="<%= chat.portrait_file_name %>" width="45">
+</figure>
+
+<section class="chat-descriptors">
+  <h1><%= chat.escape("title") %></h1>
+  <h2><%= chat.escape("description") %></h2>
+</section>
+
+<section class="chat-tools">
+  <a class="chat-settings chat-options" href="#">
+    O
+  </a>
+  <a class="close-chat chat-options" href="#">
+    X
+  </a>
+</section>
+
+</header>
+
+<article class="chat-window-body">
+
+  <section class="chat-messages">
+    <ul class="messages-list">
+    </ul>
+  </section>
+
+    <textarea type="text"
+              value=""
+              name="message[content]"
+              class="new-message">
+    </textarea>
+    <input type="submit" class="send-message-button" value="Send Message">
+</article>
