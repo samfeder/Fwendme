@@ -18,10 +18,14 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
   addMessages: function(){
     var that = this
+    console.log(this.collection)
     this.collection.forEach(function(message){
+
       var messageView = new FwendMe.Views.MessageShowView({
         model: message
       })
+      that.addSubview('.messages-list', messageView)
+
       this.$('.messages-list').append(messageView)
     })
   }

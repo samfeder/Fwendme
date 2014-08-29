@@ -4,4 +4,5 @@ json.members @chat.users, :id, :email, :avatar
 
 json.messages @chat.messages do |message|
   json.(message, :id, :content, :updated_at, :created_at)
+  json.partial! 'fwends', user: message.user
 end
