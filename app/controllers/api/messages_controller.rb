@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class Api::MessagesController < Api::ApplicationController
   before_action :require_signed_in!
 
   def create
