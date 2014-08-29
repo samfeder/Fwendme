@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.serializeJSON
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.serializeJSON
+//= require jquery.ui.sortable
 //= require underscore
 //= require backbone
 //= require fwendme

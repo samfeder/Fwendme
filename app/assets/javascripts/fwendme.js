@@ -4,9 +4,13 @@ window.FwendMe = {
   Views: {},
   Routers: {},
   initialize: function() {
-    FwendMe.chats = new FwendMe.Collections.Chats();
-    new FwendMe.Routers.Router({
-      $rootEl: $("#content")
-    });
+    console.log('Welcome to Fwend.Me!')
+    FwendMe.chats = new FwendMe.Collections.Chats()
+    FwendMe.chats.fetch({
+      success: function(){
+        var router = new FwendMe.Routers.FwendRouter();
+        Backbone.history.start()
+      }
+    })
   }
 };

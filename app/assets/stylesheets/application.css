@@ -21,16 +21,11 @@ html, figure, body, header, nav, h1, h2, a, ul, li, main, section, p, small, foo
   padding: 0;
   font-family: arial ;
   text-align: left;
+  color: inherit;
 }
 
 a {
   text-decoration: none;
-  color: darkgray;
-  font-weight: strong;
-}
-
-a:hover{
-  color: lightgray;
 }
 
 ul {
@@ -55,20 +50,24 @@ input {
 
 /* STYLES */
 
+body{
+  background: #F6FFE0;
+}
+
 input {
   border: 1px solid gray;
   border-radius: 5px;
 }
 
 input[type="submit"] {
-  border: 1px solid green;
+  border: 1px solid #BDD684;
   border-radius: 0px;
-  background: lightgray;
+  background: #E2F0D6;
 }
 
 h1 {
-font-weight: bold;
-font-size: 12pt;
+  font-weight: bold;
+  font-size: 12pt;
 }
 
 h2 {
@@ -85,44 +84,68 @@ h3 {
 
 
 #group-chat-list{
-  background: green;
+
   margin-bottom: 50px;
 }
 
 #private-chat-list{
-  background: green;
+
 }
 
-#chat-tray{
-  background: red;
+#chat-tray {
+  background: #10222B;
   position: fixed;
-  max-width: 280px;
   height: 100%;
   z-index: 900;
+  color: rgb(172, 172, 172);
+  border-radius: 10px;
+  padding-right: 47px;
 }
 
 
 
 nav.group {
   width: 100%;
-  background-color: beige;
+  background-color: #95AB63;
   height: 40px;
   position: fixed;
   z-index: 1000;
 }
 
-a.user-menu-link {
+div.user-menu-link {
   float: right;
   margin-right: 25px;
-  margin-top: 10px;
+  height: 30px;
+  padding-top: 10px;
+  cursor: hand;
+
 }
 
 ul.user-menu {
-  background-color: yellow;
+/* display: none; */
+  background-color: #95AB63;
   position: relative;
   float: right;
-  top: 35px;
-  left: 90px;
+  top: 40px;
+  right: -70px;
+}
+
+.user-menu li {
+  padding: 10px;
+}
+
+.user-menu a {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.user-menu li:hover {
+  background-color: #10222B;
+  color: #95AB63;
+}
+
+a.user-menu-link:hover + ul.user-menu{
+  display: block;
 }
 
 main.chat-window {
@@ -134,27 +157,30 @@ main.chat-window {
   padding: 0 280px;
   position: relative;
   height: 90%;
+
 }
 
 header.chat-header {
-  background: gray;
+  background: #10222B;
   height: 65px;
 }
 
 figure.chat-logo {
-float: left;
-margin: 10px;
+  float: left;
+  margin: 10px;
 }
 
 section.chat-descriptors {
   float: left;
   margin-top: 10px;
   max-width: 200px;
+  color: #9B9B9B;
 }
 
 .chat-tools{
   float: right;
   margin-right: 20px;
+  color: #9B9B9B;
 }
 
 .chat-options{
@@ -168,7 +194,7 @@ section.chat-tools {
 section.chat-messages{
   width: 100%;
   height: 90%;
-  background: magenta;
+  background: #E2F0D6;
 }
 
 textarea.new-message {
@@ -211,4 +237,21 @@ li.message {
 
 section.error-list{
   color: red;
+}
+
+p.tray-header{
+  color: #95AB63;
+  margin: 12px;
+  margin-top: 40px;
+}
+
+.new-chat-button {
+  color: #10222B;
+  background: #BDD684;
+  padding: 10 15;
+  margin-top: 15px;
+  position: fixed;
+  z-index: 5000;
+  top: 25px;
+  width: 150px;
 }

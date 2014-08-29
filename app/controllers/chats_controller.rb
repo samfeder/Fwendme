@@ -51,7 +51,6 @@ class ChatsController < ApplicationController
   def show
     @chat = Chat.includes(:users, :messages).find(params[:id])
     @messages = @chat.messages.reverse
-    render json: @chat
   end
 
   def index

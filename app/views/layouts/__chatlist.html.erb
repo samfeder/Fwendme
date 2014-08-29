@@ -1,6 +1,6 @@
 <ul id="group-chat-list" class="group">
 
-<li><h1>Group Chats</h1></li>
+<li><p class="tray-header">Group Chats</p></li>
 <% current_user.chats.each do |chat| %>
 <li>
   <%= link_to chat.title, chat_url(chat) %>
