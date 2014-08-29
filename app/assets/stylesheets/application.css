@@ -51,6 +51,11 @@ input {
 
 /* STYLES */
 
+#chat-tray a:hover {
+  color: lightgray;
+}
+
+
 body{
   background: #F6FFE0;
 }
