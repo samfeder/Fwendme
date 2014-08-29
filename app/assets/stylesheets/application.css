@@ -16,6 +16,7 @@
 
 /* RESET */
 
+
 html, figure, body, header, nav, h1, h2, a, ul, li, main, section, p, small, footer, aside, input {
   margin: 0;
   padding: 0;
@@ -99,7 +100,7 @@ h3 {
   z-index: 900;
   color: rgb(172, 172, 172);
   border-radius: 10px;
-  padding-right: 47px;
+  padding-right: 44px;
 }
 
 
@@ -114,37 +115,39 @@ nav.group {
 
 div.user-menu-link {
   float: right;
-  margin-right: 25px;
+  margin-right: 51;
   height: 30px;
-  padding-top: 10px;
+  padding: 10px;
   cursor: hand;
 
 }
 
 ul.user-menu {
-/* display: none; */
+  display: none;
   background-color: #95AB63;
   position: relative;
   float: right;
   top: 40px;
-  right: -70px;
+  right: -90px;
 }
 
-.user-menu li {
-  padding: 10px;
+ul.user-menu:hover {
+  display: block;
 }
+
 
 .user-menu a {
   padding: 10px;
+  padding-right: 20px;
   cursor: pointer;
+  display: block;
 }
-
 .user-menu li:hover {
   background-color: #10222B;
   color: #95AB63;
 }
 
-a.user-menu-link:hover + ul.user-menu{
+.user-menu-link:hover + ul.user-menu{
   display: block;
 }
 
