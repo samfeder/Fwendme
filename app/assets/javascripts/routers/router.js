@@ -28,14 +28,17 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
   edit: function(id){
     var chat = FwendMe.chats.getOrFetch(id);
     var editView = new FwendMe.Views.EditShow({
-      model: chat
+      model: chat,
+      collection: chat.fwends
     });
-
+    console.log(editView)
     this._swapView(editView)
   },
 
 
   _swapView: function(newView){
+    console.log(newView.$el[0])
+    console.log("YO!")
     this._currentView && this._currentView.remove();
     this._currentView = newView;
     $('main').html(this._currentView.render().$el)

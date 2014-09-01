@@ -17,33 +17,9 @@
 <input id="chat_portrait" name="chat[portrait]" type="file">
 
 <section class="member-management">
-  <% chat.get('members').forEach(function(member){ %>
-  <%= member.escape('avatar') %>
-  <% }) %>
+
 </section>
 
-<% chat.get("fwend_ids").forEach(function(fwendID){ %>
-
-
-<input type = "checkbox"
-  name = "chat[user_ids][]" value="<%= user.id %>">
-</li>
-
-<!--Ughh, just not sure about name -->
-
-<% }) %>
-
-<% if ( chat.get("fwends_ids") > chat.get("members.length") ){ %>
-
-<h3>Select which users to add</h3>
-
-<% } %>
-
-<% if ( chat.escape("current_user")["id"] === chat.escape("owner_id") ){ %>
-
-<a href="#">Delete Chat</a>
-
-<% } %>
 
 <a href="#">Cancel</a>
 <a href="#">Leave Chat</a>

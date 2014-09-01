@@ -1,31 +1,20 @@
-FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
+FwendMe.Views.EditShow = Backbone.CompositeView.extend({
+
+  template: JST['chats/edit'],
 
   initialize: function(){
-    this.collection = this.model.messages()
-    this.listenTo(this.model, 'sync', this.render)
-    this.listenTo(this.collection, 'add', this.addMessages);
+    this.collection = this.model.users()
+    this.listenTo(this.model, 'sync addt', this.render)
+    this.listenTo(this.collection, 'sync add', this.render);
   },
-
-  template: JST['chats/show'],
 
   render: function(){
-    var content = this.template({chat: this.model})
-    this.$el.html(content);
-    this.addMessages();
-    return this
-  },
-
-  addMessages: function(){
     var that = this
-    this.collection.forEach(function(message){
-
-      var messageView = new FwendMe.Views.MessageShowView({
-        model: message
-      })
-      that.addSubview('.messages-list', messageView)
-      console.log(messageView)
-      this.$('.messages-list').append(messageView)
+    var content = that.template({
+      chat: that.model,
     })
-  }
-
+    that.$el.html(content);
+    //Must attach user subview here with checkboxes
+    return that;
+    },
 })
