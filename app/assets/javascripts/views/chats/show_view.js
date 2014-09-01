@@ -2,7 +2,8 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
   events:{
     "click #chat-settings-trigger": "renderEdit",
-    "click #modal-trigger": "renderModal"
+    "click #modal-trigger": "renderModal",
+    "click #submit-message": "submitMessage"
   },
 
 
@@ -22,6 +23,16 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.addMessages();
     return this
+  },
+
+  submitMessage: function(){
+    var newMessage = $('#new-message').val()
+    this.collection.create({
+      content: newMessage,
+      user_id: this.model.attributes.current_user.id
+    }, {
+      wait: true
+    })
   },
 
   addMessages: function(){
