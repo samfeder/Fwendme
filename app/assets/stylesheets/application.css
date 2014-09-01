@@ -17,7 +17,7 @@
 /* RESET */
 
 
-html, figure, body, header, nav, h1, h2, a, ul, li, main, section, p, small, footer, aside, input {
+html, figure, body, header, nav, h1, h2, a, ul, li, main, article, section, p, small, footer, aside, input {
   margin: 0;
   padding: 0;
   font-family: arial ;
@@ -27,6 +27,7 @@ html, figure, body, header, nav, h1, h2, a, ul, li, main, section, p, small, foo
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 ul {
@@ -50,6 +51,42 @@ input {
 }
 
 /* STYLES */
+
+#modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+ filter: alpha(opacity=50);
+}
+
+#modal {
+  position:absolute;
+  background:url(tint20.png) 0 0 repeat;
+  background:rgba(0,0,0,0.2);
+  border-radius:14px;
+  padding:8px;
+}
+
+#modal-content {
+  border-radius:8px;
+  background:#fff;
+  padding:20px;
+}
+
+#modal-close {
+  position:absolute;
+  background:url(close.png) 0 0 no-repeat;
+  width:24px;
+  height:27px;
+  display:block;
+  text-indent:-9999px;
+  top:-7px;
+  right:-7px;
+}
 
 #chat-tray a:hover {
   color: lightgray;
@@ -156,16 +193,68 @@ ul.user-menu:hover {
   display: block;
 }
 
-main.chat-window {
+main.chat-experience{
+  min-width: 740px;
+  max-width: 900px;
+  margin: 45px auto;
+  padding: 0 280px;
+  overflow: hidden;
+}
+
+article.chat-window {
+  display: inline-block;
   max-width: 650px;
   min-width: 500px;
   text-align: center;
-  width: auto;
-  margin: 45px auto;
-  padding: 0 280px;
   position: relative;
   height: 90%;
+  float: left;
+}
 
+section.chat-settings {
+  height: 100%;
+  width: 240px;
+  display: inline-block;
+  background: gray;
+  float: left;
+}
+
+label.member-list {
+  vertical-align: middle;
+  line-height: 35px;
+}
+
+.member-list:before{
+  background-image: url('Fwendatar.png');
+  background-size: 25px 25px;
+  content: "";
+  padding: 15px;
+  background-repeat: no-repeat;
+  margin-left: 5px;
+  padding-top: 6px;
+}
+
+.settings-modal-trigger:before{
+/*  content: "O";*/
+}
+
+.side-settings{
+  border-bottom: 1px solid gainsboro;
+  padding: 0 10px;
+  line-height: 35px;
+}
+
+.settings-modal-trigger{
+  display: block;
+  padding-left: 5px;
+}
+
+section.chat-settings.hidden {
+  display: none;
+}
+
+#modal-trigger{
+  display: block;
 }
 
 header.chat-header {

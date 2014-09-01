@@ -26,10 +26,13 @@
   <%= render :partial => 'layouts/_userlist' %>
 </aside>
 
-<main class="chat-window">
-  <%= yield %>
-  <%= render :partial => 'layouts/_errors' %>
+<main class="chat-experience group">
+  <article class="chat-window">
+    <%= yield %>
+    <%= render :partial => 'layouts/_errors' %>
+  </article>
 </main>
+
 
 <% else %>
 

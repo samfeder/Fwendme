@@ -1,35 +1,64 @@
-<header class="chat-header">
-<figure class="chat-logo" alt="chat logo">
-<img height="45" src="<%= chat.escape("portrait") %>" width="45">
-</figure>
+<article class="chat-window">
+  <header class="chat-header">
+    <figure class="chat-logo" alt="chat logo">
+      <img height="45" src="<%= chat.escape("portrait") %>" width="45">
+    </figure>
 
-<section class="chat-descriptors">
-  <h1><%= chat.escape("title") %></h1>
-  <h2><%= chat.escape("description") %></h2>
-</section>
+    <section class="chat-descriptors">
+      <h1><%= chat.escape("title") %></h1>
+      <h2><%= chat.escape("description") %></h2>
+    </section>
 
-<section class="chat-tools">
-  <a class="chat-settings chat-options" href="#/chats/<%= chat.get("id") %>/edit">
-    O
-  </a>
-  <a class="close-chat chat-options" href="#">
-    X
-  </a>
-</section>
+    <section class="chat-tools">
+      <a id="chat-settings-trigger" class="chat-options" href="#/chats/<%= chat.get("id") %>">
+        O
+      </a>
+      <a class="close-chat chat-options" href="#">
+        X
+      </a>
+    </section>
 
-</header>
+  </header>
 
-<article class="chat-window-body">
+  <article class="chat-window-body">
 
-  <section class="chat-messages">
-    <ul class="messages-list">
-    </ul>
-  </section>
+    <section class="chat-messages">
+      <ul class="messages-list">
+      </ul>
+    </section>
 
-    <textarea type="text"
-              value=""
-              name="message[content]"
-              class="new-message">
-    </textarea>
-    <input type="submit" class="send-message-button" value="Send Message">
+      <textarea type="text"
+                value=""
+                name="message[content]"
+                class="new-message">
+      </textarea>
+      <input type="submit" class="send-message-button" value="Send Message">
+  </article>
 </article>
+<section class="chat-settings">
+  <figure class="chat-portrait" alt="chat logo">
+    <img height="240" src="<%= chat.escape("portrait") %>" width="240">
+  </figure>
+<section class="member-management">
+<label class="member-list">
+Members
+  <section class="side-settings member-avatars">
+    <% chat.members().models.forEach(function(member){ %>
+      <img src="<%= member.attributes.avatar %>" width="35" height="45" alt="<%= member.attributes.name %>">
+    <%  }) %>
+  </section>
+</label>
+<label class="side-settings settings-modal-trigger">
+  <a id="modal-trigger">Settings</a>
+</label>
+
+</section>
+
+
+
+
+
+</section>
+
+<div class="clear"></div>
+

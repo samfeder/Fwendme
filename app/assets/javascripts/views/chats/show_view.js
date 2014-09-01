@@ -1,15 +1,24 @@
 FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
+  events:{
+    "click #chat-settings-trigger": "renderEdit",
+    "click #modal-trigger": "renderModal"
+  },
+
+
+  template: JST['chats/show'],
+
   initialize: function(){
     this.collection = this.model.messages()
     this.listenTo(this.model, 'sync', this.render)
     this.listenTo(this.collection, 'add', this.addMessages);
   },
 
-  template: JST['chats/show'],
-
   render: function(){
-    var content = this.template({chat: this.model})
+    var content = this.template({
+      chat: this.model,
+      members: this.members
+    })
     this.$el.html(content);
     this.addMessages();
     return this
@@ -25,6 +34,25 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
       that.addSubview('.messages-list', messageView)
       this.$('.messages-list').append(messageView)
     })
+  },
+
+  renderEdit: function(){
+    $('section.chat-settings').toggleClass('hidden')
+  },
+
+  renderModal: function(){
+    var
+    method = {},
+    $overlay,
+    $modal,
+    $content,
+    $close;
+
+    method.center = function () {};
+    method.open = function (settings) {};
+    method.close = function () {};
+
+    return method;
   }
 
 })

@@ -10,12 +10,12 @@ FwendMe.Models.Chat = Backbone.Model.extend({
     return this._messages;
   },
 
-  users: function(){
-    if(!this._users){
-      this._users = new FwendMe.Collections.Users([], {chat: this});
+  members: function(){
+    if(!this._members){
+      this._members = new FwendMe.Collections.Users([], {chat: this});
     }
 
-    return this._users;
+    return this._members;
   },
 
   parse: function(response) {
@@ -23,11 +23,11 @@ FwendMe.Models.Chat = Backbone.Model.extend({
       this.messages().set(response.messages, {parse: true});
       delete response.messages;
     }
-    return response;
 
-    if(response.users){
-      this.users().set(response.users, {parse: true});
-      delete response.users;
+    if(response.members){
+
+      this.members().set(response.members, {parse: true});
+      delete response.member;
     }
     return response;
 

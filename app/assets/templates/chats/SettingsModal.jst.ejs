@@ -1,0 +1,14 @@
+  <label id="chat-name">
+    Chat Name
+    <input type="text"
+           value="<%= chat.escape("title") %>"
+           name = "chat[title]">
+  </label>
+
+  <label id="chat-description">
+    Chat Description
+    <input type="text"
+           value="<%= chat.escape("description") %>"
+           name = "chat[description]">
+  </label>
+  <input id="chat_portrait" name="chat[portrait]" type="file">
