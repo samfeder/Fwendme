@@ -12,6 +12,8 @@
     }
     </script>
   <% end %>
+
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -29,13 +31,13 @@
   </div>
   <ul class="user-menu">
     <li><%= link_to "Sign Out", session_url, :method => :delete %></li>
-    <li><%= link_to "Edit Profile", edit_user_url(current_user) %></li>
+    <li><a href="#/users/<%= current_user.id %>/edit" class="modal-trigger" id="edit-profile-link">Edit Profile</li>
   </ul>
 </nav>
 
 </header>
 <br>
-<%= link_to "Create New Chat", new_chat_url, class: "new-chat-button" %>
+<a class="modal-trigger" id="new-chat-button">Create New Chat</a>
 <aside id="chat-tray" class="group">
   <br><br>
   <%= render :partial => 'layouts/_chatlist' %>
@@ -60,6 +62,13 @@
 
 <% end %>
 
+<div id="modal"></div>
+
+<div id="modal-overlay"></div>
+
 </body>
+
+
+
 
 </html>

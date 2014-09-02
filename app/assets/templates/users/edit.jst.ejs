@@ -1,0 +1,26 @@
+<script>
+  $('.close-modal').on('click', function(event){
+    $('#modal').removeClass('modal')
+    $('#modal-overlay').removeClass('modal-overlay')
+    history.back()
+  })
+
+</script>
+
+<h3>Edit <%= window.current_user.name %>'s account</h3>
+<a class="close-modal">X</a>
+<label class="email-label">
+  Email
+  <input type="email" name="user[email]" value="<%= window.current_user.email %>">
+</label>
+
+  <label class="name-label">
+    Name
+    <input type="text" name="user[name]" value="<%= window.current_user.name %>">
+  </label>
+
+<input src= "<%= window.current_user.avatar %>" id="user-avatar-upload" name="user[avatar]" type="file" value="<%= window.current_user.file_path %>">
+
+
+<br>
+  <input type="submit" class="edit-button" value="Submit">

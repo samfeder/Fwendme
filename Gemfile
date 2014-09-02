@@ -5,6 +5,8 @@ gem 'rails', '4.0.2'
 
 gem "paperclip"
 
+gem 'pusher'
+
 gem "figaro"
 
 gem "aws-sdk"

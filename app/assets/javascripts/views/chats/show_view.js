@@ -2,18 +2,16 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
   events:{
     "click #chat-settings-trigger": "renderEdit",
-    "click #modal-trigger": "renderModal",
+    "click .modal-trigger": "renderModal",
     "click #submit-message": "addMessage",
     'keyup': 'keyEvents'
   },
-
 
   template: JST['chats/show'],
 
   initialize: function(){
     this.collection = this.model.messages()
     this.listenTo(this.model, 'sync', this.render)
-    // this.listenTo(this.collection, 'add', this.render);
   },
 
   render: function(){
@@ -47,9 +45,30 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     this.addSubview('.messages-list', newMessageView)
   },
 
-  // renderModal: function(){
-  //   console.log("one day, my son, you shall have a glorious modal")
+  // renderModal: function(event){
+  //   console.log("one day, my son, you shall have a glorious modal, what say you?")
+  //   if (event.currentTarget.name === "modalSettings"){
+  //     this.modalSettings()
+  //   }
+  //
+  //   else if (event.currentTarget.name === "modalMembers") {
+  //     this.modalMembers()
+  //   }
   // },
+
+  modalSettings: function(){
+    $overlay = $('<div id="modal-overlay"></div>');
+    $modal = $('<div class="modal"</div>');
+    $('body').append($overlay)
+    $('body').append($modal)
+  },
+
+  modalMembers: function(){
+    $overlay = $('<div id="modal-overlay"></div>');
+    $modal = $('<div class="modal"</div>');
+    $('body').append($overlay)
+    $('body').append($modal)
+  },
 
   renderEdit: function(){
     $('section.chat-settings').toggleClass('hidden')

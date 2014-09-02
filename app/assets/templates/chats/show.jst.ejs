@@ -56,7 +56,7 @@ $( "#new-message" ).keypress(function(event) {
   </figure>
 <section class="member-management">
 <label class="member-list">
-Members
+<a name="modalMembers" class="modal-trigger">Members</a>
   <section class="side-settings member-avatars">
     <% chat.members().models.forEach(function(member){ %>
       <img src="<%= member.attributes.avatar %>" width="35" height="45" alt="<%= member.attributes.name %>">
@@ -64,7 +64,7 @@ Members
   </section>
 </label>
 <label class="side-settings settings-modal-trigger">
-  <a id="modal-trigger">Settings</a>
+  <a name="modalSettings" class="modal-trigger">Settings</a>
 </label>
 
 </section>

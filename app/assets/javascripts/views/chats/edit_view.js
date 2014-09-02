@@ -1,6 +1,10 @@
-FwendMe.Views.EditShow = Backbone.CompositeView.extend({
+FwendMe.Views.ChatEdit = Backbone.CompositeView.extend({
 
   template: JST['chats/edit'],
+
+  events: {
+    "click .close-modal": "closeModal",
+  },
 
   initialize: function(){
     this.collection = this.model.users()

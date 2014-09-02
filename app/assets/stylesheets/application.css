@@ -53,7 +53,7 @@ input {
 
 /* STYLES */
 
-#modal-overlay {
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -61,15 +61,20 @@ input {
   height: 100%;
   background: #000;
   opacity: 0.5;
- filter: alpha(opacity=50);
+  filter: alpha(opacity=50);
+  z-index: 999998;
 }
 
-#modal {
-  position:absolute;
-  background:url(tint20.png) 0 0 repeat;
-  background:rgba(0,0,0,0.2);
-  border-radius:14px;
-  padding:8px;
+.modal {
+  position: absolute;
+  background: rgb(223, 223, 223);
+  border-radius: 14px;
+  padding: 8px;
+  top: 25%;
+  left: 25%;
+  width: 600px;
+  height: 500px;
+  z-index: 999999;
 }
 
 #modal-content {
@@ -342,7 +347,7 @@ p.tray-header{
   margin-top: 40px;
 }
 
-.new-chat-button {
+#new-chat-button {
   color: #10222B;
   background: #BDD684;
   padding: 10 15;
@@ -350,7 +355,8 @@ p.tray-header{
   position: fixed;
   z-index: 5000;
   top: 25px;
-  width: 150px;
+  left: 0px;
+  width: 147px;
 }
 
 figure.current-user-avatar {

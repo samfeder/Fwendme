@@ -89,6 +89,7 @@ GEM
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
     hike (1.2.3)
+    httpclient (2.4.0)
     i18n (0.6.11)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -125,6 +126,10 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    pusher (0.14.1)
+      httpclient (~> 2.3)
+      multi_json (~> 1.0)
+      signature (~> 0.1.6)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -169,6 +174,7 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
+    signature (0.1.7)
     slop (3.6.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -213,6 +219,7 @@ DEPENDENCIES
   paperclip
   pg
   pry-rails
+  pusher
   quiet_assets
   rails (= 4.0.2)
   rails_12factor
