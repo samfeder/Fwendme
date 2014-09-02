@@ -3,14 +3,9 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
   routes: {
     "": "index",
     "chats/:id": "show",
-    "users/:id/edit": "edit"
+    "users/:id/edit": "editUser"
     // "chats/new/:id": "new"
     //
-  },
-
-  initialize: function(){
-    this.history = [];
-    Backbone.history.on('route', function() { this.routesHit++; }, this);
   },
 
   index: function(){
@@ -31,10 +26,14 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
     this._swapView(view)
   },
 
-  edit: function(id){
-    var view = new FwendMe.Views.UserEdit()
-    $('#modal').html(view.render().$el)
-    console.log("it is done m'lord")
+  editUser: function(id){
+    var editView = new FwendMe.Views.UserEdit()
+    $('#modal').html(editView.render().$el)
+    this._addModal(editView)
+  },
+
+  _addModal: function(newView){
+    this._currentView = newView;
     $('#modal').addClass('modal')
     $('#modal-overlay').addClass('modal-overlay')
   },
