@@ -1,6 +1,7 @@
 <li>
 <li id= "message-<%= message.get("id") %>" class="message">
-  <img height="40" src="<%= message.get("user")['avatar'] %>" width="40" />
+  <img height="40" src= "<%= user.avatar %>" width="40" />
+  <%= user.name %>:
   <%= message.escape("content") %>
   <br>
 </li>

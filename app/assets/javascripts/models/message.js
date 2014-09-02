@@ -1,5 +1,1 @@
-FwendMe.Models.Message = Backbone.Model.extend({
-
-  url: "api/messages"
-
-});
+FwendMe.Models.Message = Backbone.Model.extend({});

@@ -3,6 +3,15 @@
   <title>Links</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <% if current_user %>
+    <script>window.current_user = {
+      id:<%= current_user.id %>,
+      avatar:"<%= current_user.avatar %>",
+      name:"<%= current_user.name %>",
+      email:"<%= current_user.email %>"
+    }
+    </script>
+  <% end %>
   <%= csrf_meta_tags %>
 </head>
 <body>

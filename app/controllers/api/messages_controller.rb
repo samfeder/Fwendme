@@ -4,10 +4,14 @@ module Api
 
     def create
       @message = current_user.messages.new(message_params)
-      @message.chat_id = params[:format]
+      puts "Heard you like params, so #{message_params}"
       @message.save
-      flash.now[:errors] = @message.errors.full_messages
       render json: @message
+    end
+
+    def index
+      @messages = Message.where(chat_id: params[:chat_id])
+      render json: @messages
     end
 
     def show
@@ -17,7 +21,7 @@ module Api
 
     private
     def message_params
-      params.require(:message).permit(:content, :chat_id, :user_id)
+      params.permit(:content, :chat_id, :user_id)
     end
 
 

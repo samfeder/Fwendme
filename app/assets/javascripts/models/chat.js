@@ -2,6 +2,11 @@ FwendMe.Models.Chat = Backbone.Model.extend({
 
   urlRoot: "api/chats",
 
+  initialize: function(){
+    this.messageList = this.messages()
+    this.messageList.url = "api/chats/" + this.id + "/messages";
+  },
+
   messages: function(){
     if(!this._messages){
       this._messages = new FwendMe.Collections.Messages([], {chat: this});

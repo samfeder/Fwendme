@@ -3,7 +3,8 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   events:{
     "click #chat-settings-trigger": "renderEdit",
     "click #modal-trigger": "renderModal",
-    "click #submit-message": "submitMessage"
+    "click #submit-message": "addMessage",
+    'keyup': 'keyEvents'
   },
 
 
@@ -12,7 +13,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   initialize: function(){
     this.collection = this.model.messages()
     this.listenTo(this.model, 'sync', this.render)
-    this.listenTo(this.collection, 'add', this.addMessages);
+    // this.listenTo(this.collection, 'add', this.render);
   },
 
   render: function(){
@@ -21,50 +22,58 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
       members: this.members
     })
     this.$el.html(content);
-    this.addMessages();
+    this._oldMessages();
     return this
   },
 
-  submitMessage: function(){
-    var newMessage = $('#new-message').val()
-    this.collection.create({
-      content: newMessage,
-      user_id: this.model.attributes.current_user.id
+  addMessage: function(){
+    event.preventDefault();
+
+    var newMessageContent = $('#new-message').val()
+
+    var newMessage = this.collection.create({
+      content: newMessageContent,
+      user_id: window.current_user.id,
+      chat_id: this.id
     }, {
       wait: true
     })
-  },
 
-  addMessages: function(){
-    var that = this
-    this.collection.forEach(function(message){
-
-      var messageView = new FwendMe.Views.MessageShowView({
-        model: message
-      })
-      that.addSubview('.messages-list', messageView)
-      this.$('.messages-list').append(messageView)
+    var newMessageView = new FwendMe.Views.MessageShowView({
+      model: newMessage,
+      options: window.current_user
     })
+
+    this.addSubview('.messages-list', newMessageView)
   },
+
+  // renderModal: function(){
+  //   console.log("one day, my son, you shall have a glorious modal")
+  // },
 
   renderEdit: function(){
     $('section.chat-settings').toggleClass('hidden')
   },
 
-  renderModal: function(){
-    var
-    method = {},
-    $overlay,
-    $modal,
-    $content,
-    $close;
-
-    method.center = function () {};
-    method.open = function (settings) {};
-    method.close = function () {};
-
-    return method;
+  _oldMessages: function(){
+    var that = this
+    this.collection.forEach(function(message){
+      var messageView = new FwendMe.Views.MessageShowView({
+        model: message
+      })
+      that.addSubview('.messages-list', messageView)
+      that.$('.messages-list').append(messageView)
+    });
   }
 
 })
+
+//How to make it work on enter!
+// createOnEnter: function(e) {
+//   if (e.keyCode != 13) return;
+//   if (!this.input.val()) return;
+//
+//   Todos.create({title: this.input.val()});
+//   this.input.val('');
+// },
 
