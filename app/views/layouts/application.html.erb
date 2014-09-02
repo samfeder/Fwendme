@@ -19,7 +19,14 @@
 <% if signed_in? %>
 
 <nav id="" class="group">
-  <div class="user-menu-link"><%= current_user.name %></div>
+  <div class="user-menu-link">
+    <figure class="current-user-avatar">
+      <img src="<%= current_user.avatar %>" width="40px" height="40px">
+    </figure>
+    <a class="current-user-profile" href="#">
+    <%= current_user.name %>
+    </a>
+  </div>
   <ul class="user-menu">
     <li><%= link_to "Sign Out", session_url, :method => :delete %></li>
     <li><%= link_to "Edit Profile", edit_user_url(current_user) %></li>

@@ -17,6 +17,7 @@
 /* RESET */
 
 
+
 html, figure, body, header, nav, h1, h2, a, ul, li, main, article, section, p, small, footer, aside, input {
   margin: 0;
   padding: 0;
@@ -158,8 +159,7 @@ nav.group {
 div.user-menu-link {
   float: right;
   margin-right: 51;
-  height: 30px;
-  padding: 10px;
+  height: 40px;
   cursor: hand;
 
 }
@@ -351,4 +351,14 @@ p.tray-header{
   z-index: 5000;
   top: 25px;
   width: 150px;
+}
+
+figure.current-user-avatar {
+    display: inline;
+
+}
+
+a.current-user-profile {
+  vertical-align: top;
+  line-height: 35px;
 }
