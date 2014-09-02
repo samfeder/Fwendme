@@ -1,3 +1,19 @@
+<script>
+// $("#new-message").keypress(function(event) {
+//     if (event.which == 13) {
+//         event.preventDefault();
+//         $("submit-message").click();
+//     }
+// });
+
+$( "#new-message" ).keypress(function(event) {
+  if (event.which == 13){
+    event.preventDefault();
+    $("#submit-message").click();
+  }
+});
+</script>
+
 <article class="chat-window">
   <header class="chat-header">
     <figure class="chat-logo" alt="chat logo">

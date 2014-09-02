@@ -30,7 +30,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     event.preventDefault();
 
     var newMessageContent = $('#new-message').val()
-
+    $('#new-message').val("")
     var newMessage = this.collection.create({
       content: newMessageContent,
       user_id: window.current_user.id,
