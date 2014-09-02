@@ -1,18 +1,20 @@
 FwendMe.Views.UserEdit = Backbone.CompositeView.extend({
 
   events: {
-    "click .edit-button": "test",
-    "click .close-modal": "closeModal"
+    "click .close-modal": "closeModal",
+    "click .edit-button": "submitEdits"
   },
 
-  closeModal: function(){
-    $('#modal').removeClass('modal')
-    $('#modal-overlay').removeClass('modal-overlay')
-    history.back()
-  },
-
-  test: function(){
-    console.log("YO")
+  submitEdits: function(){
+    var user = FwendMe.users.get(window.current_user)
+    user.set({
+      name: $('#new-user-name').val(),
+      email: $('#new-user-email').val(),
+      avatar: $('#new-user-avatar').val(),
+    })
+    user.save({
+      success: this.closeModal()
+    })
   },
 
   template: JST['users/edit'],

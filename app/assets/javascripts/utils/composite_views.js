@@ -12,6 +12,15 @@ Backbone.CompositeView = Backbone.View.extend({
     subview.delegateEvents();
   },
 
+  closeModal: function(){
+    $('#modal').removeClass('modal')
+    $('#modal-overlay').removeClass('modal-overlay')
+    //TODO build in an animation... modal game isn't even strong.
+    history.back()
+
+    //TODO render validations
+  },
+
   attachSubviews: function () {
     // I decided I didn't want a function that renders ALL the
     // subviews together. Instead, I think:

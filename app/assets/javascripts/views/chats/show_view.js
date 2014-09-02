@@ -11,7 +11,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
   initialize: function(){
     this.collection = this.model.messages()
-    this.listenTo(this.model, 'sync', this.render)
+    this.listenTo(this.model, 'sync add change', this.render)
   },
 
   render: function(){
