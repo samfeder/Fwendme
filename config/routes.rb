@@ -5,11 +5,12 @@ Fwendme::Application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:new, :create, :show, :index, :edit, :update] do
       resources :friendships, only: [:create, :new]
+      resources :chats, only: [:new]
     end
 
     resource :session, only: [:new, :create, :destroy]
 
-    resources :chats do
+    resources :chats, except: [:new] do
       resources :messages, only: [:new, :index, :create]
     end
 

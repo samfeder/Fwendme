@@ -39,7 +39,7 @@ FwendMe.Models.Chat = Backbone.Model.extend({
   },
 
   validate: function(attributes) {
-    if (!attributes.title || attribute.title == ""){
+    if (!attributes.title || attributes.title == ""){
       return "cannot have an empty title";
     }
   }

@@ -3,9 +3,8 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
   routes: {
     "": "index",
     "chats/:id": "show",
+    "users/:user_id/chats/new": "newChat",
     "users/:id/edit": "editUser"
-    // "chats/new/:id": "new"
-    //
   },
 
   index: function(){
@@ -24,6 +23,13 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
     });
 
     this._swapView(view)
+  },
+
+  newChat: function(user_id){
+    var newChatView = new FwendMe.Views.NewChatView()
+    $('#modal').html(newChatView.render().$el)
+    this._addModal(newChatView)
+
   },
 
   editUser: function(id){

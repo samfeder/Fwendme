@@ -31,13 +31,13 @@
   </div>
   <ul class="user-menu">
     <li><%= link_to "Sign Out", session_url, :method => :delete %></li>
-    <li><a href="#/users/<%= current_user.id %>/edit" class="modal-trigger" id="edit-profile-link">Edit Profile</li>
+    <li><a href="/#/users/<%= current_user.id %>/edit" class="modal-trigger" id="edit-profile-link">Edit Profile</li>
   </ul>
 </nav>
 
 </header>
 <br>
-<a class="modal-trigger" id="new-chat-button">Create New Chat</a>
+<a href = "/#/users/<%= current_user.id %>/chats/new" class="modal-trigger" id="new-chat-button">Create New Chat</a>
 <aside id="chat-tray" class="group">
   <br><br>
   <%= render :partial => 'layouts/_chatlist' %>

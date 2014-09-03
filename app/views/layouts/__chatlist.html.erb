@@ -3,7 +3,7 @@
 <li><p class="tray-header">Group Chats</p></li>
 <% current_user.chats.each do |chat| %>
 <li>
-  <a href="#/chats/<%= chat.id %>"><%= chat.title %></a>
+  <a href="/#/chats/<%= chat.id %>"><%= chat.title %></a>
 </li>
 <% end %>
 </ul>

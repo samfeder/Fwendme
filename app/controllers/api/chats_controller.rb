@@ -3,6 +3,11 @@ module Api
 
     before_action :require_membership!, only: [:edit, :show]
 
+    def new
+      @chat = Chat.new
+      render json: @chat
+    end
+
     def create
       @chat = current_user.chats.new(chat_params)
       @chat.owner = current_user
