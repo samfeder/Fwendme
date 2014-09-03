@@ -4,6 +4,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     "click #chat-settings-trigger": "renderEdit",
     "click .modal-trigger": "renderModal",
     "click #submit-message": "addMessage",
+    "click .close-modal": "closeModal",
     'keyup': 'keyEvents'
   },
 
@@ -45,22 +46,25 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     this.addSubview('.messages-list', newMessageView)
   },
 
-  // renderModal: function(event){
-  //   console.log("one day, my son, you shall have a glorious modal, what say you?")
-  //   if (event.currentTarget.name === "modalSettings"){
-  //     this.modalSettings()
-  //   }
-  //
-  //   else if (event.currentTarget.name === "modalMembers") {
-  //     this.modalMembers()
-  //   }
-  // },
 
-  modalSettings: function(){
-    $overlay = $('<div id="modal-overlay"></div>');
-    $modal = $('<div class="modal"</div>');
-    $('body').append($overlay)
-    $('body').append($modal)
+  renderModal: function(event){
+
+    if (event.currentTarget.name === "modalSettings"){
+      var edittingView = new FwendMe.Views.EditSettingsView({
+        model: this
+      })
+    }
+
+    else if (event.currentTarget.name === "modalMembers") {
+      var edittingView = new FwendMe.Views.EditMembersView({
+        model: this
+      })
+    }
+
+    $('#modal').addClass('modal')
+    $('#modal-overlay').addClass('modal-overlay')
+    this.addSubview('#modal', edittingView)
+    // $('#modal').append(edittingView.render().$el)
   },
 
   modalMembers: function(){
@@ -87,7 +91,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
 })
 
-//How to make it work on enter!
+//How to make it work form backbone!
 // createOnEnter: function(e) {
 //   if (e.keyCode != 13) return;
 //   if (!this.input.val()) return;

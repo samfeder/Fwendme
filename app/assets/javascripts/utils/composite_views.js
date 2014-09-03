@@ -1,23 +1,22 @@
 Backbone.CompositeView = Backbone.View.extend({
   addSubview: function (selector, subview) {
+    selector
     this.subviews(selector).push(subview);
     // Try to attach the subview. Render it as a convenience.
     this.attachSubview(selector, subview.render());
   },
 
   attachSubview: function (selector, subview) {
-    this.$(selector).append(subview.$el);
+    $(selector).append(subview.$el);
     // Bind events in case `subview` has previously been removed from
     // DOM.
-    subview.delegateEvents();
   },
 
   closeModal: function(){
+    console.log("closing modal")
     $('#modal').removeClass('modal')
     $('#modal-overlay').removeClass('modal-overlay')
     //TODO build in an animation... modal game isn't even strong.
-    history.back()
-
     //TODO render validations
   },
 

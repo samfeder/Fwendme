@@ -3,8 +3,15 @@ FwendMe.Views.NewChatView = Backbone.CompositeView.extend({
   template: JST["chats/new"],
 
   events: {
-    "click .close-modal": "closeModal",
+    "click .close-modal": "closeModalNav",
     "click .edit-button": "createChat"
+  },
+
+  closeModalNav: function(){
+    //Not my proudest moment... Closing the modal and
+    //manually navigating one page back to address the URL
+    this.closeModal()
+    history.back()
   },
 
   createChat: function(){
