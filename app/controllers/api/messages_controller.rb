@@ -4,9 +4,20 @@ module Api
 
     def create
       @message = current_user.messages.new(message_params)
-      puts "Heard you like params, so #{message_params}"
-      @message.save
-      render json: @message
+      if @message.save
+        puts Pusher
+        Pusher.trigger("chat-#{@message.chat.id}",
+                       'postmessage',
+                       {
+                         user_id: @message.user.id,
+                         content: @message.content,
+                         id: @message.id
+                       }
+                       )
+        # render json: @message
+      else
+        render json: @message.errors.full_messages
+      end
     end
 
     def index

@@ -1,0 +1,1 @@
+json.message @message, :chat_id, :user_id, :content

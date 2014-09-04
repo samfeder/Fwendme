@@ -5,15 +5,38 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     "click .modal-trigger": "renderModal",
     "click #submit-message": "addMessage",
     "click .close-modal": "closeModal",
-    'keyup': 'keyEvents'
+    'keypress #new-message': 'keyEvents'
+  },
+
+
+  initialize: function(){
+    this.channel = FwendMe.Pusher.subscribe('chat-' + this.model.id);
+    this.collection = this.model.messages()
+    this.listenTo(this.model, 'sync add change', this.render)
+    this.startChannel();
+  },
+
+
+  keyEvents: function(){
+    if (event.which == 13){
+      event.preventDefault();
+      this.$("#submit-message").click();
+    }
+  },
+
+  startChannel: function(){
+    var that = this
+    this.channel.bind('postmessage', function(data) {
+      var receivedMessage = {
+        content: data.content,
+        user_id: data.user_id,
+        chat_id: that.model.id
+      }
+      that.broadcastMessage(receivedMessage);
+    });
   },
 
   template: JST['chats/show'],
-
-  initialize: function(){
-    this.collection = this.model.messages()
-    this.listenTo(this.model, 'sync add change', this.render)
-  },
 
   render: function(){
     var content = this.template({
@@ -28,24 +51,28 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   addMessage: function(){
     event.preventDefault();
 
-    var newMessageContent = $('#new-message').val()
-    $('#new-message').val("")
-    var newMessage = this.collection.create({
-      content: newMessageContent,
+    var newMessage = {
+      content: this.$('#new-message').val(),
       user_id: window.current_user.id,
-      chat_id: this.id
-    }, {
-      wait: true
+      chat_id: this.model.id
+    }
+
+    this.collection.create( newMessage, {
+        wait: true
     })
 
+    this.$('#new-message').val("")
+
+  },
+
+  broadcastMessage: function(message){
     var newMessageView = new FwendMe.Views.MessageShowView({
-      model: newMessage,
-      options: window.current_user
+      model: message
     })
 
     this.addSubview('.messages-list', newMessageView)
-  },
 
+  },
 
   renderModal: function(event){
 
@@ -75,14 +102,14 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   },
 
   renderEdit: function(){
-    $('section.chat-settings').toggleClass('hidden')
+    this.$('section.chat-settings').toggleClass('hidden')
   },
 
   _oldMessages: function(){
     var that = this
     this.collection.forEach(function(message){
       var messageView = new FwendMe.Views.MessageShowView({
-        model: message
+        model: that.parseMessage(message)
       })
       that.addSubview('.messages-list', messageView)
       that.$('.messages-list').append(messageView)
@@ -91,12 +118,22 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
 })
 
-//How to make it work form backbone!
-// createOnEnter: function(e) {
-//   if (e.keyCode != 13) return;
-//   if (!this.input.val()) return;
+// console.log(message)
+// var that = this
+// FwendMe.users.fetch({
 //
-//   Todos.create({title: this.input.val()});
-//   this.input.val('');
-// },
-
+//   success: function(){
+//
+//     var poster = FwendMe.users.get(message.user_id)
+//     console.log(message)
+//     var newMessageView = new FwendMe.Views.MessageShowView({
+//       model: message,
+//       options: poster
+//     })
+//
+//     that.addSubview('.messages-list', newMessageView)
+//
+//   }
+//
+// });
+//

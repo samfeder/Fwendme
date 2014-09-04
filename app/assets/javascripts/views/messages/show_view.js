@@ -6,12 +6,11 @@ FwendMe.Views.MessageShowView = Backbone.CompositeView.extend({
   template: JST["messages/show"],
 
   initialize: function(options){
-    this.user = (this.model.attributes.user ?
-      this.model.attributes.user : window.current_user
-    )
+    this.user = FwendMe.users.getOrFetch(this.model.user_id)
   },
 
   render: function(){
+
     var content = this.template({
       message: this.model,
       user: this.user

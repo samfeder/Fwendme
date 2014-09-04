@@ -20,6 +20,13 @@ Backbone.CompositeView = Backbone.View.extend({
     //TODO render validations
   },
 
+  parseMessage: function(message){
+    return {
+      content: message.attributes.content,
+      user_id: message.attributes.user.id
+    }
+  },
+
   attachSubviews: function () {
     // I decided I didn't want a function that renders ALL the
     // subviews together. Instead, I think:

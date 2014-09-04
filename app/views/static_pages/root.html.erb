@@ -1,6 +1,16 @@
 <figure class="placeholder-text">
 Welcome back fwend, Get chattin'
 <script>
+// move to utils
+
+Pusher.log = function(message) {
+  if (window.console && window.console.log) {
+    window.console.log(message);
+  }
+};
+
+FwendMe.Pusher = new Pusher("7dfe2349716253c037d2");
+
 $(FwendMe.initialize)
 
 </script>
