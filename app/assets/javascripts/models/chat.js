@@ -24,23 +24,34 @@ FwendMe.Models.Chat = Backbone.Model.extend({
     return this._members;
   },
 
+  fwendables: function(){
+    console.log("YP")
+    if(!this._fwendables){
+      this._fwendables = new FwendMe.Collections.Users([], {chat: this});
+    }
+
+    return this._fwendable;
+  },
+
   parse: function(response) {
     if(response.messages){
+      console.log(response.messages)
       this.messages().set(response.messages, {parse: true});
       delete response.messages;
     }
 
-    if(response.fwendable_ids){
-      this.fwendable_ids = response.fwendable_ids
-      console.log(this.fwendable_ids)
-      delete response.fwendable_ids
-    }
-
     if(response.members){
-
+      console.log(response.members)
       this.members().set(response.members, {parse: true});
       delete response.member;
     }
+
+    if(response.fwendables){
+      console.log(response.fwendables) //this is breaking :(
+      this.fwendables().set(response.fwendables, {parse: true});
+      delete response.fwendables;
+    }
+
     return response;
 
   },

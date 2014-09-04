@@ -2,10 +2,9 @@ json.(@chat, :title, :description, :owner_id, :updated_at, :created_at, :portrai
 
 json.current_user current_user, :id, :email, :avatar
 
-members =  @chat.users.map {|member| member.id}
-fwends = current_user.fwends.map { |fwend| fwend.id }
-
-json.fwendable_ids fwends - members
+json.fwendables (current_user.fwends - @chat.users).each do |fwendable|
+json.(fwendable, :id, :email, :avatar, :name)
+end
 
 json.members @chat.users, :id, :email, :avatar, :name
 
