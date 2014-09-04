@@ -2,26 +2,8 @@ FwendMe.Views.UserEdit = Backbone.CompositeView.extend({
 
   events: {
     "click .close-modal": "closeModalNav",
-    "click .edit-button": "submitEdits"
-  },
-
-  closeModalNav: function(){
-    //Not my proudest moment... Closing the modal and
-    //manually navigating one page back to address the URL
-    this.closeModal()
-    history.back()
-  },
-
-  submitEdits: function(){
-    var that = this
-    this.model.set({
-      name: $('#new-user-name').val(),
-      email: $('#new-user-email').val(),
-      avatar: $('#new-user-avatar').val(),
-    })
-    this.model.save({
-      success: console.log(that.closeModalNav())
-      })
+    "click .edit-button": "submitEdits",
+    "change #avatar-file-input": "avatarSelect"
   },
 
   template: JST['users/edit'],
@@ -30,5 +12,53 @@ FwendMe.Views.UserEdit = Backbone.CompositeView.extend({
     var content = this.template()
     this.$el.html(content);
     return this;
+    },
+
+  closeModalNav: function(){
+    //Not my proudest moment... Closing the modal and
+    //manually navigating one page back to address the URL
+    this.closeModal()
+    history.back()
+  },
+
+  submitEdits: function(event){
+    event.preventDefault()
+    var that = this
+    var formData = $('.user-edit-form').serializeJSON().user
+    console.log(formData)
+
+    this.model.save(formData,
+
+
+    {
+      wait: true,
+      success: that.closeModalNav()
+    })
+  },
+
+  avatarSelect: function(event){
+    event.preventDefault()
+    var that = this
+    var imageFile = event.currentTarget.files[0]
+    var reader = new FileReader();
+
+    reader.onloadend = function(){
+
+      that.model.set("avatar", this.result)
+      that._updatePreview(this.result)
     }
+
+    if(imageFile){
+      reader.readAsDataURL(imageFile);
+    } else {
+      this._updatePreview("")
+    }
+
+  },
+
+  _updatePreview: function(imageData){
+    this.$el.find("#user-avatar-preview").attr("src", imageData)
+  }
+
+
 })

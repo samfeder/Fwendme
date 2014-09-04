@@ -7,6 +7,11 @@ FwendMe.Views.NewChatView = Backbone.CompositeView.extend({
     "click .edit-button": "createChat"
   },
 
+  initialize: function(){
+    this.collection = FwendMe.chats
+    this.listenTo(this.collection, 'save sync add change', this.chatAdded)
+  },
+
   closeModalNav: function(){
     //Not my proudest moment... Closing the modal and
     //manually navigating one page back to address the URL
@@ -15,15 +20,16 @@ FwendMe.Views.NewChatView = Backbone.CompositeView.extend({
   },
 
   createChat: function(){
-    //Make a collection of chats and plot it in there.
+    var that = this
+    console.log(1)
     var chat = new FwendMe.Models.Chat
-    chat.set({
+    chat.save({
       title: $('#new-chat-title').val(),
       owner_id: window.current_user.id
-    })
-    chat.save({
-      success: this.closeModal()
-    })
+    }, {
+        success: that.closeModalNav()
+      }
+    )
   },
 
   render: function(){

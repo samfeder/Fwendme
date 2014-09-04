@@ -1,5 +1,8 @@
 <h3>Edit <%= window.current_user.name %>'s account</h3>
 <a class="close-modal">X</a>
+
+<form class="user-edit-form" enctype="multipart/form-data">
+
 <label class="email-label">
   Email
   <input type="email" name="user[email]" id="new-user-email" value="<%= window.current_user.email %>">
@@ -10,8 +13,12 @@
     <input type="text" name="user[name]" id="new-user-name" value="<%= window.current_user.name %>">
   </label>
 
-<input src= "<%= window.current_user.avatar %>" id="new-user-avatar" name="user[avatar]" type="file" value="<%= window.current_user.file_path %>">
+<input src="<%= window.current_user.avatar %>" id="avatar-file-input" name="user[avatar]" type="file" value="">
 
+<img id="user-avatar-preview" src="" width="50" height="50">
+
+  <input type="submit" class="edit-button" value="Submit">
+
+</form>
 
 <br>
-  <input type="submit" class="edit-button" value="Submit">

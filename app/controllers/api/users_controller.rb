@@ -4,13 +4,15 @@ module Api
     before_action :require_signed_in!, except: [:new, :create]
     before_action :require_signed_out!, only: [:new, :create]
 
+    wrap_parameters false
+
     def new
       @user = User.new
     end
 
     def create
       @user = User.new(user_params)
-      @user.name ||= params["user"]["email"]
+      @user.name ||= params["email"]
       if @user.save
         sign_in(@user)
         redirect_to edit_user_url(@user)
@@ -21,6 +23,7 @@ module Api
     end
 
     def show
+      puts params
       @user = User.find(params[:id])
       render :show
     end
@@ -44,7 +47,7 @@ module Api
 
     private
     def user_params
-      params.require(:user).permit(:password, :email, :name, :avatar)
+      params.permit(:password, :email, :name, :avatar)
     end
 
 
