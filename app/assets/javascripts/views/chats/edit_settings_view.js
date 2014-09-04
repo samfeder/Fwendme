@@ -19,8 +19,6 @@ FwendMe.Views.EditSettingsView = Backbone.CompositeView.extend({
     var that = this
 
     var formData = $('.edit-chat-form').serializeJSON().chat
-    console.log(formData)
-    console.log(this.chatImage  )
     this.model.set("portrait", this.chatImage)
     this.model.save(formData,
     {
@@ -39,7 +37,6 @@ FwendMe.Views.EditSettingsView = Backbone.CompositeView.extend({
     var reader = new FileReader();
 
     reader.onloadend = function(){
-      console.log(this.result)
       that._updatePreview(this.result)
       that.chatImage = this.result
     }
@@ -57,7 +54,6 @@ FwendMe.Views.EditSettingsView = Backbone.CompositeView.extend({
 
 
   render: function(){
-    console.log(this.model)
     var content = this.template({
       chat: this.model
     })

@@ -14,8 +14,8 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   initialize: function(){
     this.channel = FwendMe.Pusher.subscribe('chat-' + this.model.id);
     this.collection = this.model.messages()
+    this.members = this.model.members()
     this.listenTo(this.model, 'update sync add change', this.render)
-
     this.startChannel();
   },
 
@@ -95,8 +95,10 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     }
 
     else if (event.currentTarget.name === "modalMembers") {
+      var currentUser = FwendMe.users.getOrFetch(window.current_user.id)
       var edittingView = new FwendMe.Views.EditMembersView({
-        model: this
+        model: this,
+        collection: currentUser.fwends()
       })
     }
 
