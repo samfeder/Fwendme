@@ -5,7 +5,9 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     "click .modal-trigger": "renderModal",
     "click #submit-message": "addMessage",
     "click .close-modal": "closeModal",
-    'keypress #new-message': 'keyEvents'
+    'keypress #new-message': 'keyEvents',
+    'click .edit-settings': 'editSettings',
+    'click .edit-members': 'editMembers'
   },
 
 
@@ -14,6 +16,18 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     this.collection = this.model.messages()
     this.listenTo(this.model, 'sync add change', this.render)
     this.startChannel();
+  },
+
+  editSettings: function(){
+    console.log("YO")
+    this.model.set({
+      title: $('#new-chat-title').val(),
+      description: $('#new-chat-description').val(),
+      portrait: $('#new-chat-avatar').val(),
+    })
+    user.save({
+      success: this.closeModal()
+    })
   },
 
 

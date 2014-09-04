@@ -1,15 +1,18 @@
   <a class="close-modal">X</a>
   <label id="chat-name">
     Chat Name
-    <input type="text"
+    <input id="new-chat-title"
+           type="text"
            value="<%= chat.title %>"
            name = "chat[title]">
   </label>
 
   <label id="chat-description">
     Chat Description
-    <input type="text"
+    <input id="new-chat-description"
+           type="text"
            value="<%= chat.description %>"
            name = "chat[description]">
   </label>
-  <input id="chat_portrait" name="chat[portrait]" type="file">
+  <input id="new-chat-avatar" name="chat[portrait]" type="file">
+  <input class="edit-settings" type="submit" value="submit">

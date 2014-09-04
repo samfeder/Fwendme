@@ -14,7 +14,7 @@ Backbone.CompositeView = Backbone.View.extend({
 
   closeModal: function(){
     console.log("closing modal")
-    $('#modal').removeClass('modal')
+    $('#modal').empty().removeClass('modal')
     $('#modal-overlay').removeClass('modal-overlay')
     //TODO build in an animation... modal game isn't even strong.
     //TODO render validations
