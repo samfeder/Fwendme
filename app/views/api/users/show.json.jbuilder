@@ -1,6 +1,6 @@
+json.messages @users do |message|
 json.(@user, :email, :name, :avatar)
 #TODO: pass up password digest to confirm password change
-
 json.chats @user.chats, :id, :title, :owner_id, :portrait
 
 json.fwends @user.fwends, :id, :email, :name, :avatar

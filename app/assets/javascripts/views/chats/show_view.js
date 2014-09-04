@@ -19,7 +19,6 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   },
 
   editSettings: function(){
-    console.log("YO")
     this.model.set({
       title: $('#new-chat-title').val(),
       description: $('#new-chat-description').val(),
@@ -39,14 +38,23 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   },
 
   startChannel: function(){
+    console.log("listening on channel 'chat-" + this.model.id + "'")
     var that = this
     this.channel.bind('postmessage', function(data) {
       var receivedMessage = {
         content: data.content,
         user_id: data.user_id,
-        chat_id: that.model.id
+        chat_id: that.model.id,
+        message_id: data.id
       }
-      that.broadcastMessage(receivedMessage);
+      FwendMe.messages.fetch({
+        success: function(){
+          var broadcasted = FwendMe.messages.get(receivedMessage.message_id)
+          console.log(broadcasted)
+          that.broadcastMessage(broadcasted)
+        }
+      })
+
     });
   },
 
@@ -80,6 +88,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   },
 
   broadcastMessage: function(message){
+    console.log(message)
     var newMessageView = new FwendMe.Views.MessageShowView({
       model: message
     })
@@ -123,7 +132,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     var that = this
     this.collection.forEach(function(message){
       var messageView = new FwendMe.Views.MessageShowView({
-        model: that.parseMessage(message)
+        model: message
       })
       that.addSubview('.messages-list', messageView)
       that.$('.messages-list').append(messageView)

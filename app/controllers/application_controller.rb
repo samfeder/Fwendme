@@ -12,6 +12,17 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def push_message(message)
+    message_hash = {
+      user_id: message.user.id,
+      content: message.content,
+      id: message.id,
+      chat_id: message.chat.id
+    }
+
+    Pusher.trigger("chat-#{message_hash[:chat_id]}", "postmessage", message_hash)
+  end
+
   def sign_in(user)
     session[:session_token] = user.session_token
     @current_user = user

@@ -3,31 +3,19 @@ module Api
     before_action :require_signed_in!
 
     def create
-      @message = current_user.messages.new(message_params)
-      if @message.save
-        puts Pusher
-        Pusher.trigger("chat-#{@message.chat.id}",
-                       'postmessage',
-                       {
-                         user_id: @message.user.id,
-                         content: @message.content,
-                         id: @message.id
-                       }
-                       )
-        # render json: @message
-      else
-        render json: @message.errors.full_messages
-      end
+      message = current_user.messages.create!(message_params)
+      push_message(message)
+      head :created
     end
 
     def index
-      @messages = Message.where(chat_id: params[:chat_id])
-      render json: @messages
+      @messages = Message.all
+      render :index
     end
 
     def show
       @message = Message.find(params[:id])
-      render json: @message
+      render :show
     end
 
     private

@@ -21,7 +21,7 @@ module Api
     end
 
     def show
-      @user = current_user
+      @user = User.find(params[:id])
       render :show
     end
 
@@ -39,7 +39,7 @@ module Api
 
     def index
       @users = User.all
-      render json: @users
+      render :index
     end
 
     private

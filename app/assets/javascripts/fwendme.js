@@ -7,6 +7,7 @@ window.FwendMe = {
     console.log('Welcome to Fwend.Me!')
     FwendMe.chats = new FwendMe.Collections.Chats()
     FwendMe.users = new FwendMe.Collections.Users()
+    FwendMe.messages = new FwendMe.Collections.Messages()
     FwendMe.chats.fetch({
       success: function(){
         FwendMe.users.fetch({
