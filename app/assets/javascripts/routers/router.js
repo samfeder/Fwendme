@@ -17,7 +17,6 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
 
   show: function(id){
     var chat = FwendMe.chats.getOrFetch(id);
-    console.log(chat)
     var view = new FwendMe.Views.ChatShow({
       model: chat,
       collection: chat.messages
@@ -34,7 +33,8 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
   },
 
   editUser: function(id){
-    var editView = new FwendMe.Views.UserEdit()
+    var currentUser = FwendMe.users.getOrFetch(window.current_user.id)
+    var editView = new FwendMe.Views.UserEdit({model: currentUser})
     $('#modal').html(editView.render().$el)
     this._addModal(editView)
   },

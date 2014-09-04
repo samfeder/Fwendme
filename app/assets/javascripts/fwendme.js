@@ -12,8 +12,6 @@ window.FwendMe = {
       success: function(){
         FwendMe.users.fetch({
           success: function(){
-            console.log(FwendMe.users)
-            console.log(FwendMe.chats)
             var router = new FwendMe.Routers.FwendRouter();
             Backbone.history.start()
           }

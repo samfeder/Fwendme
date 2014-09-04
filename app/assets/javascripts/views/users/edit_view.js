@@ -13,15 +13,15 @@ FwendMe.Views.UserEdit = Backbone.CompositeView.extend({
   },
 
   submitEdits: function(){
-    var user = FwendMe.users.get(window.current_user)
-    user.set({
+    var that = this
+    this.model.set({
       name: $('#new-user-name').val(),
       email: $('#new-user-email').val(),
       avatar: $('#new-user-avatar').val(),
     })
-    user.save({
-      success: this.closeModal()
-    })
+    this.model.save({
+      success: console.log(that.closeModalNav())
+      })
   },
 
   template: JST['users/edit'],
