@@ -14,21 +14,10 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   initialize: function(){
     this.channel = FwendMe.Pusher.subscribe('chat-' + this.model.id);
     this.collection = this.model.messages()
-    this.listenTo(this.model, 'sync add change', this.render)
+    this.listenTo(this.model, 'update sync add change', this.render)
+
     this.startChannel();
   },
-
-  editSettings: function(){
-    this.model.set({
-      title: $('#new-chat-title').val(),
-      description: $('#new-chat-description').val(),
-      portrait: $('#new-chat-avatar').val(),
-    })
-    user.save({
-      success: this.closeModal()
-    })
-  },
-
 
   keyEvents: function(){
     if (event.which == 13){
@@ -101,7 +90,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
     if (event.currentTarget.name === "modalSettings"){
       var edittingView = new FwendMe.Views.EditSettingsView({
-        model: this
+        model: this.model
       })
     }
 
@@ -140,23 +129,3 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   }
 
 })
-
-// console.log(message)
-// var that = this
-// FwendMe.users.fetch({
-//
-//   success: function(){
-//
-//     var poster = FwendMe.users.get(message.user_id)
-//     console.log(message)
-//     var newMessageView = new FwendMe.Views.MessageShowView({
-//       model: message,
-//       options: poster
-//     })
-//
-//     that.addSubview('.messages-list', newMessageView)
-//
-//   }
-//
-// });
-//

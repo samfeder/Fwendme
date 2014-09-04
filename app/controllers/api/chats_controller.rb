@@ -2,6 +2,7 @@ module Api
   class ChatsController < ApiController
 
     before_action :require_membership!, only: [:edit, :show]
+    wrap_parameters false
 
     def new
       @chat = Chat.new
@@ -67,7 +68,7 @@ module Api
 
     private
     def chat_params
-      params.require(:chat).permit(:title, :portrait, user_ids: [])
+      params.permit(:title, :description, :portrait, user_ids: [])
     end
 
   end

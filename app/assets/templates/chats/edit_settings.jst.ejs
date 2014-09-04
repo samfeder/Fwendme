@@ -1,9 +1,11 @@
   <a class="close-modal">X</a>
+<form class="edit-chat-form" enctype="multipart/form-data">
+
   <label id="chat-name">
     Chat Name
     <input id="new-chat-title"
            type="text"
-           value="<%= chat.title %>"
+           value="<%= chat.escape('title') %>"
            name = "chat[title]">
   </label>
 
@@ -11,8 +13,13 @@
     Chat Description
     <input id="new-chat-description"
            type="text"
-           value="<%= chat.description %>"
+           value="<%= chat.escape('description') %>"
            name = "chat[description]">
   </label>
-  <input id="new-chat-avatar" name="chat[portrait]" type="file">
-  <input class="edit-settings" type="submit" value="submit">
+  <input id="new-chat-portrait" name="chat[portrait]" type="file">
+
+  <img id="chat-portrait-preview" src="" width="50" height="50">
+
+  <input class="edit-settings-button" type="submit" value="submit">
+
+</form>

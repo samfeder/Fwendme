@@ -21,7 +21,6 @@ FwendMe.Views.NewChatView = Backbone.CompositeView.extend({
 
   createChat: function(){
     var that = this
-    console.log(1)
     var chat = new FwendMe.Models.Chat
     chat.save({
       title: $('#new-chat-title').val(),
