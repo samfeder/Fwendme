@@ -35,6 +35,10 @@ module Api
 
     def update
       @user = User.find(params[:id])
+      if params[:chatAdd]
+        ChatMembership.create!(chat_id: chat_add_params[:chatId], user_id: chat_add_params[:memberId])
+      end
+
       @user.update(user_params)
       flash.now[:errors] = @user.errors.full_messages
       render json: @user
@@ -48,6 +52,10 @@ module Api
     private
     def user_params
       params.permit(:password, :email, :name, :avatar)
+    end
+
+    def chat_add_params
+      params.require(:chatAdd).permit(:memberId, :chatId)
     end
 
 

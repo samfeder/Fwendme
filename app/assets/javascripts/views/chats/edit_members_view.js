@@ -1,48 +1,44 @@
 FwendMe.Views.EditMembersView = Backbone.CompositeView.extend({
 
   events: {
-    "click .close-modal": "closeModal"
+    "click .close-modal": "closeModal",
+    "click .add-member": "addMember"
   },
 
+
   initialize: function(){
-    //this.collection is the current member's fwends.
-    // this.fwendables = this.collection.fetch({success: this.fwendables})
+    this.fwendables = this.model.fwendables()
+    this.listenTo(this.collection, "sync add change", this.render)
+    this.listenTo(this.fwendables, "sync add change", this.render)
   },
 
   template: JST["chats/edit_members"],
 
+  addMember: function(event){
+    var that = this
+    event.preventDefault()
+    var selectedObj = $(event.currentTarget).parent()
+    var addedId = selectedObj.attr("data-id")
+    var addedUser = this.fwendables.findWhere({id: parseInt(addedId)})
+    addedUser.save(
+      {"chatAdd":
+        {"memberId": addedId,
+         "chatId": this.model.id}
+       }, {success: function(){
+         addedUser.chats().add(that.model)
+         that.collection.add(addedUser)
+         //TODO: WHY WON'T REMOVE() WORK?!
+       }}
+     )
+  },
+
   render: function(){
-    console.log(this.model)
-    console.log(this.fwendables)
     var content = this.template({
       chat: this.model,
-      members: this.model.members
+      members: this.collection,
+      fwendables: this.fwendables
     })
     this.$el.html(content);
     return this
   },
-
-  // fwendables: function(){
-  //   currentMemberIds = this.model.members.map(function(member){
-  //      return member.attributes.id
-  //     }
-  //   )
-  //
-  //   console.log("member id " + currentMemberIds)
-  //   console.log(this.collection) //needs to be this.collection.models but apparently needs to be fetched?
-  //   soonFwends = this.collection.map(function(fwend){
-  //      if(currentMemberIds.indexOf(fwend.attributes.id) === -1 &&
-  //         fwend.attributes.id !== window.current_user.id) {
-  //           console.log(fwend.attributes.name + " is good")
-  //           return fwend
-  //         } else {
-  //           console.log("parsing out " + fwend.attributes.name)
-  //         }
-  //      }
-  //   )
-  //   console.log(soonFwends)
-  //   return _.compact(soonFwends)
-  // }
-
-
 })

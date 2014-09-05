@@ -5,7 +5,7 @@ FwendMe.Models.Chat = Backbone.Model.extend({
   initialize: function(){
     this.messageList = this.messages()
     this.messageList.url = "api/chats/" + this.id + "/messages";
-    this.fwendable_ids
+    this.fwendables
   },
 
   messages: function(){
@@ -25,30 +25,27 @@ FwendMe.Models.Chat = Backbone.Model.extend({
   },
 
   fwendables: function(){
-    console.log("YP")
     if(!this._fwendables){
       this._fwendables = new FwendMe.Collections.Users([], {chat: this});
     }
 
-    return this._fwendable;
+    return this._fwendables;
   },
 
   parse: function(response) {
     if(response.messages){
-      console.log(response.messages)
       this.messages().set(response.messages, {parse: true});
       delete response.messages;
     }
 
     if(response.members){
-      console.log(response.members)
       this.members().set(response.members, {parse: true});
       delete response.member;
     }
 
     if(response.fwendables){
-      console.log(response.fwendables) //this is breaking :(
       this.fwendables().set(response.fwendables, {parse: true});
+      // this.fwendables = response.fwendables
       delete response.fwendables;
     }
 

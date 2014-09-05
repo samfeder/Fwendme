@@ -97,15 +97,15 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     else if (event.currentTarget.name === "modalMembers") {
       var currentUser = FwendMe.users.getOrFetch(window.current_user.id)
       var edittingView = new FwendMe.Views.EditMembersView({
-        model: this,
-        collection: currentUser.fwends()
+        model: this.model,
+        collection: this.model.members()
       })
     }
 
     $('#modal').addClass('modal')
     $('#modal-overlay').addClass('modal-overlay')
     this.addSubview('#modal', edittingView)
-    // $('#modal').append(edittingView.render().$el)
+
   },
 
   modalMembers: function(){

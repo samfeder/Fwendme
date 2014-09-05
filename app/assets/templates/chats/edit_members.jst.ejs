@@ -5,7 +5,12 @@
 <% }) %>
 
 <h3>Add Members</h3>
-I could do this... or... OR... I could work on actually making
-this push.
 
-<input class="edit-members" type="submit" value="submit">
+<ul>
+<% fwendables.forEach(function(fwendable){ %>
+  <li data-id="<%= fwendable.get('id') %>">
+    <img width="40" height="40" src="<%= fwendable.escape('avatar')%>">
+    <input class="add-member" type="submit">
+  </li>
+<% }) %>
+</ul>
