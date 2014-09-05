@@ -16,9 +16,13 @@
            value="<%= chat.escape('description') %>"
            name = "chat[description]">
   </label>
-  <input id="new-chat-portrait" name="chat[portrait]" type="file">
 
-  <img id="chat-portrait-preview" src="" width="50" height="50">
+<div class="dropzone">
+  <input src="<%= chat.escape('portrait') %>" id="new-chat-portrait" name="chat[portrait]" class="image-file-input" type="file">
+
+  <img src="<%= chat.escape('portrait') %>" class="image-file-preview" id="chat-portrait-preview" src="" width="50" height="50">
+</div>
+
 
   <input class="edit-settings-button" type="submit" value="submit">
 

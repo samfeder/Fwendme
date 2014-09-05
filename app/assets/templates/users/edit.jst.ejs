@@ -13,9 +13,11 @@
     <input type="text" name="user[name]" id="new-user-name" value="<%= window.current_user.name %>">
   </label>
 
-<input src="<%= window.current_user.avatar %>" id="avatar-file-input" name="user[avatar]" type="file" value="">
-
-<img id="user-avatar-preview" src="" width="50" height="50">
+<div class="dropzone">
+  <input src="<%= window.current_user.avatar %>" class="image-file-input" id="avatar-file-input"
+    name="user[avatar]" type="file" value="">
+<img id="user-avatar-preview" class="image-file-preview" src="<%= window.current_user.avatar %>" width="50" height="50" alt="drop your image here">
+</div>
 
   <input type="submit" class="edit-button" value="Submit">
 
