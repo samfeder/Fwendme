@@ -3,6 +3,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+gem 'omniauth'
+
+gem 'omniauth-google'
+
+gem "omniauth-google-oauth2"
+
 gem "paperclip"
 
 gem "bower-rails", "~> 0.8.3"

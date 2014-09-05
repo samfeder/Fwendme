@@ -16,3 +16,4 @@ Rails
 Paginating the chat
 adding notifications
 adding bumps
+allow users to send up images
