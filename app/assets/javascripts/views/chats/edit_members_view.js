@@ -27,7 +27,8 @@ FwendMe.Views.EditMembersView = Backbone.CompositeView.extend({
        }, {success: function(){
          addedUser.chats().add(that.model)
          that.collection.add(addedUser)
-         //TODO: WHY WON'T REMOVE() WORK?!
+         selectedObj.addClass('testclass')
+         console.log(selectedObj[0])
        }}
      )
   },
