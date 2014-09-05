@@ -368,3 +368,7 @@ a.current-user-profile {
   vertical-align: top;
   line-height: 35px;
 }
+
+.newly-add {
+  display: none;
+}

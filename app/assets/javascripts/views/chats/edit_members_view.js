@@ -17,8 +17,7 @@ FwendMe.Views.EditMembersView = Backbone.CompositeView.extend({
   addMember: function(event){
     var that = this
     event.preventDefault()
-    var selectedObj = $(event.currentTarget).parent()
-    var addedId = selectedObj.attr("data-id")
+    var addedId = $(event.currentTarget).parent().attr("data-id")
     var addedUser = this.fwendables.findWhere({id: parseInt(addedId)})
     addedUser.save(
       {"chatAdd":
@@ -27,8 +26,7 @@ FwendMe.Views.EditMembersView = Backbone.CompositeView.extend({
        }, {success: function(){
          addedUser.chats().add(that.model)
          that.collection.add(addedUser)
-         selectedObj.addClass('testclass')
-         console.log(selectedObj[0])
+         that.fwendables.remove(addedUser)
        }}
      )
   },
