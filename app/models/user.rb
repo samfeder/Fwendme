@@ -47,10 +47,32 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  def self.find_by_google_auth_hash(auth_hash)
+    User.find_by(uid: auth_hash[:uid], provider: auth_hash[:provider])
+  end
+
+  def self.create_by_google_auth_hash(auth_hash)
+    User.create!(
+      uid: auth_hash[:uid],
+      provider: auth_hash[:provider],
+      email: auth_hash[:info][:email],
+      name: auth_hash[:info][:first_name],
+      avatar:  auth_hash[:info][:image],
+      password: SecureRandom.urlsafe_base64(8)
+      )
+  end
+
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return (user && user.valid_password?(password) ? user : nil)
   end
+
+  # def self.process_uri(uri)
+  #   open(uri, :allow_redirections => :safe) do |r|
+  #     r.base_uri.to_s
+  #   end
+  # end
 
   def password=(password)
     @password = password

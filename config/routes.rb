@@ -35,6 +35,6 @@ Fwendme::Application.routes.draw do
 
   resources :messages, only: [:create, :show]
 
-  get '/auth/google_oauth2', to: 'oauth_callbacks#google'
+  get '/auth/google_oauth2/callback', to: 'oauth_callbacks#google'
 
 end

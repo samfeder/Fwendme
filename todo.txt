@@ -1,19 +1,17 @@
 Backbone
 
 move root views to backbone
-DROPZONE
 Add validations to only allow seeing your own chat
-
-
-API/SDK
-
-Add the user's most recent twitter comment
-Allow Twitter sign in / linking
-
 
 Rails
 
 Paginating the chat
 adding notifications
-adding bumps
 allow users to send up images
+
+
+Features:
+Chat Alias
+Image Gallery
+Fist Bumps
+Sending Images/Videos
