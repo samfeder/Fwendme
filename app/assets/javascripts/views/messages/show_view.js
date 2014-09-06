@@ -52,6 +52,7 @@ FwendMe.Views.MessageShowView = Backbone.CompositeView.extend({
       fistbumps: this.fistbumps
     })
     this.$el.html(content);
+
     return this;
   }
 

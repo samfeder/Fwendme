@@ -1,7 +1,6 @@
 Backbone
 
 move root views to backbone
-Add validations to only allow seeing your own chat
 
 Rails
 
@@ -9,10 +8,9 @@ Paginating the chat
 adding notifications
 
 Features:
-Chat Alias
 Image Gallery
 Fist Bumps
 Sending Images/Videos
 email invites
 FIX DEFAULT IMAGES
-MANY more pusher events
+Validations on viewing chatsvz

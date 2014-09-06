@@ -56,8 +56,7 @@ module Api
       if @chat.is_member?(current_user)
         render :show
       else
-        render json: ["You are not a member of this here chat, fella."],
-                                                       status: 403
+        render json: {errors: "Can't see this chat"}
       end
     end
 
