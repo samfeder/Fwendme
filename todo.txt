@@ -15,3 +15,4 @@ Fist Bumps
 Sending Images/Videos
 email invites
 FIX DEFAULT IMAGES
+MANY more pusher events

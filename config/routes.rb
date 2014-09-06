@@ -11,14 +11,16 @@ Fwendme::Application.routes.draw do
     resource :session, only: [:new, :create, :destroy]
 
     resources :chats, except: [:new] do
-      resources :messages, only: [:new, :create]
+      resources :messages, only: :new
     end
 
     resources :chat_memberships, only: [:create, :new, :destroy]
 
-    resources :messages, only: [:show, :index] do
-      resources :bumps, only: [:create, :new, :update]
+    resources :messages, only: [:show, :index, :create] do
+      resources :bumps, only: :new
     end
+
+    resources :bumps, only: [:create, :update, :index, :destroy]
   end
 
 

@@ -298,6 +298,8 @@ section.chat-messages{
   width: 100%;
   height: 90%;
   background: #E2F0D6;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 textarea#new-message {

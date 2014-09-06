@@ -1,1 +1,5 @@
-FwendMe.Models.Bump = Backbone.Model.extend({})
+FwendMe.Models.Bump = Backbone.Model.extend({
+
+  urlRoot: "/api/bumps"
+
+})

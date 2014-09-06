@@ -16,6 +16,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     this.collection = this.model.messages()
     this.members = this.model.members()
     this.listenTo(this.model, 'update sync add change', this.render)
+    this.listenTo(this.collection, 'update sync add change', this.render)
     this.startChannel();
   },
 
@@ -52,10 +53,20 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   render: function(){
     var content = this.template({
       chat: this.model,
-      members: this.members
+      members: this.members,
     })
+
     this.$el.html(content);
-    this._oldMessages();
+
+    //renders the last 5 messages
+
+    this.collection.forEach(function(oldMessage){
+      var oldMessageView = new FwendMe.Views.MessageShowView({
+        model: oldMessage
+      })
+      this.$('.messages-list').append(oldMessageView.render().$el)
+    })
+
     return this
   },
 
@@ -77,7 +88,6 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   },
 
   broadcastMessage: function(message){
-    console.log(message)
     var newMessageView = new FwendMe.Views.MessageShowView({
       model: message
     })
@@ -117,17 +127,5 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
   renderEdit: function(){
     this.$('section.chat-settings').toggleClass('hidden')
-  },
-
-  _oldMessages: function(){
-    var that = this
-    this.collection.forEach(function(message){
-      var messageView = new FwendMe.Views.MessageShowView({
-        model: message
-      })
-      that.addSubview('.messages-list', messageView)
-      that.$('.messages-list').append(messageView)
-    });
   }
-
 })
