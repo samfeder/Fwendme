@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
 
   has_many :messages
 
+  has_many :bumps, inverse_of: :user
+
   has_many :chats, through: :chat_memberships, source: :chat
 
   attr_reader :password
@@ -67,12 +69,6 @@ class User < ActiveRecord::Base
     user = User.find_by(email: email)
     return (user && user.valid_password?(password) ? user : nil)
   end
-
-  # def self.process_uri(uri)
-  #   open(uri, :allow_redirections => :safe) do |r|
-  #     r.base_uri.to_s
-  #   end
-  # end
 
   def password=(password)
     @password = password

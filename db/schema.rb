@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905224806) do
+ActiveRecord::Schema.define(version: 20140906011646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bumps", force: true do |t|
+    t.integer  "user_id",                    null: false
+    t.integer  "message_id",                 null: false
+    t.boolean  "snailed",    default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bumps", ["message_id"], name: "index_bumps_on_message_id", using: :btree
+  add_index "bumps", ["user_id"], name: "index_bumps_on_user_id", using: :btree
 
   create_table "chat_memberships", force: true do |t|
     t.integer  "user_id",    null: false

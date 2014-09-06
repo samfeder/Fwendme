@@ -1,7 +1,23 @@
-<li>
 <li id= "message-<%= message.escape('id') %>" class="message">
+
+<li>
   <img height="40" src="<%= user.avatar %>" width="40" />
-  <%= user.name %>:
-  <%= message.escape('content') %>
-  <br>
+</li>
+
+<li>
+  <%= user.name %>:  <%= message.escape('content') %>
+<li>
+
+<li class="snail-item" id="<%= message.escape('id') %>snail">
+  <!-- <img src="whitesnail.png" width="25" height="25" alt="Whitesnail"> -->
+<!-- Amazing image by Leonardo Schneider. Take a look at his stuff at http://thenounproject.com/leonardo.schneider.121/ -->
+  SN
+</li>
+
+<li class="bump-item" id="<%= message.escape('id') %>bump">
+  <!-- <img src="whitefist.png" width="25" height="25"> -->FI
+<!--Image by Alessandro Bertoni, check out his awesome work http://thenounproject.com/icarvs/ -->
+</li>
+
+
 </li>

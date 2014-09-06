@@ -16,7 +16,9 @@ Fwendme::Application.routes.draw do
 
     resources :chat_memberships, only: [:create, :new, :destroy]
 
-    resources :messages, only: [:show, :index]
+    resources :messages, only: [:show, :index] do
+      resources :bumps, only: [:create, :new, :update]
+    end
   end
 
 

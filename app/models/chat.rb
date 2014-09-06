@@ -8,6 +8,7 @@ class Chat < ActiveRecord::Base
   attr_reader :portrait
 
   has_many :chat_memberships
+
   has_many :messages
 
   has_many :users, through: :chat_memberships, source: :user
