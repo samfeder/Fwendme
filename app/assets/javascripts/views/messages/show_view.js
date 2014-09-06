@@ -1,12 +1,14 @@
 FwendMe.Views.MessageShowView = Backbone.CompositeView.extend({
 
-
-  //TODO events:{"click #add-like": "add"}
+  events:{
+    "click #snail-item": "snailBump",
+    "click #bump-item": "fistBump"
+  },
 
   template: JST["messages/show"],
 
   initialize: function(){
-    this.user = this.model.attributes.user
+    this.user = this.model.attributes.user;
   },
 
   render: function(){
@@ -18,6 +20,8 @@ FwendMe.Views.MessageShowView = Backbone.CompositeView.extend({
     this.$el.html(content);
     return this
   }
+
+
 
 
 })

@@ -1,0 +1,1 @@
+FwendMe.Models.Bump = Backbone.Model.extend({})
