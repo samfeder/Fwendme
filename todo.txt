@@ -1,16 +1,19 @@
 Backbone
 
-move root views to backbone
+move root views to backbone //would be nice
 
 Rails
 
-Paginating the chat
-adding notifications
+Paginating the chat //Not that great
+adding notifications //Maybe this should be a Node convention
 
 Features:
-Image Gallery
-Fist Bumps
-Sending Images/Videos
-email invites
-FIX DEFAULT IMAGES
-Validations on viewing chatsvz
+Image Gallery // not that great
+
+Sending Images/Videos //sweet but not that great
+email invites // kinda nice
+Validations on viewing chatsvz // eh
+
+I WANNA NOOOOODE
+Fist Bumps // SUPER IMPORTANT
+FIX DEFAULT IMAGES // SUPER IMPORTANT

@@ -93,7 +93,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     })
 
     this.addSubview('.messages-list', newMessageView)
-  $(".chat-messages").animate({ scrollTop: $(".chat-messages")[0].scrollHeight}, 5000);
+  $(".chat-messages").animate({ scrollTop: $(".chat-messages")[0].scrollHeight}, 500);
   },
 
   renderModal: function(event){

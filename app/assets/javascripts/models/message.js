@@ -2,6 +2,16 @@ FwendMe.Models.Message = Backbone.Model.extend({
 
   urlRoot: "api/messages",
 
+
+  initialize: function(){
+
+    this.bumps = new Backbone.Subset([], {
+      parentCollection: FwendMe.bumps
+    });
+    this.bumps.url = "/api/message" + this.id + "/bumps";
+
+  },
+
   fistbumps: function(){
     if(!this._fistbumps){
       this._fistbumps = new FwendMe.Collections.Bumps([], {message: this});

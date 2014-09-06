@@ -22,13 +22,18 @@ FwendMe.Views.MessageShowView = Backbone.CompositeView.extend({
 
   fistBump: function(){
     console.log("BUMPED!")
-    var bump = new FwendMe.Models.Bump({
+    var bump = this.fistbumps.create({
       user_id: window.current_user.id,
       message_id: this.model.id,
+    },
+    {
+      silent: true,
+      wait: true,
     });
-
-    bump.save();
   },
+
+
+
 
   // undoFistBump: function(){
   //   console.log("unbumped.");
