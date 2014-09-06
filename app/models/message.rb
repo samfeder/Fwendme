@@ -5,7 +5,12 @@ class Message < ActiveRecord::Base
   belongs_to :chat
   belongs_to :user
 
+  has_many :fistbumps, -> { where snailed: false },
+                                class_name: "Bump"
+  has_many :snails, -> { where snailed: true },
+                                class_name: "Bump"
+
+
   has_many :bumps, inverse_of: :message
-  # has_many :snails <-- Will be a scope of messages with snail == true
 
 end
