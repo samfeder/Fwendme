@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   has_attached_file :avatar,
-  :default_url => "Fwendatar.png",
+  :default_url => "/assets/Fwendatar.png",
   :styles => {
     :big => "40x40>",
     :small => "40x40#"

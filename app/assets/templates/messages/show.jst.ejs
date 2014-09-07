@@ -1,28 +1,34 @@
 <li id= "message-<%= message.escape('id') %>" class="message">
 
-<li>
-  <img height="40" src="<%= user.avatar %>" width="40" />
+  <section class="message-info group">
+
+    <img class="message-avatar" height="40" src="<%= user.avatar %>" width="40" />
+
+    <section class="message-sender">
+      <%= user.name %>
+    </section>
+
+    <section class="message-content">
+      <%= message.escape('content') %>
+    </section>
+
+  </section>
+
+  <section class="group bump-icons">
+
+    <section class="snail-item" id="<%= message.escape('id') %>snail">
+      <!-- <img src="whitesnail.png" width="25" height="25" alt="Whitesnail"> -->
+    <!-- Amazing image by Leonardo Schneider. Take a look at his stuff at http://thenounproject.com/leonardo.schneider.121/ -->
+      SN (0)
+    </section>
+
+    <section class="bump-item" id="<%= message.escape('id') %>bump">
+      <!-- <img src="whitefist.png" width="25" height="25"> -->+FB
+       (0)
+    <!--Image by Alessandro Bertoni, check out his awesome work http://thenounproject.com/icarvs/ -->
+    </section>
+
+  </section>
 </li>
 
-<li>
-  <%= user.name %>:  <%= message.escape('content') %>
-<li>
 
-<li class="snail-item" id="<%= message.escape('id') %>snail">
-  <!-- <img src="whitesnail.png" width="25" height="25" alt="Whitesnail"> -->
-<!-- Amazing image by Leonardo Schneider. Take a look at his stuff at http://thenounproject.com/leonardo.schneider.121/ -->
-  SN (<%= snails.length %>)
-</li>
-
-<li class="bump-item" id="<%= message.escape('id') %>bump">
-  <!-- <img src="whitefist.png" width="25" height="25"> -->+FB
-   (<%= fistbumps.length %>)
-<!--Image by Alessandro Bertoni, check out his awesome work http://thenounproject.com/icarvs/ -->
-</li>
-<li class="unbump-item" id="<%= message.escape('id') %>unbump">
-  <!-- <img src="whitefist.png" width="25" height="25"> -->-FB
-<!--Image by Alessandro Bertoni, check out his awesome work http://thenounproject.com/icarvs/ -->
-</li>
-
-
-</li>

@@ -22,6 +22,30 @@ class ApplicationController < ActionController::Base
 
     Pusher.trigger("chat-#{message_hash[:chat_id]}", "postmessage", message_hash)
   end
+# Move this to ApiController?
+
+  def push_bump(bump)
+    bump_hash = {
+      user_id: bump.user.id,
+      message_id: bump.message.id,
+      id: bump.id,
+      snailed: bump.snailed
+    }
+
+    Pusher.trigger("message-#{bump_hash[:message_id]}", "bumpactions", bump_hash)
+  end
+
+  def remove_bump(bump)
+    bump_hash = {
+      user_id: bump.user.id,
+      message_id: bump.message.id,
+      id: bump.id,
+      snailed: bump.snailed,
+      remove_bump: true
+    }
+
+    Pusher.trigger("message-#{bump_hash[:message_id]}", "bumpactions", bump_hash)
+  end
 
   def sign_in(user)
     session[:session_token] = user.session_token

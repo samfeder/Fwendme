@@ -18,6 +18,7 @@
 
 
 
+
 html, figure, body, header, nav, h1, h2, a, ul, li, main, article, section, p, small, footer, aside, input {
   margin: 0;
   padding: 0;
@@ -390,9 +391,57 @@ height: 100%;
 
 input.image-file-input {
 position: absolute;
-width: 100%;
+width: 80%;
 height: 100%;
 opacity: 0;
 }
 
+.message-avatar {
+display: inline-block;
+float: left;
+padding: 5px 10px;
+}
 
+.message-sender {
+float: left;
+padding-top: 10px;
+font-weight: bold;
+position: absolute;
+top: 35px;
+left: 10px;
+}
+
+.snail-item {
+float: right;
+display: inline-block;
+padding: 15px;
+padding-right 15px;
+}
+
+.bump-item {
+float: left;
+display: inline-block;
+padding: 15px;
+}
+
+.message-content {
+display: inline-block;
+float: left;
+width: 80%;
+margin-top: 10px;
+font-size: 10pt;
+}
+
+.message-info {
+width: 65%;
+height: 65px;
+float: left;
+display: inline-block;
+position: relative;
+}
+
+.bump-item {
+float: left;
+display: inline-block;
+padding: 15px;
+}

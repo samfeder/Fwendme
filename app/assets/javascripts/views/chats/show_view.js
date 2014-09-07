@@ -62,7 +62,8 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
     this.collection.forEach(function(oldMessage){
       var oldMessageView = new FwendMe.Views.MessageShowView({
-        model: oldMessage
+        model: oldMessage,
+        collection: oldMessage.bumps
       })
       this.$('.messages-list').append(oldMessageView.render().$el)
     })
@@ -89,7 +90,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
   broadcastMessage: function(message){
     var newMessageView = new FwendMe.Views.MessageShowView({
-      model: message
+      model: message,
     })
 
     this.addSubview('.messages-list', newMessageView)

@@ -16,7 +16,7 @@ class Chat < ActiveRecord::Base
   validates :title, :owner_id, presence: true
 
   has_attached_file :portrait,
-  :default_url => "Fwendatar.png",
+  :default_url => "/assets/Fwendatar.png",
   :styles => {
     :big => "45x45",
     :small => "45x45"

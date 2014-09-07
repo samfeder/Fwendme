@@ -1,6 +1,9 @@
 module Api
   class BumpsController < ApiController
 
+
+# CURRENT INVALID
+
     def create
       bump = Bump.find_by_user_id_and_message_id(
                                   current_user.id,
@@ -9,7 +12,8 @@ module Api
         bump = current_user.bumps.new(bump_params)
         bump.save!
       end
-        render json: bump
+      push_bump(bump)
+      render json: bump
     end
 
     def destroy
