@@ -2,19 +2,19 @@ development:
   adapter: postgresql
   database: fwendme_development
   host: localhost
-  username: appacademy
+  username: 
 
 test:
   adapter: postgresql
   database: fwendme_development
   host: localhost
-  username: appacademy
+  username: 
 
 production:
   adapter: postgresql
   database: fwendme_development
   host: localhost
-  username: appacademy
+  username: 
 
 
 

@@ -4,7 +4,8 @@ FwendMe.Views.NewChatView = Backbone.CompositeView.extend({
 
   events: {
     "click .close-modal": "closeModalNav",
-    "click .edit-button": "createChat"
+    "click .approve-modal": "createChat",
+	'keypress .click-event': 'keyEvents',
   },
 
   initialize: function(){
@@ -18,6 +19,19 @@ FwendMe.Views.NewChatView = Backbone.CompositeView.extend({
     this.closeModal()
     history.back()
   },
+  
+
+  keyEvent: function(){
+    if (event.which == 13){
+      event.preventDefault();
+      $("#create-chat").click();
+    }
+    if (event.which == 27){
+      event.preventDefault();
+      $(".close-modal").click();
+    }
+  },
+  
 
   createChat: function(){
     var that = this

@@ -11,6 +11,7 @@ gem "omniauth-google-oauth2"
 
 gem "paperclip"
 
+
 gem "bower-rails", "~> 0.8.3"
 
 gem 'pusher'
