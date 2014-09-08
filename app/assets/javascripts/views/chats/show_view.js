@@ -116,7 +116,9 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     $('#modal').addClass('modal')
     $('#modal-overlay').addClass('modal-overlay')
     this.addSubview('#modal', edittingView)
-
+    // $(window).on("scroll", function(){
+    //    window.scrollTo(0,0)
+    // })
   },
 
   modalMembers: function(){

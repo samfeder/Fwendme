@@ -1,16 +1,36 @@
 <input type="submit" class="close-modal click-event" value="×">
-<h3>Current Members</h3>
-<% members.forEach(function(member){ %>
-  <img width="40" height="40" src="<%= member.escape('avatar')%>">
-<% }) %>
 
-<h3>Add Members</h3>
-
-<ul>
-<% fwendables.forEach(function(fwendable){ %>
-  <li data-id="<%= fwendable.get('id') %>">
-    <img width="40" height="40" src="<%= fwendable.escape('avatar')%>">
-    <input class="add-member" type="submit">
-  </li>
-<% }) %>
+<section class="current-members edit-chat-section">
+  <h3 class="header-label" id="current-members-label">Current Members</h3>
+<ul class="current-members-list edit-members-list">
+  <% members.forEach(function(member){ %>
+    <li class="current-member-item edit-item">
+      <figure class="current-member-figure">
+        <img width="150" height="150"
+             src="<%= member.escape('avatar')%>">
+      </figure>
+      <a class="manage-member-label show-member-label"><%= member.escape('name') %></a>
+    </li>
+  <% }) %>
 </ul>
+</section>
+
+<section class="add-members edit-chat-section">
+  <h3 class="header-label" id="add-members-label">Add Members</h3>
+
+  <ul class="add-members-list  edit-members-list">
+    <% fwendables.forEach(function(fwendable){ %>
+      <li class="add-member-item edit-item" data-id="<%= fwendable.get('id') %>">
+        <figure class="add-member-figure">
+          <img width="150" height="150"
+               src="<%= fwendable.escape('avatar')%>">
+        </figure>
+        <input class="add-member"
+               type="submit" value="">
+               <a class="hover-add">+</a>
+               <a class="manage-member-label add-member-label">Add <%= fwendable.escape('name') %></a>
+
+      </li>
+    <% }) %>
+  </ul>
+</section>

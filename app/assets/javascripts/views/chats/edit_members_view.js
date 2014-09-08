@@ -23,12 +23,14 @@ FwendMe.Views.EditMembersView = Backbone.CompositeView.extend({
       {"chatAdd":
         {"memberId": addedId,
          "chatId": this.model.id}
-       }, {success: function(){
-         addedUser.chats().add(that.model)
-         that.collection.add(addedUser)
-         that.fwendables.remove(addedUser)
-       }}
+       }, {
+         success: function(){
+           addedUser.chats().add(that.model)
+         }
+       }
      )
+     that.collection.add(addedUser)
+     that.fwendables.remove(addedUser)
   },
 
   render: function(){
@@ -38,6 +40,7 @@ FwendMe.Views.EditMembersView = Backbone.CompositeView.extend({
       fwendables: this.fwendables
     })
     this.$el.html(content);
+    $('.modal').addClass("edit-members-modal")
     return this
   },
 })

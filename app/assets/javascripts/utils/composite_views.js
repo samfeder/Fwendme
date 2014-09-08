@@ -22,6 +22,7 @@ Backbone.CompositeView = Backbone.View.extend({
   },
 
   parseMessage: function(message){
+    // $(window).off()
     return {
       content: message.attributes.content,
       user_id: message.attributes.user.id

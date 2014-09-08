@@ -56,7 +56,18 @@ section.chat-settings { background-color: gray; }
 .chat-edit-inputs { color: rgb(135, 135, 135); }
 .chat-edit-inputs:focus{ border-bottom: 2px solid white; }
 
+.edit-chat-section {border-right: 2px solid #E74C3C;}
+
 .dropzone { box-shadow: 2px 5px 10px 0px rgba(50, 50, 50, 0.75); }
 
 .dropzone-label { background-color: gray; }
 .dropzone-label { color: black; }
+
+.add-member-label { background-color: rgba(33, 215, 33, 0.5); }
+.show-member-label { background-color: #E74C3C;}
+.show-member-label { opacity: .5;}
+
+.add-member-item { border: 3px solid rgb(33, 215, 33);}
+.current-member-item { border: 3px solid #E74C3C;}
+
+.hover-add { color: #E74C3C }

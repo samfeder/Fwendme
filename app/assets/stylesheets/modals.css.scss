@@ -131,3 +131,108 @@ input.image-file-input {
   height: 100%;
   opacity: 0;
 }
+
+.edit-chat-section h3{
+  position: fixed;
+  text-align: center;
+  font-size: 30pt;
+}
+
+.edit-chat-section {
+  height: 100%;
+  width: 41%;
+  position: fixed;
+  top: 0;
+}
+
+.edit-members-modal{
+  width: 75%;
+}
+
+.edit-members-list{
+  display: inline-block;
+  height: 100%;
+  position: fixed;
+  top: 20%;
+  text-align: center;
+}
+
+.current-members-list {
+  width: 35%;
+  left: 65%;
+  float: right;
+}
+.add-members-list {
+  width: 40%;
+  left: 25%;
+  float: left;
+}
+
+.current-member-figure {
+
+}
+
+.edit-item {
+display: inline-block;
+height: 150px;
+width: 150px;
+position: relative;
+}
+
+.current-member {
+
+}
+
+.add-member-label {}
+
+.manage-member-label {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.add-member {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  z-index: 50;
+  top: 0;
+  opacity: 0;
+}
+
+.hover-add{
+  display: none;
+}
+
+.add-member-item:hover .hover-add {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 200px;
+  content: "+";
+  z-index: 45;
+  top: 0;
+  left: 0;
+  line-height: 60%;
+  text-align: center;
+  opacity: .75;
+  font-weight: 300;
+}
+
+#add-members-label {
+  top: 5%;
+  left: 20%;
+}
+
+#current-members-label {
+  top: 5%;
+  left: 60%;
+}
+
+.edit-item{
+  margin: 5px;
+}
