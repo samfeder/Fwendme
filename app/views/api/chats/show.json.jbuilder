@@ -1,4 +1,4 @@
-json.(@chat, :title, :description, :owner_id, :updated_at, :created_at, :portrait)
+json.(@chat, :title, :description, :owner_id, :updated_at, :created_at, :portrait, :settings, :closer)
 
 json.current_user current_user, :id, :email, :avatar
 

@@ -21,6 +21,22 @@ class Chat < ActiveRecord::Base
     :big => "45x45",
     :small => "45x45"
   }
+
+  has_attached_file :settings,
+  :default_url => "/assets/chat_settings.png",
+  :styles => {
+    :big => "45x45",
+    :small => "45x45"
+  }
+
+  has_attached_file :closer,
+  :default_url => "/assets/closer_chat.png",
+  :styles => {
+    :big => "45x45",
+    :small => "45x45"
+  }
+
+
   validates_attachment_content_type(
     :portrait,
     :content_type => /\Aimage\/.*\Z/

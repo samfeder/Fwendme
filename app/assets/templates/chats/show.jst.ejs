@@ -1,7 +1,7 @@
 <article class="chat-window">
   <header class="chat-header">
     <figure class="chat-logo" alt="chat logo">
-      <img height="45" src="<%= chat.escape("portrait") %>" width="45">
+      <img height="65" src="<%= chat.escape("portrait") %>" width="65">
     </figure>
 
     <section class="chat-descriptors">
@@ -11,10 +11,10 @@
 
     <section class="chat-tools">
       <a id="chat-settings-trigger" class="chat-options" href="#/chats/<%= chat.get("id") %>">
-        O
+        <img src="<%= chat.escape("settings") %>" width="25px" height="25px">
       </a>
       <a class="close-chat chat-options" href="#">
-        X
+        <img src="<%= chat.escape("closer") %>" width="25px" height="25px">
       </a>
     </section>
 
@@ -27,12 +27,13 @@
 
       </ul>
     </section>
-
+  <section class="send-message-area">
       <textarea type="text"
                 value=""
                 name="message[content]"
                 id="new-message"></textarea>
       <input type="submit" id="submit-message" value="Send Message">
+  </section>
   </article>
 </article>
 <section class="chat-settings">

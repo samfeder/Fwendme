@@ -25,15 +25,29 @@ header.chat-header {
   height: 65px;
 }
 
-figure.chat-logo {
-  float: left;
-  margin: 10px;
+.chat-descriptors h1 {
+  font-size: 18pt;
 }
 
-section.chat-descriptors {
+figure.chat-logo {
+  float: left;
+  padding-right: 15px;
+}
+
+.chat-descriptors {
   float: left;
   margin-top: 3px;
-  max-width: 200px;
+  max-width: 275px;
+}
+
+.chat-descriptors h2 {
+  font-size: 9pt;
+  margin-top: 4px;
+}
+
+.chat-descriptors h1 {
+  font-size: 18pt;
+  margin-bottom: -8px;
 }
 
 .chat-tools{
@@ -42,17 +56,18 @@ section.chat-descriptors {
 
 }
 
-.chat-options{
-  margin: 45px;
+.close-chat.chat-options {
+  margin-left: 65px;
 }
 
 section.chat-tools {
   margin-top: 20px;
 }
 
-section.chat-messages{
+.chat-messages {
   width: 99%;
-  height: 90%;
+  min-height: 535px;
+  max-height: 700px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -72,6 +87,7 @@ main.chat-experience{
   margin: 45px auto;
   padding: 0 280px;
   overflow: hidden;
+  min-height: 750px;
 }
 
 article.chat-window {
@@ -85,7 +101,7 @@ article.chat-window {
 }
 
 section.chat-settings {
-  height: 100%;
+  height: 732px;
   width: 240px;
   display: inline-block;
   float: left;
@@ -135,4 +151,19 @@ section.chat-settings.hidden {
 
 .message{
   height: 65px;
+}
+
+#chat-settings-trigger{
+    width: 45px;
+    height: 45px;
+}
+
+.send-message-area {
+width: 100%;
+position: absolute;
+}
+
+#submit-message {
+  padding: 10px;
+  margin-right: -15;
 }
