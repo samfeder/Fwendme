@@ -2,7 +2,7 @@ FwendMe.Views.UserEdit = Backbone.CompositeView.extend({
 
   events: {
     "click .close-modal": "closeModalNav",
-    "click .edit-button": "submitEdits",
+    "click .approve-modal": "submitEdits",
     "change #avatar-file-input": "avatarSelect"
   },
 

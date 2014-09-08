@@ -21,6 +21,8 @@
 
 
 
+
+
 html, figure, body, header, nav, h1, h2, a, ul, li, main, article, section, p, small, footer, aside, input {
   margin: 0;
   padding: 0;
@@ -64,15 +66,14 @@ input {
 	width: 100%;
 	height: 100%;
 	background: #000;
-	opacity: 0.85;
+	opacity: 0.9;
 	filter: alpha(opacity=50);
 	z-index: 999998;
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   border-radius: 14px;
-  padding: 8px;
   top: 25%;
   left: 25%;
   width: 50%;
@@ -297,7 +298,7 @@ section.chat-messages{
   overflow-y: scroll;
 }
 
-#new-message { 
+#new-message {
 	background-color: yellowgreen;
 	width: 100%;
 	height: 40px;
@@ -373,11 +374,15 @@ a.current-user-profile {
 }
 
 .dropzone {
-position: relative;
-height: 250px;
-margin-top: 60px;
+cursor: pointer;
+position: fixed;
+height: 270px;
 box-shadow: 2px 5px 10px 0px rgba(50, 50, 50, 0.75);
+width: 250px;
+left: 28%;
+top: 35%;
 }
+
 
 img.image-file-preview {
 width: 100%;
@@ -386,7 +391,7 @@ height: 100%;
 
 input.image-file-input {
 position: absolute;
-width: 80%;
+width: 100%;
 height: 100%;
 opacity: 0;
 }
@@ -442,11 +447,7 @@ font-size: 10pt;
 }
 
 .approve-modal{
-	border-radius: 0px;
-	border: none;
-	display: block;
 	position: fixed;
-	float: right;
 	top: 0;
 	right: 0;
 	width: 25%;
@@ -456,14 +457,14 @@ font-size: 10pt;
 	text-align: center;
 	padding-top: 10%;
 	color: rgb(33, 215, 33);
+  background-color: rgba(33, 215, 33, 0.15);
+  border-left: rgba(33, 215, 33, .35);
+  cursor: pointer;
+
 }
 
 .close-modal{
-	border-radius: 0px;
-	border: none;
-	display: block;
 	position: fixed;
-	float: left;
 	top: 0;
 	left: 0;
 	width: 25%;
@@ -473,33 +474,79 @@ font-size: 10pt;
 	padding-top: 7%;
 	text-align: center;
 	color: rgb(215, 10, 10);
+  background-color: rgba(215, 10, 10, .15);
+  border-left: rgba(215, 10, 10, .35);
+  cursor: pointer;
 }
 
 .header-label {
-	float: left;
-	color: white;
-	position: fixed;
-	top: 50px;
-	width: 50%;
-	text-align: center;
-	font-size: 50pt;
+float: left;
+color: white;
+position: fixed;
+top: 15%;
+width: 50%;
+text-align: center;
+font-size: 44pt;
 }
 
 #new-chat-title {
-	border-radius: 5px;
-	width: 50%;
-	padding: 15px 20px;
-	font-size: 55pt;
-	float: left;
-	color: white;
-	font-weight: bold;
-	position: fixed;
-	top: 250px;
+border-radius: 5px;
+width: 50%;
+padding: 15px 20px;
+font-size: 55pt;
+float: left;
+color: white;
+font-weight: bold;
+position: fixed;
+top: 50%;
+text-align: center;
 }
+
 #new-chat-title:focus {
 	outline: 0;
 }
 
 *::-webkit-input-placeholder {
     text-align: center;
+    color: rgb(50,50,50);
+}
+
+.input-label {
+position: fixed;
+font-size: 18pt;
+color: white;
+right: 25%;
+top: 45%;
+}
+
+
+#email-label {
+top: 55%;
+}
+
+.user-edit-inputs {
+padding-left: 20px;
+color: rgb(135, 135, 135);
+}
+
+.user-edit-inputs:focus{
+  outline: 0;
+  border-bottom: 2px solid white;
+
+}
+
+.dropzone-label {
+position: relative;
+display: block;
+background-color: gray;
+color: black;
+text-align: center;
+}
+
+#edit-settings-button{
+  font-size: 200px;
+}
+
+#avatar-file-input{
+  cursor: pointer;
 }

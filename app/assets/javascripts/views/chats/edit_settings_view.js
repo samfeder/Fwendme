@@ -2,7 +2,7 @@ FwendMe.Views.EditSettingsView = Backbone.CompositeView.extend({
 
   events: {
     "click .close-modal": "closeModal",
-    "click .edit-settings-button": "submitEdits",
+    "click .approve-modal": "submitEdits",
     "change #new-chat-portrait": "portraitSelect"
   },
 
