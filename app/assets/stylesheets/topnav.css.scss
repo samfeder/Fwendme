@@ -1,0 +1,51 @@
+figure.current-user-avatar {
+    display: inline;
+
+}
+
+a.current-user-profile {
+  vertical-align: top;
+  line-height: 35px;
+}
+
+figure.user-avatar {
+  margin-top: 75px;
+  text-align: center;
+}
+nav.group {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  z-index: 1000;
+}
+
+div.user-menu-link {
+  float: right;
+  margin-right: 51;
+  height: 40px;
+  cursor: hand;
+}
+
+ul.user-menu {
+  display: none;
+  position: relative;
+  float: right;
+  top: 40px;
+  right: -90px;
+}
+
+ul.user-menu:hover {
+  display: block;
+}
+
+
+.user-menu a {
+  padding: 10px;
+  padding-right: 20px;
+  cursor: pointer;
+  display: block;
+}
+
+.user-menu-link:hover + ul.user-menu{
+  display: block;
+}

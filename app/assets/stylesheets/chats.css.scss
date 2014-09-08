@@ -1,3 +1,131 @@
 // Place all the styles related to the Chats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li.message {
+  padding-top: 5px;
+  border-bottom: 1px solid black;
+}
+
+
+#submit-message {
+	border-left: 1px solid black;
+	height: 40px;
+	padding-left: 16px;
+	cursor: pointer;
+	position: absolute;
+	float: right;
+	bottom: 0;
+	right: 16px;
+	border: none;
+}
+
+
+header.chat-header {
+  height: 65px;
+}
+
+figure.chat-logo {
+  float: left;
+  margin: 10px;
+}
+
+section.chat-descriptors {
+  float: left;
+  margin-top: 3px;
+  max-width: 200px;
+}
+
+.chat-tools{
+  float: right;
+  margin-right: 20px;
+
+}
+
+.chat-options{
+  margin: 45px;
+}
+
+section.chat-tools {
+  margin-top: 20px;
+}
+
+section.chat-messages{
+  width: 100%;
+  height: 90%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#new-message {
+	width: 100%;
+	height: 40px;
+	font-size: 14pt;
+	overflow: auto;
+	resize: none;
+	padding-right: 30%;
+}
+
+main.chat-experience{
+  min-width: 740px;
+  max-width: 900px;
+  margin: 45px auto;
+  padding: 0 280px;
+  overflow: hidden;
+}
+
+article.chat-window {
+  display: inline-block;
+  max-width: 650px;
+  min-width: 500px;
+  text-align: center;
+  position: relative;
+  height: 90%;
+  float: left;
+}
+
+section.chat-settings {
+  height: 100%;
+  width: 240px;
+  display: inline-block;
+  float: left;
+}
+
+label.member-list {
+  vertical-align: middle;
+  line-height: 35px;
+}
+
+.member-list:before{
+  background-image: url('Fwendatar.png');
+  background-size: 25px 25px;
+  content: "";
+  padding: 15px;
+  background-repeat: no-repeat;
+  margin-left: 5px;
+  padding-top: 6px;
+}
+
+.settings-modal-trigger:before{
+/*  content: "O";*/
+}
+
+.side-settings{
+  border-bottom: 1px solid gainsboro;
+  padding: 0 10px;
+  line-height: 35px;
+}
+
+.settings-modal-trigger{
+  display: block;
+  padding-left: 5px;
+}
+
+section.chat-settings.hidden {
+  display: none;
+}
+
+#modal-trigger{
+  display: block;
+}
+

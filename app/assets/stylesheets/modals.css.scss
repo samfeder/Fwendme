@@ -1,0 +1,133 @@
+// Place all the styles related to the bumps controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.approve-modal{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 25%;
+	height: 100%;
+	font-size: 250px;
+	text-align: center;
+	padding-top: 10%;
+  cursor: pointer;
+
+}
+
+.close-modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 25%;
+	height: 100%;
+	font-size: 250px;
+	padding-top: 7%;
+	text-align: center;
+  cursor: pointer;
+}
+
+.header-label {
+  float: left;
+  position: fixed;
+  top: 15%;
+  width: 50%;
+  text-align: center;
+  font-size: 44pt;
+}
+
+#new-chat-title {
+  border-radius: 5px;
+  width: 50%;
+  padding: 15px 20px;
+  font-size: 55pt;
+  float: left;
+  font-weight: bold;
+  position: fixed;
+  top: 50%;
+  text-align: center;
+}
+
+.input-label {
+  position: fixed;
+  font-size: 18pt;
+  left: 47%;
+  top: 45%;
+}
+
+
+#email-label {
+  top: 55%;
+}
+
+.user-edit-inputs {
+  padding-left: 20px;
+}
+
+.user-edit-inputs:focus{
+  outline: 0;
+}
+
+.chat-edit-inputs {
+  padding-left: 20px;
+}
+
+.chat-edit-inputs:focus{
+  outline: 0;
+}
+
+
+#chat-description {
+  top: 55%;
+}
+
+#edit-chat-title {
+  width: 60%;
+}
+
+
+.dropzone-label {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+#edit-chat-description {
+  display: block;
+  margin-top: 15px;
+  padding-left: 0px;
+}
+
+#edit-settings-button{
+  font-size: 200px;
+}
+
+#new-chat-title:focus {
+	outline: 0;
+}
+
+.dropzone {
+cursor: pointer;
+position: fixed;
+height: 270px;
+width: 250px;
+left: 28%;
+top: 35%;
+}
+
+.newly-add {
+  display: none;
+}
+
+img.image-file-preview {
+  width: 100%;
+  height: 100%;
+}
+
+input.image-file-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

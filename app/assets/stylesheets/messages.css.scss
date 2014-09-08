@@ -1,3 +1,48 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.message-avatar {
+display: inline-block;
+float: left;
+padding: 5px 10px;
+}
+
+.message-sender {
+float: left;
+padding-top: 10px;
+font-weight: bold;
+position: absolute;
+top: 35px;
+left: 10px;
+}
+
+.snail-item {
+float: right;
+display: inline-block;
+padding: 15px;
+padding-right: 15px;
+}
+
+.bump-item {
+float: left;
+display: inline-block;
+padding: 15px;
+}
+
+.message-content {
+  display: inline-block;
+  float: left;
+  width: 80%;
+  margin-top: 10px;
+  font-size: 10pt;
+}
+
+.message-info {
+	width: 65%;
+	height: 65px;
+	float: left;
+	display: inline-block;
+	position: relative;
+}

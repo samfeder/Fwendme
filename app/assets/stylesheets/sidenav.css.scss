@@ -1,0 +1,27 @@
+
+.tray-header{
+  margin: 12px;
+  margin-top: 40px;
+}
+
+#new-chat-button {
+  padding: 10 15;
+  margin-top: 15px;
+  position: fixed;
+  z-index: 5000;
+  top: 25px;
+  left: 0px;
+  width: 147px;
+}
+
+#chat-tray {
+  position: fixed;
+  height: 100%;
+  z-index: 900;
+  border-radius: 10px;
+  padding-right: 44px;
+}
+
+#group-chat-list{
+  margin-bottom: 50px;
+}
