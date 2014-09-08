@@ -1,30 +1,51 @@
 <input type="submit" class="close-modal click-event" value="×">
-<div class="header-label">
-  <h3><%= window.current_user.name %>-justments</h3>
-</div>
 
-<form class="user-edit-form" enctype="multipart/form-data">
+  <div class="header-label">
+    <h3><%= window.current_user.name %>-justments</h3>
+  </div>
 
+  <form class="user-edit-form" enctype="multipart/form-data">
 
   <label class="input-label" id="name-label">
-    Name
-    <input class="user-edit-inputs"  type="text" name="user[name]" id="new-user-name" autofocus="true" value="<%= window.current_user.name %>">
+      Name
+      <input class="user-edit-inputs"
+             type="text"
+             name="user[name]"
+             id="new-user-name"
+             autofocus="true"
+             value="<%= window.current_user.name %>">
   </label>
 
 
-<label class="input-label" id="email-label">
-  Email
-  <input class="user-edit-inputs" type="email" name="user[email]" id="new-user-email" value="<%= window.current_user.email %>">
-</label>
+  <label class="input-label" id="email-label">
+    Email
+    <input class="user-edit-inputs"
+           type="email"
+           name="user[email]"
+           id="new-user-email"
+           value="<%= window.current_user.email %>">
+  </label>
 
-<div class="dropzone">
-  <input src="<%= window.current_user.avatar %>" class="image-file-input" id="avatar-file-input"
-    name="user[avatar]" type="file" value="">
-<img id="user-avatar-preview" class="image-file-preview" src="<%= window.current_user.avatar %>" width="50" height="50" alt="drop your image here">
-<a class="dropzone-label">Update Image</a>
-</div>
+  <div class="dropzone">
+    <input src="<%= window.current_user.avatar %>"
+           class="image-file-input"
+           id="avatar-file-input"
+           name="user[avatar]"
+           type="file"
+           value="">
+    <img id="user-avatar-preview"
+         class="image-file-preview"
+         src="<%= window.current_user.avatar %>"
+         width="50" height="50"
+         alt="drop your image here">
 
-<input type="submit" class="approve-modal click-event" id="edit-settings-button" value="✔">
+    <a class="dropzone-label">Update Avatar</a>
+  </div>
+
+  <input type="submit"
+         class="approve-modal click-event"
+         id="edit-settings-button"
+         value="✔">
 
 </form>
 

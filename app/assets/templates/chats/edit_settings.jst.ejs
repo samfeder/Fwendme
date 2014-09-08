@@ -1,28 +1,44 @@
 <input type="submit" class="close-modal click-event" value="x">
 <form class="edit-chat-form" enctype="multipart/form-data">
 
-  <label id="chat-name">
+  <label class="input-label"
+         id="chat-name">
+
     Chat Name
-    <input id="new-chat-title"
+
+    <input class="chat-edit-inputs"
+           id="edit-chat-title"
            type="text"
            value="<%= chat.escape('title') %>"
            name = "chat[title]">
   </label>
 
-  <label id="chat-description">
+  <label class="input-label"
+         id="chat-description">
+
     Chat Description
-    <input id="new-chat-description"
+
+    <input class="chat-edit-inputs"
+           id="edit-chat-description"
            type="text"
            value="<%= chat.escape('description') %>"
            name = "chat[description]">
   </label>
 
 <div class="dropzone">
-  <input src="<%= chat.escape('portrait') %>" id="new-chat-portrait" name="chat[portrait]" class="image-file-input" type="file">
+  <input src="<%= chat.escape('portrait') %>"
+         class="image-file-input"
+         id="new-chat-portrait"
+         name="chat[portrait]"
+         type="file"
+         value="">
 
-  <img src="<%= chat.escape('portrait') %>" class="image-file-preview" id="chat-portrait-preview" src="" width="50" height="50">
+  <img src="<%= chat.escape('portrait') %>"
+       class="image-file-preview"
+       id="chat-portrait-preview"
+       width="50" height="50">
+  <a class="dropzone-label">Update Portrait</a>
 </div>
-
 
 <input type="submit" class="approve-modal click-event" id="edit-settings-button" value="+">
 
