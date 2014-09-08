@@ -21,9 +21,10 @@ nav.group {
 
 div.user-menu-link {
   float: right;
-  margin-right: 51;
+  padding-right: 51;
   height: 40px;
   cursor: hand;
+  padding-left: 25px;
 }
 
 ul.user-menu {
@@ -31,7 +32,10 @@ ul.user-menu {
   position: relative;
   float: right;
   top: 40px;
-  right: -90px;
+  right: -163;
+  width: 160px;
+  border: 2px solid #21d721;
+  border-top: none;
 }
 
 ul.user-menu:hover {

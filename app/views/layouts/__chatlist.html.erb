@@ -2,8 +2,11 @@
 
 <li><p class="tray-header">Group Chats</p></li>
 <% current_user.chats.each do |chat| %>
-<li>
-  <a href="/#/chats/<%= chat.id %>"><%= chat.title %></a>
+<li class="chat-link">
+  <figure class="chat-link-portrait">
+    <img src="<%= asset_path(chat.portrait) %>" width="50px" height="50px">
+  </figure>
+  <a class="chat-link-button"  href="/#/chats/<%= chat.id %>"><%= chat.title %></a>
 </li>
 <% end %>
 </ul>

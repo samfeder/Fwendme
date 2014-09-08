@@ -1,27 +1,70 @@
 
-.tray-header{
-  margin: 12px;
-  margin-top: 40px;
+.tray-header {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14pt;
+  margin-bottom: 25px;
 }
 
 #new-chat-button {
-  padding: 10 15;
-  margin-top: 15px;
+  padding: 10 0;
   position: fixed;
   z-index: 5000;
-  top: 25px;
+  top: 0px;
   left: 0px;
-  width: 147px;
+  width: 245px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 #chat-tray {
   position: fixed;
   height: 100%;
   z-index: 900;
-  border-radius: 10px;
-  padding-right: 44px;
+  padding: 35px 10px;
+  width: 222px;
 }
 
 #group-chat-list{
   margin-bottom: 50px;
+}
+
+.chat-link {
+  display: block;
+  width: 222px;
+  height: 50px;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+
+.chat-link-portrait {
+float: left;
+margin-left: 10px;
+border-radius: 15px;
+}
+
+.chat-link-button {
+  line-height: 50px;
+  margin-left: 5px;
+  font-size: 12pt;
+  font-weight: bold;
+  display: inline-block;
+  width: 70%;
+}
+
+.fwends-link {
+  display: inline-block;
+  width: 242px;
+  position: fixed;
+  top: 75px;
+  height: 35px;
+  z-index: 1000;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 35px;
 }

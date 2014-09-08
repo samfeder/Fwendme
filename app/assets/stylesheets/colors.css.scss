@@ -1,7 +1,7 @@
 
 //Application Colors
 
-body{ background-color: #F6FFE0; }
+body{ background-color: rgba(99, 65, 255, 0.25);}
 #chat-tray a:hover { color: lightgray; }
 section.error-list{ color: red; }
 *::-webkit-input-placeholder { color: rgb(50,50,50); }
@@ -10,29 +10,38 @@ section.error-list{ color: red; }
 
 //TopNav Colors
 
-nav.group { background-color: #95AB63; }
-ul.user-menu { background-color: #95AB63; }
+nav.group { background-color: rgb(30, 30, 30); }
+nav.group { border-bottom: 3px solid rgb(33,215,33); }
+ul.user-menu { background-color: rgb(30,30,30); }
+ul.user-menu { color: rgb(33,215,33); }
+.user-menu-link { border-left: 2px solid rgb(33,215,33); }
 .user-menu li:hover { background-color: #10222B; }
 .user-menu li:hover { color: #95AB63; }
 
 //SideNav Colors
 
-.tray-header{ color: #95AB63; }
+.tray-header{ color: white; }
 #new-chat-button { color: #10222B; }
-#new-chat-button { background-color: #E74C3C; }
-#chat-tray { background-color: #10222B; }
-#chat-tray { color: rgb(172, 172, 172); }
+#new-chat-button { background-color: rgb(33,215,33);; }
+#chat-tray { background-color: rgb(30, 30, 30); }
+.chat-link {  border-bottom: 3px solid #4184FF; }
+.chat-link:hover {background-color: rgba(255, 255, 255, 0.15);}
+.chat-link-button { color: #4184FF; }
+
+#chat-tray { border-right: 3px solid rgb(33,215,33); }
+.fwends-link { background: #21d721; }
+.chat-link-portrait { background-color: white; }
 
 
 //Chat-Experience Colors
 
 #submit-message { background: transparent; }
-header.chat-header { background-color: #E74C3C; }
+header.chat-header { background-color: #4184FF; }
 section.chat-descriptors { color: black; }
 .chat-tools { color: #9B9B9B; }
-section.chat-messages{ background-color: #E2F0D6; }
+section.chat-messages{ border-left: 5px solid #4184FF;}
 #new-message { background-color: yellowgreen; }
-section.chat-settings { background-color: gray; }
+section.chat-settings { background-color: #4184FF; }
 
 //Individual Message Colors
 
