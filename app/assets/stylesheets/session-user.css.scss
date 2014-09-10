@@ -1,0 +1,129 @@
+.splash-page{
+  height: 100%;
+  width: 100%;
+  background: url('bestfriends.jpg') no-repeat;
+  background-size: cover;
+}
+
+.error-list{
+  opacity: 0 ;
+  color: black;
+}
+
+.new-user-form {
+  position: absolute;
+  bottom: 25%;
+  width: 95%;
+  left: 0%;
+  margin: 0px 10px;
+}
+
+.start-session-button{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 25%;
+  font-size: 120px;
+  text-align: center;
+  padding-top: 0;
+  cursor: pointer;
+  letter-spacing: 50px;
+}
+
+.credential-input {
+  width: 100%;
+  padding: 10px;
+  margin: 15px;
+  height: 75px;
+  font-size: 25pt;
+  text-align: center;
+}
+
+.credential-input::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 25pt;
+    height: 75px;
+    opacity: .6;
+    letter-spacing: 10px;
+}
+
+.session-type {
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+  padding: 10px 25px;
+  font-weight: bold;
+  letter-spacing: 7px;
+
+}
+
+.current-session-type {
+margin-top: 10px;
+margin-left: 10px;
+border-radius: 5px;
+cursor: default;
+box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 1);
+}
+
+.other-session-type {
+float: right;
+}
+
+.switch-session-button {
+  color: white;
+  width: 90%;
+  float: right;
+  border-radius: 10px;
+}
+
+.session-type-choice {
+  position: absolute;
+  width: 600px;
+  top: 27%;
+  left: 5%;
+  border-radius: 10px;
+  font-size: 15pt;
+}
+
+.tag-line {
+  width: 40%;
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 18%;
+  font-size: 35pt;
+}
+
+.logo-back {
+  position: absolute;
+  top: 17%;
+  left: 16%;
+}
+
+.omni-auth {
+  width: 200px;
+  position: absolute;
+  left: 75%;
+  top: 31%;
+  color: white;
+  background: linear-gradient(to bottom, #c90004 44%, #f40000 76%, #f40000 100%);
+  border-radius: 18px;
+  height: 50px;
+}
+
+.omni-auth-logo {
+  float: left;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#google-omni {
+  line-height: 50px;
+  font-size: 12pt;
+  position: absolute;
+  width: 145px;
+  height: 100%;
+  padding-left: 55px;
+  margin-left: -50px;
+  padding-right: 20px;
+}

@@ -1,46 +1,58 @@
-<h3>Sign In</h3>
+<section class="splash-page">
+  <section class="logo-back">
+    <img class="logo-img"
+         src="<%= asset_path('TagLine2.png') %>"
+         alt="Fwendatar">
+ </section>
 
-<section class="new-user-form">
-  <form action="<%= session_url %>" method="post">
-    <%= auth_token_input %>
 
-
-    <section class="email-label credential">
-      <label>
-        Email<br>
-        <input class="sign-in-email"
-               type="email"
-               name="user[email]"
-               value="">
-      </label>
+  <section class="session-type-choice group">
+    <section class="current-session-type session-type">Sign in/</section>
+    <section class="other-session-type session-type"><%= link_to "Sign up", new_user_url, class: "switch-session-button session-type" %></section>
+  </section>
+    <section class="omni-auth group">
+      <img src="<%= asset_path("google-plus.png") %>"
+           class="omni-auth-logo"
+           width="50"
+           height="50"
+           alt="Google Plus">
+      <%= link_to "Sign in with Google",
+                  "/auth/google_oauth2",
+                  class: "omniauth-button",
+                  id: "google-omni" %>
     </section>
+  <section class="new-user-form">
 
-    <section class="password-label credential">
-      <label>
-        Password<br>
-        <input class="sign-in-password"
-               type="password"
-               name="user[password]"
-               value="">
-      </label>
-    </section>
 
-    <input type="submit"
-           class="start-session-button"
-           value="Sign In">
 
-  </form>
-  <%= link_to "Sign up", new_user_url, class: "switch-session-button" %>
-  <br>
-  <%= link_to "Sign in with Google", "/auth/google_oauth2", class: "omniauth-button", id: "google-omni" %>
+    <form action="<%= session_url %>" class="session-form" method="post">
+      <%= auth_token_input %>
 
+
+      <section class="email-label credential">
+        <label>
+          <input class="sign-in-email credential-input"
+                 type="email"
+                 name="user[email]"
+                 value=""
+                 placeholder="Email">
+        </label>
+      </section>
+
+      <section class="password-label credential">
+        <label>
+          <input class="sign-in-password credential-input"
+                 type="password"
+                 name="user[password]"
+                 value=""
+                 placeholder="Password">
+        </label>
+      </section>
+
+      <input type="submit"
+             class="start-session-button"
+             value="Submit">
+
+    </form>
+  </section>
 </section>
-
-
-
-
-
-
-<video autoplay="true" loop="loop" id="bgvid">
-      <!-- <source src="https://s3.amazonaws.com/Fwend.dev/Now+THIS+is+a+Pool+Pawty!.mp4" type="video/mp4"></source> -->
-    </video>
