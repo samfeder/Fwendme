@@ -1,7 +1,7 @@
 
 //Application Colors
 
-body{ background-color: rgba(99, 65, 255, 0.25);}
+body{ background-color: #4184FF;}
 #chat-tray a:hover { color: lightgray; }
 section.error-list{ color: red; }
 *::-webkit-input-placeholder { color: rgb(50,50,50); }
@@ -15,6 +15,7 @@ nav.group { border-bottom: 3px solid rgb(33,215,33); }
 ul.user-menu { background-color: rgb(30,30,30); }
 ul.user-menu { color: rgb(33,215,33); }
 .user-menu-link { border-left: 2px solid rgb(33,215,33); }
+.user-menu-link { color: rgb(33,215,33); }
 .user-menu li:hover { background-color: #10222B; }
 .user-menu li:hover { color: #95AB63; }
 
@@ -27,6 +28,7 @@ ul.user-menu { color: rgb(33,215,33); }
 .chat-link {  border-bottom: 3px solid #4184FF; }
 .chat-link:hover {background-color: rgba(255, 255, 255, 0.15);}
 .chat-link-button { color: #4184FF; }
+
 
 #chat-tray { border-right: 3px solid rgb(33,215,33); }
 .fwends-link { background: #21d721; }

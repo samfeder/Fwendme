@@ -1,21 +1,46 @@
 <h3>Sign In</h3>
 
+<section class="new-user-form">
+  <form action="<%= session_url %>" method="post">
+    <%= auth_token_input %>
 
-<form action="<%= session_url %>" method="post">
-  <%= auth_token_input %>
 
-  <label>
-    Email<br>
-    <input class="sign-in-email" type="email" name="user[email]" value="">
-  </label>
-<br>
-  <label>
-    Password<br>
-    <input class="sign-in-password" type="password" name="user[password]" value="">
-  </label>
-<br><br>
-  <input type="submit" value="Sign In">
-</form>
-<%= link_to "Sign up", new_user_url %>
-<br>
-<%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+    <section class="email-label credential">
+      <label>
+        Email<br>
+        <input class="sign-in-email"
+               type="email"
+               name="user[email]"
+               value="">
+      </label>
+    </section>
+
+    <section class="password-label credential">
+      <label>
+        Password<br>
+        <input class="sign-in-password"
+               type="password"
+               name="user[password]"
+               value="">
+      </label>
+    </section>
+
+    <input type="submit"
+           class="start-session-button"
+           value="Sign In">
+
+  </form>
+  <%= link_to "Sign up", new_user_url, class: "switch-session-button" %>
+  <br>
+  <%= link_to "Sign in with Google", "/auth/google_oauth2", class: "omniauth-button", id: "google-omni" %>
+
+</section>
+
+
+
+
+
+
+<video autoplay="true" loop="loop" id="bgvid">
+      <!-- <source src="https://s3.amazonaws.com/Fwend.dev/Now+THIS+is+a+Pool+Pawty!.mp4" type="video/mp4"></source> -->
+    </video>

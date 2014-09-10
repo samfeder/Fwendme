@@ -15,4 +15,14 @@ email invites // kinda nice
 Validations on viewing chatsvz // eh
 
 I WANNA NOOOOODE
-Fist Bumps // SUPER IMPORTANT
+Fist Bumps // would be awesome
+
+
+
+TODO:
+
+-Fix chat window styles... Looks like ayysss.
+-Make add-users page a modal like the rest of 'em
+-Fix splash page
+-Style chat buttons better
+-add image support, it'll be kinda easy
