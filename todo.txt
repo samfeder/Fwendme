@@ -26,3 +26,8 @@ TODO:
 -Fix splash page
 -Style chat buttons better
 -add image support, it'll be kinda easy
+
+
+
+Also, here's the rewrite code:
+git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Sam Feder'; GIT_AUTHOR_EMAIL='feder3esq@gmail.com'; GIT_COMMITTER_NAME='Sam Feder'; GIT_COMMITTER_EMAIL='feder3esq@gmail.com';" HEAD
