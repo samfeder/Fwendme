@@ -77,15 +77,12 @@
   box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 1);
 }
 
-#sign-in-button{
-  float: right;
-}
 
 .session-type-choice {
   position: absolute;
   width: 600px;
-  top: 20%;
-  left: 30%;
+  top: 120px;
+  left: 15px;
   border-radius: 10px;
   font-size: 15pt;
 }
@@ -115,7 +112,7 @@
   width: 200px;
   position: absolute;
   border-radius: 18px;
-  top: 25px;
+  top: 115px;
   right: 50px;
 }
 .omni-auth-logo {
