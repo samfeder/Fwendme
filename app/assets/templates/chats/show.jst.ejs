@@ -4,15 +4,7 @@
       <img height="65" src="<%= chat.escape("portrait") %>" width="65">
     </figure>
 
-    <section class="chat-descriptors">
-      <h1><%= chat.escape("title") %></h1>
-      <h2><%= chat.escape("description") %></h2>
-    </section>
-
     <section class="chat-tools">
-      <a id="chat-settings-trigger" class="chat-options" href="#/chats/<%= chat.get("id") %>">
-        <img src="<%= chat.escape("settings") %>" width="25px" height="25px">
-      </a>
       <a class="close-chat chat-options" href="#">
         <img src="<%= chat.escape("closer") %>" width="25px" height="25px">
       </a>
@@ -40,26 +32,30 @@
   <figure class="chat-portrait" alt="chat logo">
     <img height="240" src="<%= chat.escape("portrait") %>" width="240">
   </figure>
-<section class="member-management">
-<label class="member-list">
-<a name="modalMembers" class="modal-trigger">Members</a>
-  <section class="side-settings member-avatars">
-    <% chat.members().models.forEach(function(member){ %>
-      <img src="<%= member.attributes.avatar %>" width="35" height="45" alt="<%= member.attributes.name %>">
-    <%  }) %>
+
+  <section class="chat-descriptors">
+    <h1><%= chat.escape("title") %></h1>
+    <h2><%= chat.escape("description") %></h2>
   </section>
-</label>
-<label class="side-settings settings-modal-trigger">
-  <a name="modalSettings" class="modal-trigger">Settings</a>
-</label>
+<section class="all-settings">
 
-</section>
+  <section class="member-management">
 
+    <section class="member-list">
+      <img class="trigger-image" src="fwendatar_alt.png">
+      <a name="modalMembers" class="modal-trigger chat-settings-trigger">Members</a>
+      <section class="side-settings member-avatars">
+        <% chat.members().models.forEach(function(member){ %>
+          <img class="listatar" src="<%= member.attributes.avatar %>" alt="<%= member.attributes.name %>">
+        <%  }) %>
+      </section>
+    </section>
+    <label class="side-settings settings-modal-trigger">
+      <img class="trigger-image" src="<%= chat.escape("settings") %>">
+      <a name="modalSettings" class="modal-trigger chat-settings-trigger">Settings</a>
+    </label>
 
-
-
-
-</section>
-
+    </section>
+  </section>
 <div class="clear"></div>
 

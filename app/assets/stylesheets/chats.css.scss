@@ -34,20 +34,27 @@ figure.chat-logo {
   padding-right: 15px;
 }
 
+.chat-portrait {
+background: rgba(255,255,255,.35);
+}
+
+
 .chat-descriptors {
-  float: left;
-  margin-top: 3px;
-  max-width: 275px;
+  width: 100%;
+  margin-top: 5px;
+  margin: 15px 0px;
 }
 
 .chat-descriptors h2 {
-  font-size: 9pt;
-  margin-top: 4px;
+  font-size: 10pt;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .chat-descriptors h1 {
   font-size: 18pt;
   margin-bottom: -8px;
+  text-align: center;
 }
 
 .chat-tools{
@@ -101,10 +108,11 @@ article.chat-window {
 }
 
 section.chat-settings {
-  height: 732px;
+  height: 100%;
   width: 240px;
-  display: inline-block;
-  float: left;
+  position: fixed;
+  right: 0;
+  top: 43px;
 }
 
 label.member-list {
@@ -112,29 +120,26 @@ label.member-list {
   line-height: 35px;
 }
 
-.member-list:before{
-  background-image: url('Fwendatar.png');
-  background-size: 25px 25px;
-  content: "";
-  padding: 15px;
-  background-repeat: no-repeat;
-  margin-left: 5px;
-  padding-top: 6px;
-}
+//.member-list:before{
+//  background-image: url('Fwendatar.png');
+//  background-size: 25px 25px;
+//  content: "";
+//  padding: 15px;
+//  background-repeat: no-repeat;
+//  margin-left: 5px;
+//  padding-top: 6px;
+//}
 
 .settings-modal-trigger:before{
 /*  content: "O";*/
 }
 
 .side-settings{
-  border-bottom: 1px solid gainsboro;
-  padding: 0 10px;
-  line-height: 35px;
+  line-height: 20px;
 }
 
 .settings-modal-trigger{
   display: block;
-  padding-left: 5px;
 }
 
 section.chat-settings.hidden {
@@ -166,4 +171,36 @@ position: absolute;
 #submit-message {
   padding: 10px;
   margin-right: -15;
+}
+
+.listatar {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 45px;
+  width: 50px;
+  height: 50px;
+}
+
+.trigger-image {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.chat-settings-trigger {
+  letter-spacing: 2px;
+  display: block;
+  text-align: center;
+  border-top: 1px solid white;
+  padding: 8px;
+
+}
+
+.member-avatars {
+  margin: 12px 0px;
+}
+
+.all-settings {
+  border-bottom: 1px solid white;
 }
