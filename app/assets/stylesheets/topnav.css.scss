@@ -53,3 +53,8 @@ ul.user-menu:hover {
 .user-menu-link:hover + ul.user-menu{
   display: block;
 }
+
+.navatar{
+  background: rgba(255,255,255,0.35);
+  border-radius: 45px;
+}

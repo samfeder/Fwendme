@@ -1,4 +1,4 @@
-<h3>Sign Up</h3>
+<!-- <h3>Sign Up</h3>
 
 <form action="<%= users_url %>" method="post">
   <%= auth_token_input %>
@@ -16,3 +16,68 @@
 </form>
 <%= link_to "Sign in", new_session_url %><br>
 <%= link_to "Sign up with Google", "/auth/google_oauth2" %>
+ -->
+
+
+<section class="splash-page">
+
+</section>
+
+  <section class="logo-back">
+    <img class="logo-img"
+         src="<%= asset_path('TagLine2.png') %>"
+         alt="Fwendatar">
+
+     <section class="session-type-choice group">
+        <%= link_to "Sign in", new_session_url, id: "sign-in-button", class: "other-session-type switch-session-button session-type" %>
+       <a id="sign-up-button" class="current-session-type session-type">Sign up</a>
+     </section>
+
+     <section class="omni-auth group">
+       <img src="<%= asset_path("google-plus.png") %>"
+            class="omni-auth-logo"
+            width="50"
+            height="50"
+            alt="Google Plus">
+       <%= link_to "Sign in with Google",
+                   "/auth/google_oauth2",
+                   class: "omniauth-button",
+                   id: "google-omni" %>
+     </section>
+ </section>
+
+  <section class="new-user-form">
+
+
+
+    <form action="<%= users_url %>" class="session-form" method="post">
+      <%= auth_token_input %>
+
+      <section class="email-label credential">
+        <label>
+          <input class="sign-in-email credential-input"
+                 type="email"
+                 name="user[email]"
+                 value=""
+                 placeholder="Email"
+                 autofocus="true">
+        </label>
+      </section>
+
+      <section class="password-label credential">
+        <label>
+          <input class="sign-in-password credential-input"
+                 type="password"
+                 name="user[password]"
+                 value=""
+                 placeholder="Password">
+        </label>
+      </section>
+
+      <input type="submit"
+             class="start-session-button"
+             value="Submit">
+
+    </form>
+  </section>
+</section>

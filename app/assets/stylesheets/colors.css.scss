@@ -4,7 +4,7 @@
 body{ background-color: #4184FF;}
 #chat-tray a:hover { color: lightgray; }
 section.error-list{ color: red; }
-*::-webkit-input-placeholder { color: rgb(50,50,50); }
+*::-webkit-input-placeholder { color: rgb(150,150,150); }
 #modal-content { background-color:#fff; }
 .modal-overlay { background-color: #000; }
 
@@ -88,9 +88,15 @@ section.chat-settings { background-color: rgb(30,30,30); }
 //New session/user
 
 
-.start-session-button {border-top: 1px solid #bc9667; }
-.start-session-button {background: rgba(188, 150, 103, 0.5); }
-.credential-input { border: 5px solid rgba(0, 0, 0, 0.35);}
-.credential-input { background: rgba(188, 150, 103, 0.5);}
+.start-session-button{	color: white; }
+.start-session-button{ background-color: rgba(255, 255, 255, 0.15); }
+.start-session-button{ border-top: 2px solid rgba(255, 255, 255, .35); }
 .current-session-type { background: linear-gradient(to bottom, rgba(45,122,255,1) 0%,rgba(65,132,255,1) 100%);}
-.switch-session-button { background-color: black;}
+.switch-session-button { background: linear-gradient(to bottom, #2d7aff 0%, #4184ff 100%);}
+.splash-page { background-color: #1e1e1e;}
+.omni-auth {  color: white; }
+.omni-auth {  background: linear-gradient(to bottom, #c90004 44%, #f40000 76%, #f40000 100%);}
+.logo-back { background: rgba(255, 255, 255, .75);}
+.credential-input:hover {border: 1px solid rgba(255,255,255,0.25);}
+.credential-input:focus {outline: 1px solid rgba(255,255,255,0.50);}
+.credential-input:focus {border:none;}

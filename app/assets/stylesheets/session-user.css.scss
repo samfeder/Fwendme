@@ -1,8 +1,8 @@
-.splash-page{
+.splash-page {
   height: 100%;
   width: 100%;
-  background: url('bestfriends.jpg') no-repeat;
-  background-size: cover;
+  position: absolute;
+  top: 0;
 }
 
 .error-list{
@@ -12,7 +12,7 @@
 
 .new-user-form {
   position: absolute;
-  bottom: 25%;
+  bottom: 40%;
   width: 95%;
   left: 0%;
   margin: 0px 10px;
@@ -38,7 +38,12 @@
   height: 75px;
   font-size: 25pt;
   text-align: center;
-}
+  outline: none;
+  font-weight: bold;
+  color: white;
+  border-radius: 150px;
+  letter-spacing: 3px;
+  }
 
 .credential-input::-webkit-input-placeholder {
     text-align: center;
@@ -50,7 +55,7 @@
 
 .session-type {
   display: inline-block;
-  width: 40%;
+  width: 225px;
   text-align: center;
   padding: 10px 25px;
   font-weight: bold;
@@ -59,29 +64,28 @@
 }
 
 .current-session-type {
-margin-top: 10px;
-margin-left: 10px;
-border-radius: 5px;
-cursor: default;
-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 1);
+
+  border-radius: 5px;
+  cursor: default;
+  box-shadow: inset 1px 1px 1px 2px #27496d,inset 0 5px 50px #193047;
 }
 
-.other-session-type {
-float: right;
-}
+
 
 .switch-session-button {
-  color: white;
-  width: 90%;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 1);
+}
+
+#sign-in-button{
   float: right;
-  border-radius: 10px;
 }
 
 .session-type-choice {
   position: absolute;
   width: 600px;
-  top: 27%;
-  left: 5%;
+  top: 20%;
+  left: 30%;
   border-radius: 10px;
   font-size: 15pt;
 }
@@ -96,22 +100,24 @@ float: right;
 }
 
 .logo-back {
-  position: absolute;
-  top: 17%;
-  left: 16%;
+  position: fixed;
+  margin: auto;
+  width: 100%;
+  top: 0;
+}
+
+.logo-img {
+  display: block;
+  margin: 20px 50px;
 }
 
 .omni-auth {
   width: 200px;
   position: absolute;
-  left: 75%;
-  top: 31%;
-  color: white;
-  background: linear-gradient(to bottom, #c90004 44%, #f40000 76%, #f40000 100%);
   border-radius: 18px;
-  height: 50px;
+  top: 25px;
+  right: 50px;
 }
-
 .omni-auth-logo {
   float: left;
   border-right: 1px solid rgba(255, 255, 255, 0.5);

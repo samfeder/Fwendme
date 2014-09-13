@@ -1,26 +1,30 @@
 <section class="splash-page">
+
+</section>
+
   <section class="logo-back">
     <img class="logo-img"
          src="<%= asset_path('TagLine2.png') %>"
          alt="Fwendatar">
+
+     <section class="session-type-choice group">
+       <a id="sign-in-button" class="current-session-type session-type">Sign in</a>
+<%= link_to "Sign up", new_user_url, class: "other-session-type switch-session-button session-type" %>
+     </section>
+
+     <section class="omni-auth group">
+       <img src="<%= asset_path("google-plus.png") %>"
+            class="omni-auth-logo"
+            width="50"
+            height="50"
+            alt="Google Plus">
+       <%= link_to "Sign in with Google",
+                   "/auth/google_oauth2",
+                   class: "omniauth-button",
+                   id: "google-omni" %>
+     </section>
  </section>
 
-
-  <section class="session-type-choice group">
-    <section class="current-session-type session-type">Sign in/</section>
-    <section class="other-session-type session-type"><%= link_to "Sign up", new_user_url, class: "switch-session-button session-type" %></section>
-  </section>
-    <section class="omni-auth group">
-      <img src="<%= asset_path("google-plus.png") %>"
-           class="omni-auth-logo"
-           width="50"
-           height="50"
-           alt="Google Plus">
-      <%= link_to "Sign in with Google",
-                  "/auth/google_oauth2",
-                  class: "omniauth-button",
-                  id: "google-omni" %>
-    </section>
   <section class="new-user-form">
 
 
@@ -35,7 +39,8 @@
                  type="email"
                  name="user[email]"
                  value=""
-                 placeholder="Email">
+                 placeholder="Email"
+                 autofocus="true">
         </label>
       </section>
 
