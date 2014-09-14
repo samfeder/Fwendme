@@ -51,7 +51,7 @@
 .input-label {
   position: fixed;
   font-size: 18pt;
-  left: 47%;
+  left: 40%;
   top: 45%;
 }
 
@@ -61,24 +61,38 @@
 }
 
 .user-edit-inputs {
-  padding-left: 20px;
+  padding: 10px 15px;
 }
 
 .user-edit-inputs:focus{
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
   outline: 0;
 }
 
-.chat-edit-inputs {
-  padding-left: 20px;
+
+.user-edit-inputs:hover {
+  border-bottom: 2px solid white;
 }
+
+
+.chat-edit-inputs {
+  display: block;
+  padding: 10px 15px;
+}
+
+.chat-edit-inputs:hover {
+  border-bottom: 2px solid white;
+}
+
+.chat-edit-inputs:focus {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
 
 .chat-edit-inputs:focus{
   outline: 0;
-}
-
-
-#chat-description {
-  top: 55%;
 }
 
 #edit-chat-title {
@@ -92,28 +106,45 @@
   text-align: center;
 }
 
-#edit-chat-description {
-  display: block;
-  margin-top: 15px;
-  padding-left: 0px;
-}
-
 #edit-settings-button{
   font-size: 200px;
 }
 
 #new-chat-title:focus {
-	outline: 0;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  outline: 0;
+}
+
+#new-chat-title:hover {
+  border-bottom: 2px solid white;
+  outline: 0;
 }
 
 .dropzone {
-cursor: pointer;
-position: fixed;
-height: 270px;
-width: 250px;
-left: 28%;
-top: 35%;
+  cursor: pointer;
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  left: 28%;
+  top: 40%;
 }
+
+.portrait-dropzone{
+  height: 240px;
+  width: 240px;
+  left: 40%;
+  top: 10%;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+#chat-name{
+  top: 65%;
+}
+#chat-description{
+  top: 80%;
+}
+
 
 .newly-add {
   display: none;

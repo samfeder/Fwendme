@@ -1,17 +1,20 @@
 <li id= "message-<%= message.escape('id') %>" class="message">
 
+  <!-- <div class="triangle"></div> -->
+  <div class="small-circle circle"></div>
+  <div class="mid-circle circle"></div>
+  <div class="big-circle circle"></div>
+
   <section class="message-info group">
 
-    <img class="message-avatar" height="40" src="<%= user.avatar %>" width="40" />
+    <img class="message-avatar" src="<%= user.avatar %>"/>
 
     <section class="message-sender">
       <%= user.name %>
     </section>
-
     <section class="message-content">
       <%= message.escape('content') %>
     </section>
-
   </section>
 
   <section class="group bump-icons">

@@ -1,7 +1,7 @@
 
 //Application Colors
 
-body{ background-color: #4184FF;}
+body{ background-color: #1e1e1e;}
 #chat-tray a:hover { color: lightgray; }
 section.error-list{ color: red; }
 *::-webkit-input-placeholder { color: rgb(150,150,150); }
@@ -16,23 +16,34 @@ ul.user-menu { background-color: rgb(30,30,30); }
 ul.user-menu { color: rgb(33,215,33); }
 .user-menu-link { border-left: 2px solid rgb(33,215,33); }
 .user-menu-link { color: rgb(33,215,33); }
-.user-menu li:hover { background-color: #10222B; }
-.user-menu li:hover { color: #95AB63; }
+.user-menu li:hover { color: rgb(30,30,30); }
+.user-menu li:hover { background-color: rgb(33,215,33); }
 
 //SideNav Colors
 
 .tray-header{ color: white; }
-#new-chat-button { color: #10222B; }
-#new-chat-button { background-color: rgb(33,215,33);; }
+
 #chat-tray { background-color: rgb(30, 30, 30); }
+#chat-tray { border-right: 3px solid rgb(33,215,33); }
+
 .chat-link {  border-bottom: 3px solid #4184FF; }
 .chat-link:hover {background-color: rgba(255, 255, 255, 0.15);}
+
 .chat-link-button { color: #4184FF; }
 
-
-#chat-tray { border-right: 3px solid rgb(33,215,33); }
-.fwends-link { background: #21d721; }
 .chat-link-portrait { background-color: white; }
+
+.fwends-link{ border:1px solid #1AA61A; }
+.fwends-link{ background-color: #21D721; background-image: -webkit-gradient(linear, left top, left bottom, from(#21D721), to(#1CB51C)); }
+.fwends-link:hover{ border:1px solid #169116; }
+.fwends-link:hover{ background-color: #1AAB1A; background-color: #1AAB1A; background-image: -webkit-gradient(linear, left top, left bottom, from(#1AAB1A), to(#158915));}
+
+#new-chat-button{ border:1px solid #1AA61A; }
+#new-chat-button{ background-color: #21D721; background-image: -webkit-gradient(linear, left top, left bottom, from(#21D721), to(#1CB51C)); }
+#new-chat-button:hover{ border:1px solid #169116; }
+#new-chat-button:hover{ background-color: #1AAB1A; background-color: #1AAB1A; background-image: -webkit-gradient(linear, left top, left bottom, from(#1AAB1A), to(#158915));}
+
+
 
 
 //Chat-Experience Colors
@@ -41,11 +52,17 @@ ul.user-menu { color: rgb(33,215,33); }
 header.chat-header { background-color: rgb(30,30,30); }
 section.chat-descriptors { color: rgba(255, 255, 255, 0.85); }
 .chat-tools { color: #9B9B9B; }
-section.chat-messages{ border-left: 5px solid #4184FF;}
-#new-message { background-color: #4184FF; }
 section.chat-settings { background-color: rgb(30,30,30); }
+section.chat-settings { border-left: 3px solid #21d721; }
 #submit-message { background-color: #21d721; }
 .member-management {color: white;}
+.chat-setting {border-left: 3px solid #21d721;}
+#new-message {  background-color: #1e1e1e;}
+#new-message {  color: #21d721;}
+
+
+
+
 
 //Individual Message Colors
 

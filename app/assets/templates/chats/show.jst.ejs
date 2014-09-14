@@ -1,16 +1,4 @@
 <article class="chat-window">
-  <header class="chat-header">
-    <figure class="chat-logo" alt="chat logo">
-      <img height="65" src="<%= chat.escape("portrait") %>" width="65">
-    </figure>
-
-    <section class="chat-tools">
-      <a class="close-chat chat-options" href="#">
-        <img src="<%= chat.escape("closer") %>" width="25px" height="25px">
-      </a>
-    </section>
-
-  </header>
 
   <article class="chat-window-body">
 
@@ -19,15 +7,15 @@
 
       </ul>
     </section>
-  <section class="send-message-area">
-      <textarea type="text"
-                value=""
-                name="message[content]"
-                id="new-message"></textarea>
-      <input type="submit" id="submit-message" value="Send Message">
-  </section>
   </article>
 </article>
+<section class="send-message-area">
+    <textarea type="text"
+              value=""
+              name="message[content]"
+              id="new-message"
+              placeholder="Enter message here, then hit enter!"></textarea>
+</section>
 <section class="chat-settings">
   <figure class="chat-portrait" alt="chat logo">
     <img height="240" src="<%= chat.escape("portrait") %>" width="240">
@@ -37,6 +25,7 @@
     <h1><%= chat.escape("title") %></h1>
     <h2><%= chat.escape("description") %></h2>
   </section>
+
 <section class="all-settings">
 
   <section class="member-management">
@@ -58,4 +47,4 @@
     </section>
   </section>
 <div class="clear"></div>
-
+<input type="submit" id="submit-message" value="Send Message">

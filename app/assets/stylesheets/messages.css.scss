@@ -4,25 +4,26 @@
 
 
 .message-avatar {
-display: inline-block;
-float: left;
-padding: 5px 10px;
+  float: left;
+  padding: 5px 5px;
+  border-radius: 150px;
+  width: 50px;
+  height: 50px;
 }
 
 .message-sender {
-float: left;
-padding-top: 10px;
-font-weight: bold;
-position: absolute;
-top: 35px;
-left: 10px;
+  padding-top: 10px;
+  position: absolute;
+  top: -7px;
+  left: 70px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .snail-item {
-float: right;
-display: inline-block;
-padding: 15px;
-padding-right: 15px;
+  float: right;
+  display: inline-block;
+  padding: 15px;
+  padding-right: 15px;
 }
 
 .bump-item {
@@ -36,17 +37,24 @@ padding: 15px;
 }
 
 .message-content {
-  display: inline-block;
-  float: left;
+  display: block;
+  position: absolute;
   width: 80%;
-  margin-top: 10px;
-  font-size: 10pt;
+  margin-top: 20px;
+  font-size: 12pt;
+  left: 50px;
+  overflow: hidden;
+  border-radius: 15px;
+  padding: 8px;
+  padding-left: 20px;
+  color: white;
 }
 
 .message-info {
-	width: 65%;
-	height: 65px;
-	float: left;
-	display: inline-block;
-	position: relative;
+  width: 100%;
+  min-height: 65px;
+  float: left;
+  display: inline-block;
+  position: relative;
+  margin: 5px 0px;
 }

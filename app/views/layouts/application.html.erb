@@ -36,7 +36,10 @@
     </a>
   </div>
   <ul class="user-menu">
-    <li><a href="/#/users/<%= current_user.id %>/edit" class="modal-trigger" id="edit-profile-link">Edit Profile</li>
+    <li>
+      <a href="/#/users/<%= current_user.id %>/edit"
+         class="modal-trigger"
+         id="edit-profile-link">Edit Profile</a></li>
     <li><%= link_to "Sign Out", session_url, :method => :delete %></li>
   </ul>
 </nav>
