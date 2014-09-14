@@ -64,32 +64,12 @@
   padding: 10px 15px;
 }
 
-.user-edit-inputs:focus{
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  outline: 0;
-}
-
-
-.user-edit-inputs:hover {
-  border-bottom: 2px solid white;
-}
 
 
 .chat-edit-inputs {
   display: block;
   padding: 10px 15px;
 }
-
-.chat-edit-inputs:hover {
-  border-bottom: 2px solid white;
-}
-
-.chat-edit-inputs:focus {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-}
-
 
 .chat-edit-inputs:focus{
   outline: 0;
@@ -110,16 +90,7 @@
   font-size: 200px;
 }
 
-#new-chat-title:focus {
-  border-bottom: 2px solid white;
-  border-top: 2px solid white;
-  outline: 0;
-}
 
-#new-chat-title:hover {
-  border-bottom: 2px solid white;
-  outline: 0;
-}
 
 .dropzone {
   cursor: pointer;
@@ -135,7 +106,6 @@
   width: 240px;
   left: 40%;
   top: 10%;
-  background-color: rgba(255, 255, 255, 0.35);
 }
 
 #chat-name{

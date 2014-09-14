@@ -12,8 +12,13 @@ section.error-list{ color: red; }
 
 nav.group { background-color: rgb(30, 30, 30); }
 nav.group { border-bottom: 3px solid rgb(33,215,33); }
+
+.navatar{ background: rgba(255,255,255,0.35); }
+
 ul.user-menu { background-color: rgb(30,30,30); }
 ul.user-menu { color: rgb(33,215,33); }
+ul.user-menu { border: 2px solid #21d721; }
+
 .user-menu-link { border-left: 2px solid rgb(33,215,33); }
 .user-menu-link { color: rgb(33,215,33); }
 .user-menu li:hover { color: rgb(30,30,30); }
@@ -57,12 +62,26 @@ section.chat-settings { border-left: 3px solid #21d721; }
 #submit-message { background-color: #21d721; }
 .member-management {color: white;}
 .chat-setting {border-left: 3px solid #21d721;}
+
 #new-message {  background-color: #1e1e1e;}
 #new-message {  color: #21d721;}
+#new-message {   border-bottom: 1px solid rgb(33, 215, 33); }
+
+.all-settings {  border-bottom: 1px solid white; }
+
+.chat-settings-trigger { border-top: 1px solid white;}
+
+.chat-settings-trigger:hover{  color: white; }
+.chat-settings-trigger:hover{  background: #4184FF; }
+
+.listatar {  background: rgba(255, 255, 255, 0.35); }
 
 
+::-webkit-scrollbar { opacity: 0; }
 
+.chat-messages::-webkit-scrollbar-thumb { background: white; }
 
+.chat-portrait { background: rgba(255,255,255,.35); }
 
 //Individual Message Colors
 
@@ -90,6 +109,8 @@ section.chat-settings { border-left: 3px solid #21d721; }
 
 .dropzone { box-shadow: 2px 5px 10px 0px rgba(50, 50, 50, 0.75); }
 
+.portrait-dropzone{ background-color: rgba(255, 255, 255, 0.35); }
+
 .dropzone-label { background-color: gray; }
 .dropzone-label { color: black; }
 
@@ -101,6 +122,25 @@ section.chat-settings { border-left: 3px solid #21d721; }
 .current-member-item { border: 3px solid #E74C3C;}
 
 .hover-add { color: #E74C3C }
+
+#new-chat-title:focus { border-bottom: 2px solid white; }
+#new-chat-title:focus { border-top: 2px solid white;}
+#new-chat-title:focus {   outline: 0; }
+
+#new-chat-title:hover { border-bottom: 2px solid white; }
+#new-chat-title:hover { outline: 0; }
+
+.user-edit-inputs:focus{  border-top: 2px solid white; }
+.user-edit-inputs:focus{  border-bottom: 2px solid white; }
+.user-edit-inputs:focus{  outline: 0; }
+
+.user-edit-inputs:hover { border-bottom: 2px solid white; }
+
+
+.chat-edit-inputs:hover { border-bottom: 2px solid white; }
+
+.chat-edit-inputs:focus { border-top: 2px solid white; }
+.chat-edit-inputs:focus { border-bottom: 2px solid white; }
 
 //New session/user
 

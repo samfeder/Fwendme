@@ -18,7 +18,9 @@
 </section>
 <section class="chat-settings">
   <figure class="chat-portrait" alt="chat logo">
-    <img height="240" src="<%= chat.escape("portrait") %>" width="240">
+    <img height="240"
+         src="<%= chat.escape("portrait") %>"
+         width="240">
   </figure>
 
   <section class="chat-descriptors">
@@ -31,20 +33,32 @@
   <section class="member-management">
 
     <section class="member-list">
-      <img class="trigger-image" src="fwendatar_alt.png">
-      <a name="modalMembers" class="modal-trigger chat-settings-trigger">Members</a>
+      <img class="trigger-image"
+           src="fwendatar_alt.png">
+      <a name="modalMembers"
+         class="modal-trigger chat-settings-trigger">
+         Members
+      </a>
       <section class="side-settings member-avatars">
         <% chat.members().models.forEach(function(member){ %>
-          <img class="listatar" src="<%= member.attributes.avatar %>" alt="<%= member.attributes.name %>">
+          <img class="listatar"
+               src="<%= member.attributes.avatar %>"
+               alt="<%= member.attributes.name %>">
         <%  }) %>
       </section>
     </section>
     <label class="side-settings settings-modal-trigger">
-      <img class="trigger-image" src="<%= chat.escape("settings") %>">
-      <a name="modalSettings" class="modal-trigger chat-settings-trigger">Settings</a>
+      <img class="trigger-image"
+           src="<%= chat.escape("settings") %>">
+      <a name="modalSettings"
+         class="modal-trigger chat-settings-trigger">
+         Settings
+      </a>
     </label>
 
     </section>
   </section>
 <div class="clear"></div>
-<input type="submit" id="submit-message" value="Send Message">
+<input type="submit"
+       id="submit-message"
+       value="Send Message">
