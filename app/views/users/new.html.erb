@@ -58,3 +58,35 @@
     </form>
   </section>
 </section>
+
+
+<form action="<%= session_url %>" class="demo-form" method="post">
+  <%= auth_token_input %>
+
+  <section class="email-label credential demo-input">
+    <label>
+      <input class="sign-in-email credential-demo"
+             type="email"
+             name="user[email]"
+             value="frodo@shire.com"
+             placeholder="Email">
+    </label>
+  </section>
+
+  <section class="password-label credential demo-input">
+    <label>
+      <input class="sign-in-password credential-demo"
+             type="password"
+             name="user[password]"
+             value="password"
+             placeholder="Password">
+    </label>
+  </section>
+
+  <input type="submit"
+         class="start-demo-button"
+         value="Demo User">
+
+</form>
+
+
