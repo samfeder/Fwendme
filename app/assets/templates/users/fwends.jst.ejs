@@ -1,0 +1,25 @@
+<input type="submit" class="close-modal click-event" value="×">
+
+<section class="add-fwends edit-fwends-section">
+  <h3 class="header-label" id="add-fwends-label">Add Fwends</h3>
+
+  <ul class="add-fwends-list  edit-fwends-list">
+    <% users.forEach(function(user){ %>
+      <li class="add-fwend-item edit-item" data-id="<%= user.get('id') %>">
+        <figure class="add-fwend-figure">
+          <img width="150" height="150"
+               src="<%= user.escape('avatar')%>">
+        </figure>
+        <input class="add-fwend"
+               type="submit" value="">
+               <a class="hover-add">+</a>
+               <a class="manage-fwend-label add-fwend-label">Add <%= user.escape('name') %></a>
+
+      </li>
+    <% }) %>
+  </ul>
+</section>
+
+<section class="status-checker">
+  Let's be fwends!
+</section>

@@ -1,6 +1,6 @@
 json.array! @users do |user|
 
-  json.(user, :email, :name, :avatar)
+  json.(user, :id, :email, :name, :avatar)
   #TODO: pass up password digest to confirm password change
 
   json.chats user.chats, :id, :title, :owner_id, :portrait

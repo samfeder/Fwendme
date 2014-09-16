@@ -136,11 +136,14 @@ section.chat-settings { border-left: 3px solid #21d721; }
 
 .user-edit-inputs:hover { border-bottom: 2px solid white; }
 
-
 .chat-edit-inputs:hover { border-bottom: 2px solid white; }
 
 .chat-edit-inputs:focus { border-top: 2px solid white; }
 .chat-edit-inputs:focus { border-bottom: 2px solid white; }
+
+.status-checker{ color: yellow; }
+
+.successAdd{ color: green; }
 
 //New session/user
 

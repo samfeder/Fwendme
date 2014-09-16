@@ -35,17 +35,25 @@ module Api
 
     def update
       @user = User.find(params[:id])
-      if params[:chatAdd]
+
+      if params[:fwendAdd]
+        current_user.friendships.create!(friend_id: fwend_add_params[:friend_id])
+
+      elsif params[:chatAdd]
         ChatMembership.create!(chat_id: chat_add_params[:chatId], user_id: chat_add_params[:memberId])
+
+      else
+        @user.update(user_params)
+
+      render @user.errors.full_messages if flash.now[:errors]
+
       end
 
-      @user.update(user_params)
-      flash.now[:errors] = @user.errors.full_messages
       render json: @user
     end
 
     def index
-      @users = User.all
+      @users = User.all - [current_user] - current_user.fwends
       render :index
     end
 
@@ -56,6 +64,9 @@ module Api
 
     def chat_add_params
       params.require(:chatAdd).permit(:memberId, :chatId)
+    end
+    def fwend_add_params
+      params.require(:fwendAdd).permit(:friend_id)
     end
 
 

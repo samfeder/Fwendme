@@ -47,9 +47,8 @@
 </header>
 <br>
 <a href = "/#/users/<%= current_user.id %>/chats/new" class="modal-trigger" id="new-chat-button">Create New Chat</a>
-<a href = "/users" id="make-fwends-button" class="fwends-link">Make Fwendz</a>
+<a href = "/#/users" id="make-fwends-button" class="fwends-link">Make Fwendz</a>
 
-<%= link_to "Make Fwends", users_url %>
 <aside id="chat-tray" class="group">
   <br><br>
   <%= render :partial => 'layouts/_chatlist' %>

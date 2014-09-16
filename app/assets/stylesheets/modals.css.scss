@@ -236,3 +236,126 @@ position: relative;
 .edit-item{
   margin: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.add-fwends {
+  width: 100%;
+  right: 0px;
+  position: absolute;
+  overflow-y: scroll;
+  height: 100%;
+  background-color: rgba(255,255,255,.15);
+}
+
+
+.edit-fwend-modal{
+  width: 75%;
+}
+
+.edit-fwend-list{
+  display: inline-block;
+  height: 100%;
+  position: fixed;
+  top: 20%;
+  text-align: center;
+}
+
+.current-fwend-list {
+  width: 35%;
+  left: 65%;
+  float: right;
+}
+.add-fwend-list {
+  width: 40%;
+  left: 25%;
+  float: left;
+}
+
+.edit-item {
+display: inline-block;
+height: 150px;
+width: 150px;
+position: relative;
+}
+
+.add-fwend-label {}
+
+.manage-fwend-label {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: rgba(255,255,255,.35);
+}
+
+.add-fwend {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  z-index: 50;
+  top: 0;
+  opacity: 0;
+}
+
+.hover-add{
+  display: none;
+}
+
+.add-fwend-item:hover .hover-add {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 200px;
+  content: "+";
+  z-index: 45;
+  top: 0;
+  left: 0;
+  line-height: 60%;
+  text-align: center;
+  opacity: .75;
+  font-weight: 300;
+}
+
+#add-fwends-label {
+  top: 5%;
+  left: 20%;
+
+}
+
+#current-fwend-label {
+  top: 5%;
+  left: 60%;
+}
+
+.status-checker{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  font-size: 90px;
+  text-align: center;
+  padding-top: 10%;
+  margin-left: 85px;
+}
+
+.hideFrame{
+  display: none;
+}

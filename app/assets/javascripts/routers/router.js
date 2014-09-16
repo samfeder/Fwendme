@@ -4,6 +4,7 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
     "": "index",
     "chats/:id": "show",
     "users/:user_id/chats/new": "newChat",
+    "users": "makeFwends",
     "users/:id/edit": "editUser"
   },
 
@@ -30,6 +31,17 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
     $('#modal').html(newChatView.render().$el)
     this._addModal(newChatView)
 
+  },
+
+
+  makeFwends: function(){
+    var currentUser = FwendMe.users.getOrFetch(window.current_user.id)
+    var makeFwendsView = new FwendMe.Views.MakeFwendsView({
+      model: currentUser,
+      collection: FwendMe.users
+    })
+    $('#modal').html(makeFwendsView.render().$el)
+    this._addModal(makeFwendsView)
   },
 
   editUser: function(id){
