@@ -29,8 +29,8 @@ class Chat < ActiveRecord::Base
     :small => "45x45"
   }
 
-  has_attached_file :closer,
-  :default_url => "closer_chat.png",
+  has_attached_file :member_icon,
+  :default_url => "Fwendatar_alt.png",
   :styles => {
     :big => "45x45",
     :small => "45x45"
