@@ -7,7 +7,9 @@ FwendMe.Models.Chat = Backbone.Model.extend({
     this.messageList.url = "api/chats/" + this.id + "/messages";
     this.fwendables
   },
-
+ 
+ 
+ 
   messages: function(){
     if(!this._messages){
       this._messages = new FwendMe.Collections.Messages([], {chat: this});
@@ -42,7 +44,7 @@ FwendMe.Models.Chat = Backbone.Model.extend({
       this.members().set(response.members, {parse: true});
       delete response.member;
     }
-
+	
     if(response.fwendables){
       this.fwendables().set(response.fwendables, {parse: true});
       // this.fwendables = response.fwendables
