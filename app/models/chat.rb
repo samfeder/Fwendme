@@ -5,7 +5,7 @@ class Chat < ActiveRecord::Base
   foreign_key: :owner_id,
   primary_key: :id
 
-  attr_reader :portrait
+  attr_reader :portrait, :unread
 
   has_many :chat_memberships
 
@@ -55,17 +55,15 @@ class Chat < ActiveRecord::Base
   def is_member?(user)
     self.users.include?(user)
   end
+  
+  def unread(current_user_id)
+    membership = ChatMembership.find_by_user_id_and_chat_id(current_user_id, self.id)
+    membership ? membership.unread : 0
+  end
+
+  def clear_unreads(current_user_id)
+    ChatMembership.find_by_user_id_and_chat_id(current_user_id, self.id).unread = 0
+  end
 
 
 end
-
-  #   group.each_with_index do |member, i|
-  #     (i+1).upto(group.length-1) do |j|
-  #       next if current_friends.include?([i,j])
-  #       Friendship.create(user_id: group[i].id, friend_id: group[j].id)
-  #       current_friends << [group[i].id,group[j].id]
-  #     end
-  #   end
-  # end
-
-

@@ -15,6 +15,9 @@ User.create([{email: "frodo@shire.com", name: "Frodo", password: "password", ava
 {email: "troll@mordor.com", name: "Troll", password: "password", avatar: File.new("#{Rails.root}/seeds/images/troll.jpg")},
 {email: "gollum@precious.com", name: "Gollum", password: "password", avatar: File.new("#{Rails.root}/seeds/images/gollum.jpg")}])
 
+{email: "sauron@m12ordor.com", name: "Sauron",  password: "password"})
+
+
 frodo = User.find_by_name("Frodo")
 pippen = User.find_by_name("Pippen")
 sam = User.find_by_name("Sam")

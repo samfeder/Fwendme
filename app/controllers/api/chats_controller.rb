@@ -54,6 +54,7 @@ module Api
       @chat = Chat.includes(:users, :messages).find(params[:id])
       @messages = @chat.messages.reverse
       if @chat.is_member?(current_user)
+        @chat.clear_unreads(current_user.id)
         render :show
       else
         render json: {errors: "Can't see this chat"}
@@ -62,7 +63,7 @@ module Api
 
     def index
       @chats = Chat.all
-      render json: @chats
+      render :index
     end
 
     private
