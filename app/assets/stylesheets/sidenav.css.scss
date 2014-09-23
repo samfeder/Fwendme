@@ -5,6 +5,7 @@
   font-weight: bold;
   font-size: 14pt;
   margin-bottom: 25px;
+  margin-top: 40px;
 }
 
 #new-chat-button {
@@ -25,10 +26,14 @@
   position: fixed;
   height: 100%;
   width: 242px;
+  z-index: 2;
 }
 
 #group-chat-list{
-  margin-top: 40px;
+  position: relative;
+  height: 70%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .chat-link {
@@ -83,5 +88,4 @@ border-radius: 15px;
   top: 70;
   left: 190;
   display: none;
-//  TO DO, COLLAPSABLE NAVIGATION
 }

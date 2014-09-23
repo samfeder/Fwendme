@@ -16,6 +16,8 @@ window.FwendMe = {
         FwendMe.users.fetch({
           success: function(){
             var router = new FwendMe.Routers.FwendRouter();
+            var sidenav = new FwendMe.Views.ChatListView({collection: FwendMe.chats})
+            $('#chat-tray').html(sidenav.render().$el)
             Backbone.history.start()
           }
         })

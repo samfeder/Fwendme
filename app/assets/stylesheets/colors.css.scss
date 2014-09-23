@@ -48,7 +48,7 @@ ul.user-menu { border: 2px solid #21d721; }
 #new-chat-button:hover{ border:1px solid #169116; }
 #new-chat-button:hover{ background-color: #1AAB1A; background-color: #1AAB1A; background-image: -webkit-gradient(linear, left top, left bottom, from(#1AAB1A), to(#158915));}
 
-
+#group-chat-list{   background-color: rgba(250,250,250,.05);}
 
 
 //Chat-Experience Colors
@@ -63,7 +63,7 @@ section.chat-settings { border-left: 3px solid #21d721; }
 .member-management {color: white;}
 .chat-setting {border-left: 3px solid #21d721;}
 
-#new-message {  background-color: #1e1e1e;}
+#new-message {  background-color: rgba(30,30,30,0);}
 #new-message {  color: #21d721;}
 #new-message {   border-bottom: 1px solid rgb(33, 215, 33); }
 
@@ -76,10 +76,12 @@ section.chat-settings { border-left: 3px solid #21d721; }
 
 .listatar {  background: rgba(255, 255, 255, 0.35); }
 
+.chat-window{   background-color: rgba(250,250,250,.05);}
+.chat-window{  box-shadow: inset 0px 0px 20px 10px rgb(30,30,30);}
 
 ::-webkit-scrollbar { opacity: 0; }
 
-.chat-messages::-webkit-scrollbar-thumb { background: white; }
+::-webkit-scrollbar-thumb { background: white; }
 
 .chat-portrait { background: rgba(255,255,255,.35); }
 

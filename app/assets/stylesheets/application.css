@@ -32,6 +32,10 @@ html, figure, body, header, nav, h1, h2, a, ul, li, main, article, section, p, s
   font-family: 'Roboto', sans-serif;
 }
 
+body{
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -122,7 +126,7 @@ h3 {
 }
 
 *::-webkit-input-placeholder {
-    text-align: center;
+  white-space: nowrap;
 }
 
 .image-file-input{

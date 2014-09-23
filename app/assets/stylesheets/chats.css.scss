@@ -62,7 +62,7 @@ section.chat-tools {
 
 .chat-messages {
   width: 99%;
-  height: 50%;
+  height: 80%;
   min-height: 535px;
   max-height: 700px;
   overflow-x: hidden;
@@ -76,14 +76,16 @@ section.chat-tools {
 #new-message {
   width: 45%;
   display: block;
-  margin-left: 285px;
-  margin-top: 50px;
   font-size: 20pt;
   height: 64px;
   resize: none;
   padding: 15px;
   outline: none;
   border: none;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 50px;
+  word-wrap: normal;
 }
 
 main.chat-experience{
@@ -96,11 +98,11 @@ main.chat-experience{
 }
 
 article.chat-window {
-  position: fixed;
   top: 43px;
   left: 255px;
-  width: 50%;
-  min-width: 370px;
+  position: absolute;
+  right: 267px;
+
 }
 
 section.chat-settings {

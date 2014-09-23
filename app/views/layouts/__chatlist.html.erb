@@ -1,12 +1,11 @@
+<!-- <p class="tray-header">Group Chats</p><img class="toggle-chat-list" src="hamburger.png" alt="toggle chats">
 <ul id="group-chat-list" class="group">
-
-<li><p class="tray-header">Group Chats</p><img class="toggle-chat-list" src="hamburger.png" alt="toggle chats"></li>
-<% current_user.chats.each do |chat| %>
+<%# current_user.chats.each do |chat| %>
 <li class="chat-link">
   <figure class="chat-link-portrait">
-    <img src="<%= asset_path(chat.portrait) %>" width="50px" height="50px">
+    <img src="<%#= asset_path(chat.portrait) %>" width="50px" height="50px">
   </figure>
-  <a class="chat-link-button"  href="/#/chats/<%= chat.id %>"><%= chat.title %></a>
+  <a class="chat-link-button"  href="/#/chats/<%#= chat.id %>"><%#= chat.title %></a>
 </li>
-<% end %>
-</ul>
+<%# end %>
+</ul> -->

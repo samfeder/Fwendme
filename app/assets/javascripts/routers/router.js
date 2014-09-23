@@ -10,10 +10,6 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
 
   index: function(){
     FwendMe.chats.fetch();
-
-    var view = new FwendMe.Views.ChatIndexView({collection: FwendMe.chats})
-
-    this._swapView(view)
   },
 
   show: function(id){
