@@ -4,14 +4,34 @@
 <img class="toggle-chat-list"
     src="hamburger.png"
     alt="toggle chats">
-<ul id="group-chat-list" class="group">
+<ul id="group-chat-list"
+    class="group">
+
 <% chats.forEach(function(chat){ %>
 
   <li class="chat-link">
+
     <figure class="chat-link-portrait">
-      <img class="chat-link-portrait" src="<%= chat.escape('portrait') %>" width="50px" height="50px">
+
+      <img class="chat-link-portrait"
+           src="<%= chat.escape('portrait') %>"
+           width="50px"
+           height="50px">
+
     </figure>
-    <a class="chat-link-button"  href="/#/chats/<%= chat.escape('id') %>"><%= chat.escape('title') %><div class="notification-badge"><%= chat.escape('unreads')%></div></a>
+
+    <a class="chat-link-button"
+       href="/#/chats/<%= chat.escape('id') %>">
+
+       <%= chat.escape('title') %>
+
+       <% if(parseInt(chat.escape('unreads')) > 0){ %>
+       <div class="notification-badge">
+         <%= chat.escape('unreads')%>
+       </div>
+       <% } %>
+
+     </a>
   </li>
 
 <% }) %>
