@@ -55,14 +55,15 @@ class Chat < ActiveRecord::Base
   def is_member?(user)
     self.users.include?(user)
   end
-  
+
   def unread(current_user_id)
     membership = ChatMembership.find_by_user_id_and_chat_id(current_user_id, self.id)
     membership ? membership.unread : 0
   end
 
   def clear_unreads(current_user_id)
-    ChatMembership.find_by_user_id_and_chat_id(current_user_id, self.id).unread = 0
+    ChatMembership.find_by_user_id_and_chat_id(current_user_id, self.id)
+                  .unread = 0
   end
 
 

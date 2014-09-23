@@ -14,6 +14,8 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
 
   show: function(id){
     var chat = FwendMe.chats.getOrFetch(id);
+    chat.set({"unreads": 0})
+    chat.save()
     var view = new FwendMe.Views.ChatShow({
       model: chat,
       collection: chat.messages
