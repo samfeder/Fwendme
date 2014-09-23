@@ -62,7 +62,7 @@ module Api
     end
 
     def index
-      @chats = Chat.all
+      @chats = current_user.chats
       render :index
     end
 

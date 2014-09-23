@@ -4,7 +4,7 @@ module Api
 
     def create
       message = current_user.messages.create!(message_params)
-      ChatMembership.add_unreads(current_user.id)
+      ChatMembership.add_unreads(current_user.id, message_params[:chat_id])
       push_message(message)
       head :created
     end
