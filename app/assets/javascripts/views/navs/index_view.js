@@ -5,7 +5,6 @@ FwendMe.Views.ChatListView = Backbone.CompositeView.extend({
   template: JST["navs/index"],
 
   render: function(){
-    console.log("COME ON MAN")
     var content = this.template({
       chats: this.collection
     });
