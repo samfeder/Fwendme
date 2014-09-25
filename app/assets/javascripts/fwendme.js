@@ -7,7 +7,6 @@ window.FwendMe = {
     FwendMe.chats = new FwendMe.Collections.Chats()
     FwendMe.users = new FwendMe.Collections.Users()
     FwendMe.messages = new FwendMe.Collections.Messages()
-    FwendMe.Pusher.subscribe('sidenav');
     FwendMe.chats.fetch({
       success: function(){
         FwendMe.users.fetch({

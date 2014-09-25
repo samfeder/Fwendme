@@ -5,7 +5,9 @@ FwendMe.Views.ChatListView = Backbone.CompositeView.extend({
   template: JST["navs/index"],
 
   initialize: function(){
-    this.listenTo(this.collection, "sync add update delete", this.render)
+    // window.channel = FwendMe.Pusher.subscribe('chat-' + this.model.id);
+    this.listenTo(this.collection, "sync add update delete", this.render);
+    // this.startIndexChannels;
   },
 
   render: function(){
@@ -14,6 +16,10 @@ FwendMe.Views.ChatListView = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     return this;
-  }
+  },
+
+  // startIndexChannels: function(){
+  //
+  // }
 
 })

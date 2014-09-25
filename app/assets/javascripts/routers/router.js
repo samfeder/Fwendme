@@ -14,12 +14,11 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
 
   show: function(id){
     var chat = FwendMe.chats.getOrFetch(id);
-    chat.set({"unreads": 0})
-    chat.save()
 
     if(window.channel){
       FwendMe.Pusher.unsubscribe(window.channel.name)
     }
+
     var view = new FwendMe.Views.ChatShow({
       model: chat,
       collection: chat.messages
@@ -31,17 +30,19 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
   newChat: function(user_id){
     var newChatView = new FwendMe.Views.NewChatView()
     $('#modal').html(newChatView.render().$el)
-    this._addModal(newChatView)
 
+    this._addModal(newChatView)
   },
 
 
   makeFwends: function(){
     var currentUser = FwendMe.users.getOrFetch(window.current_user.id)
+
     var makeFwendsView = new FwendMe.Views.MakeFwendsView({
       model: currentUser,
       collection: FwendMe.users
     })
+
     $('#modal').html(makeFwendsView.render().$el)
     this._addModal(makeFwendsView)
   },
@@ -50,6 +51,7 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
     var currentUser = FwendMe.users.getOrFetch(window.current_user.id)
     var editView = new FwendMe.Views.UserEdit({model: currentUser})
     $('#modal').html(editView.render().$el)
+
     this._addModal(editView)
   },
 

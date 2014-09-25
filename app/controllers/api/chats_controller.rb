@@ -54,6 +54,7 @@ module Api
       @chat = Chat.includes(:users, :messages).find(params[:id])
       @messages = @chat.messages.reverse
       if @chat.is_member?(current_user)
+        ChatMembership.find_by_chat_id_and_user_id(params[:id], current_user.id).update(unread: 0)
         render :show
       else
         render json: {errors: "Can't see this chat"}
