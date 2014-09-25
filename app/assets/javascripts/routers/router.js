@@ -15,8 +15,8 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
   show: function(id){
     var chat = FwendMe.chats.getOrFetch(id);
 
-    if(window.channel){
-      FwendMe.Pusher.unsubscribe(window.channel.name)
+    if(FwendMe.channels["current-chat"]){
+      FwendMe.Pusher.unsubscribe(FwendMe.channels["current-chat"].name)
     }
 
     var view = new FwendMe.Views.ChatShow({
