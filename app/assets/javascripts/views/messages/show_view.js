@@ -10,7 +10,7 @@ FwendMe.Views.MessageShowView = Backbone.CompositeView.extend({
 
   initialize: function(){
     this.user = this.model.attributes.user;
-    this.channel = FwendMe.Pusher.subscribe('message-' + this.model.id);
+    // this.channel = FwendMe.Pusher.subscribe('message-' + this.model.id);
   },
 
   render: function(){
