@@ -12,6 +12,8 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
 
   initialize: function(){
+    window.currentChat = this.model
+
     this.collection = this.model.messages();
     this.members = this.model.members();
     this.listenTo(this.model, 'update sync add change', this.render);

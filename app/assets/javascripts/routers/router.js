@@ -19,6 +19,8 @@ FwendMe.Routers.FwendRouter = Backbone.Router.extend({
       FwendMe.Pusher.unsubscribe(FwendMe.channels["current-chat"].name)
     }
 
+    chat.save({"unreads": 0});
+
     var view = new FwendMe.Views.ChatShow({
       model: chat,
       collection: chat.messages

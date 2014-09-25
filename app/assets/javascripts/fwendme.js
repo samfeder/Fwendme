@@ -29,8 +29,10 @@ window.FwendMe = {
                   message_id: data.id
                 }
 
-                updatedChat = FwendMe.chats.get(receivedMessage.chat_id);
-                updatedChat.save({"unreads": updatedChat.attributes.unreads + 1});
+                if(!receivedMessage.chat_id !== window.currentChat.id){
+                  updatedChat = FwendMe.chats.get(receivedMessage.chat_id);
+                  updatedChat.save({"unreads": updatedChat.attributes.unreads + 1});
+                }
 
               });
             });
