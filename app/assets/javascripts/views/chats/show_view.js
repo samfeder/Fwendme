@@ -29,7 +29,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   },
 
   startChannel: function(){
-    FwendMe.channels["current-chat"] = FwendMe.Pusher.subscribe('chat-' + this.model.id);
+    FwendMe.channels["current-chat"] = FwendMe.Pusher.subscribe('presence-chat-' + this.model.id);
     console.log("listening on chat-" + this.model.id)
     var that = this
     FwendMe.channels["current-chat"].bind('postmessage', function(data) {

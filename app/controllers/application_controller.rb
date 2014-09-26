@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
       chat_id: message.chat.id
     }
 
-    Pusher.trigger("chat-#{message_hash[:chat_id]}", "postmessage", message_hash)
+    Pusher.trigger("presence-chat-#{message_hash[:chat_id]}", "postmessage", message_hash)
     Pusher.trigger("chat-notifications", "add-notification-chat#{message_hash[:chat_id]}", message_hash)
   end
 # Move this to ApiController?
