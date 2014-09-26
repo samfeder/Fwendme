@@ -62,7 +62,7 @@ module Api
     end
 
     def index
-      @chats = current_user.chats
+      @chats = current_user.chats.reverse
       render :index
     end
 

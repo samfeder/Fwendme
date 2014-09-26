@@ -15,6 +15,7 @@ FwendMe.Views.ChatListView = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     return this;
+
   },
 
 })
