@@ -31,7 +31,10 @@ ul.user-menu { border: 2px solid #21d721; }
 #chat-tray { background-color: rgb(30, 30, 30); }
 #chat-tray { border-right: 3px solid rgb(33,215,33); }
 
+
 .chat-link {  border-bottom: 3px solid #4184FF; }
+.chat-link:last-child {  border-bottom: 3px solid white; }
+.chat-link:first-child {  border-top: 3px solid white; }
 .chat-link:hover {background-color: rgba(255, 255, 255, 0.15);}
 
 .chat-link-button { color: #4184FF; }
@@ -49,7 +52,7 @@ ul.user-menu { border: 2px solid #21d721; }
 #new-chat-button:hover{ background-color: #1AAB1A; background-color: #1AAB1A; background-image: -webkit-gradient(linear, left top, left bottom, from(#1AAB1A), to(#158915));}
 
 #group-chat-list{   background-color: rgba(250,250,250,.05);}
-
+#group-chat-list{  box-shadow: inset 0px 0px 20px 10px rgb(30,30,30);}
 
 //Chat-Experience Colors
 
