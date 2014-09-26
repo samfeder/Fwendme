@@ -13,10 +13,14 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
   initialize: function(){
     window.currentChat = this.model
+    FwendMe.channels["current-chat"] = FwendMe.Pusher.subscribe('presence-chat-' + this.model.id);
 
     this.collection = this.model.messages();
     this.members = this.model.members();
-    this.listenTo(this.model, 'update sync add change', this.render);
+
+    // Don't listen on the model or else we'll
+    // overwrite all new messages with each other.
+
     this.listenTo(this.collection, 'update sync add change', this.render);
     this.startChannel()
   },
@@ -29,7 +33,6 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
   },
 
   startChannel: function(){
-    FwendMe.channels["current-chat"] = FwendMe.Pusher.subscribe('presence-chat-' + this.model.id);
     console.log("listening on chat-" + this.model.id)
     var that = this
     FwendMe.channels["current-chat"].bind('postmessage', function(data) {
@@ -60,8 +63,6 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     })
 
     this.$el.html(content);
-
-    //renders the last 5 messages
 
     this.collection.forEach(function(oldMessage){
       var oldMessageView = new FwendMe.Views.MessageShowView({
@@ -119,9 +120,6 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     $('#modal').addClass('modal')
     $('#modal-overlay').addClass('modal-overlay')
     this.addSubview('#modal', edittingView)
-    // $(window).on("scroll", function(){
-    //    window.scrollTo(0,0)
-    // })
   },
 
   modalMembers: function(){

@@ -15,7 +15,7 @@ window.FwendMe = {
             var router = new FwendMe.Routers.FwendRouter();
             var sidenav = new FwendMe.Views.ChatListView({collection: FwendMe.chats})
 
-            FwendMe.Pusher.subscribe('presence-'+ window.current_user.id);
+            FwendMe.channels["user-presence"] = FwendMe.Pusher.subscribe('presence-'+ window.current_user.id);
 
             FwendMe.channels["chat-notifications"] = FwendMe.Pusher.subscribe('chat-notifications');
 
