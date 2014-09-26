@@ -42,6 +42,7 @@
       <section class="side-settings member-avatars">
         <% chat.members().models.forEach(function(member){ %>
           <img class="listatar"
+               id="status-<%= member.attributes.id %>"
                src="<%= member.attributes.avatar %>"
                alt="<%= member.attributes.name %>">
         <%  }) %>

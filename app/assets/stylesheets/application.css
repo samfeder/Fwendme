@@ -132,3 +132,48 @@ h3 {
 .image-file-input{
   cursor: pointer;
 }
+
+#push-messages{
+  position: absolute;
+  width: 320px;
+  background-color: rgba(30,30,30,.5);
+  top: 50;
+  right: 0;
+}
+
+.push-message {
+  background: #4184FF;
+  background-color: #4184FF;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4184FF), to(#3262BB));
+  border-radius: 10px;
+  width: 300px;
+  top: 0;
+  right: 0;
+  margin: 5px;
+}
+
+.push-image {
+  height: 50px;
+  width: 50px;
+  margin-top: 7px;
+  margin-left: 5px;
+  display: inline;
+  float: left;
+  margin-right: 5px;
+  border-radius: 50px;
+}
+
+.pusher-name {
+  font-weight: bold;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+.push-message-content {
+  display: block;
+  max-width: 280px;
+  word-wrap: break-word;
+  padding: 0px 10px;
+  margin-top: 25px;
+  font-style: italic;
+}

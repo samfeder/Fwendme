@@ -12,12 +12,13 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  def push_message(message)
+  def push_message(message, user)
     message_hash = {
       user_id: message.user.id,
       content: message.content,
       id: message.id,
-      chat_id: message.chat.id
+      chat_id: message.chat.id,
+      user: user
     }
 
     Pusher.trigger("presence-chat-#{message_hash[:chat_id]}", "postmessage", message_hash)

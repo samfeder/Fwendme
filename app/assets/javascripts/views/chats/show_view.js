@@ -12,6 +12,7 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
 
 
   initialize: function(){
+    var that = this
     window.currentChat = this.model
     FwendMe.channels["current-chat"] = FwendMe.Pusher.subscribe('presence-chat-' + this.model.id);
 
@@ -22,7 +23,17 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     // overwrite all new messages with each other.
 
     this.listenTo(this.collection, 'update sync add change', this.render);
-    this.startChannel()
+    this.addMembers()
+    this.startChannels()
+  },
+
+  addMembers: function(){
+    var that = this;
+    this.model.fetch({
+      success: function(){
+        that.render();
+      }
+    });
   },
 
   keyEvents: function(){
@@ -32,9 +43,10 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
     }
   },
 
-  startChannel: function(){
+  startChannels: function(){
     console.log("listening on chat-" + this.model.id)
     var that = this
+
     FwendMe.channels["current-chat"].bind('postmessage', function(data) {
       console.log(data)
       var receivedMessage = {
@@ -48,10 +60,32 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
           var broadcasted = FwendMe.messages.get(receivedMessage.message_id)
           console.log(broadcasted)
           that.broadcastMessage(broadcasted)
+          that.model.save({"unreads": 0});
         }
       })
 
     });
+
+    //online functionality, late fetching is kinda messing with this.
+
+    // FwendMe.channels["user-presence"].bind("pusher:subscription_succeeded", function(member_list){
+    //   _.each(_.keys(member_list.members), function(member){
+    //     onlineMember = FwendMe.users.getOrFetch(member)
+    //     console.log(onlineMember.attributes)
+        // $('#status-' + member).addClass('online')
+    //   });
+    // });
+
+    // FwendMe.channels["user-presence"].bind("pusher:member_added", function(member){
+    //   console.log(member)
+    //   $('#status-' + member).addClass('online')
+    // });
+    //
+    // FwendMe.channels["user-presence"].bind("pusher:member_removed", function(member){
+    //   console.log(member)
+    //   $('#status-' + member).removeClass('online')
+    // });
+
   },
 
   template: JST['chats/show'],
@@ -71,7 +105,6 @@ FwendMe.Views.ChatShow = Backbone.CompositeView.extend({
       })
       this.$('.messages-list').append(oldMessageView.render().$el)
     })
-
     return this
   },
 

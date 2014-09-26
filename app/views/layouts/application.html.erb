@@ -54,7 +54,6 @@
 
 <aside id="chat-tray" class="group">
   <br><br>
-  <%= render :partial => 'layouts/_chatlist' %>
   <%#= render :partial => 'layouts/_userlist' %>
 
 </aside>
@@ -76,7 +75,9 @@
 <%= yield %>
 
 <% end %>
+<div id="push-messages">
 
+</div>
 <div id="modal"></div>
 <div id="modal-overlay"></div>
 
