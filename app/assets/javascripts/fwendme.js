@@ -46,9 +46,9 @@ window.FwendMe = {
                       '</div></div>').slideDown('slow')
 
 
-                    setTimeout(function() {
-                      $("#message-" + receivedMessage.message_id).fadeOut().empty();
-                    }, 5000);
+                    // setTimeout(function() {
+                    //   $("#message-" + receivedMessage.message_id).fadeOut().empty();
+                    // }, 5000);
 
                 }
 

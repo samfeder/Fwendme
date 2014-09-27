@@ -136,16 +136,12 @@ h3 {
 #push-messages{
   position: absolute;
   width: 320px;
-  background-color: rgba(30,30,30,.5);
   top: 50;
   right: 0;
 }
 
 .push-message {
-  background: #4184FF;
-  background-color: #4184FF;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4184FF), to(#3262BB));
-  border-radius: 10px;
+  border-radius: 25px;
   width: 300px;
   top: 0;
   right: 0;
@@ -159,21 +155,31 @@ h3 {
   margin-left: 5px;
   display: inline;
   float: left;
-  margin-right: 5px;
+  margin-right: 10px;
   border-radius: 50px;
 }
 
 .pusher-name {
-  font-weight: bold;
-  padding-top: 10px;
+  padding-top: 5px;
   display: inline-block;
+  font-size: 15pt;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.pushed-chat {
+  font-size: 10pt;
+  padding-bottom: 15px;
 }
 
 .push-message-content {
   display: block;
   max-width: 280px;
   word-wrap: break-word;
-  padding: 0px 10px;
-  margin-top: 25px;
-  font-style: italic;
+  padding: 10px;
+  font-size: 12pt;
+  text-align: center;
+  border-top: 1px solid black;
+  background-color: white;
+  border-radius: 0px 0px 30px 30px;
 }
