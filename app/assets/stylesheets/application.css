@@ -141,6 +141,7 @@ h3 {
 }
 
 .push-message {
+  display: none;
   border-radius: 25px;
   width: 300px;
   top: 0;
@@ -182,4 +183,12 @@ h3 {
   border-top: 1px solid black;
   background-color: white;
   border-radius: 0px 0px 30px 30px;
+}
+
+.push-link {
+	position: absolute;
+	height: 97%;
+	width: 94%;
+	display: block;
+	top: 0;
 }

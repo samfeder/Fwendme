@@ -1,0 +1,25 @@
+<div href="/#/chats/<%= chat.escape('id') %>" 
+   class="push-message group" 
+   id="message-<%= message.message_id %>">
+	
+	<figure class="push-message-avatar">
+		<img class="push-image" 
+			 src="<%= message.user.avatar %>">
+	</figure>
+	
+	<div class="pusher-name">
+		<%= message.user.name %>
+	</div>
+	
+	<div class="pushed-chat">
+		from <%= chat.escape('title') %>
+	</div>
+	
+	<div class="push-message-content">
+		<%= message.content %>
+	</div>
+<a href="/#/chats/<%= chat.escape('id') %>"
+   class="push-link">
+</a>
+</div>
+
