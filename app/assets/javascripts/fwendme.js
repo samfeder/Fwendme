@@ -41,11 +41,11 @@ window.FwendMe = {
 					$('#push-messages').append(pushMessage.render().$el)
 					$("#message-" + receivedMessage.message_id).slideToggle('slow')
 				
-							//                     setTimeout(function() {
-							//                         $("#message-" + receivedMessage.message_id).fadeOut('slow', function(){
-							// $(this).parent().remove()
-							//                         });
-							//                     }, 5000);
+                    setTimeout(function() {
+                        $("#message-" + receivedMessage.message_id).fadeOut('slow', function(){
+							$(this).parent().remove()
+                        });
+                    }, 5000);
 				};
               });
             });
