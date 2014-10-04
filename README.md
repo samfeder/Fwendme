@@ -7,6 +7,8 @@
 fwend.me is based off of the functionality of GroupMe, features include
 
 * Real-time messaging. All group members receive your message the second it's pushed.
+* Push notifications for whenever you miss a message in another chat.
+* Unread messages notifications.
 * Full user page. Ability to edit your alias and avatar.
 * Create a new chat! Name it whatever you want!
 * Functionality to adjust a chat's members list, portrait, and name.
@@ -14,9 +16,13 @@ fwend.me is based off of the functionality of GroupMe, features include
 
 ##Stack
 
-I experimented with a ton of technologies, and while a lot of them helped make fwend.me great, a some didn't make the cut, node.js most notably. If you want to check out the node portion I had to scrap, check out (https://github.com/samfeder/Node.Fwends).
+I experimented with a few technologies, and while a lot of them helped make fwend.me great, some didn't make the cut. Most notably, I had to scrap my personalized node.js server due to time constraints. 
 
-Some tools that I held on to were
+If you want to check out the node portion, I appended a quick client-side on it and heroku'd it without a database. check it out:
+Code:  (https://github.com/samfeder/Node.Fwends)
+Heroku: (http://node-fwends.herokuapp.com/)
+
+Here are some of the tools that I did use:
 
 **Back-End**: fwend.me is built with a Rails 4 RESTful API.
 
@@ -36,7 +42,6 @@ Some tools that I held on to were
 Still on my list of things to do:
 
 * Paginating old messages
-* Unread messages notifications
 * Image Gallery of all shared images
 * Email invites
 * liking messages
