@@ -16,7 +16,7 @@ fwend.me is based off of the functionality of GroupMe, features include
 
 ##Stack
 
-I experimented with a few technologies, and while a lot of them helped make fwend.me great, some didn't make the cut. Most notably, I had to scrap my personalized node.js server due to time constraints. 
+I experimented with a few technologies, and while a lot of them helped make fwend.me great, some didn't make the cut. Most notably, I had to scrap my personalized node.js server due to time constraints.
 
 If you want to check out the node portion, I appended a quick client-side on it and heroku'd it without a database. check it out:
 Code:  (https://github.com/samfeder/Node.Fwends)
@@ -60,4 +60,3 @@ You might be slightly exaggerating. Realisitically, I intend to earn a few cool 
 > This app has changed my life. Can I be your girlfriend?
 
 No. But if you have a passion for developing in MVC frameworks with a skinny controller and fat model, despise page-loads, and get giddy at the prospect of real-time data package broadcasts, you should get in touch.
-
